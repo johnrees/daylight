@@ -1,13 +1,23 @@
 @import "bourbon";
+// @import "grid-settings";
+@import "neat-helpers";
 @import "neat";
 
+$visual-grid: true;
 $column: 158px;
-$gutter: 12px;
+$gutter: 0;
 $grid-columns: 6;
-// $max-width: em(1088);
 
-// $mobile: new-breakpoint(max-width 480px 4);
-// $tablet: new-breakpoint(max-width 768px 8);
+$orange: #F9A518;
+
+body {
+  font-family: $helvetica;
+  font-size: 13px;
+}
+
+h1,h2,h3,h4,h5 {
+  color: $orange;
+}
 
 div.container {
   @include outer-container;
@@ -24,12 +34,12 @@ header {
 }
 
 nav {
-li {
-  margin: 0;
-  padding: 0;
-  @include span-columns(1);
-  background: #FCA33D;
-}
+  li {
+    margin: 0;
+    padding: 0;
+    @include span-columns(1);
+    background: #FCA33D;
+  }
 }
 
 a {
@@ -87,7 +97,9 @@ a {
   @include omega();
   a {
     @include span-columns(1 of 6);
-    padding: 3px;
+    // padding: 3px;
+    background: $orange;
+    color: #FFF;
   }
 }
 
