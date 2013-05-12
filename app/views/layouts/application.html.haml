@@ -1,0 +1,40 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}/
+    / Always force latest IE rendering engine or request Chrome Frame
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    / Use title if it's in the page YAML frontmatter
+    %title= "Daylight Moving Image"
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    .container
+      %header
+        %nav.top-nav
+          = link_to "Backstage", "backstage"
+          = link_to "Blog", "blog"
+
+        #aperture *
+        #logo
+          #daylight Daylight
+          #moving-image Moving Image
+
+        #contact
+          Penthouse, Margolis Building, 37 Turner Street Manchester, M4 1DW
+          T: 0161 839 9088 E: talk@day-light.co.uk
+
+        #summary
+          Established in 2004, Daylight is an award winning, independent, creative moving image company based in the northern quarter of Manchester.
+
+          We like working in natural light.
+
+        %nav#main-nav
+          = link_to "Showreel", "showreel.html"
+          = link_to "Featured", "featured.html"
+          = link_to "Work", "work.html"
+          = link_to "About", about_path
+          = link_to "Clients", "clients.html"
+          = link_to "Light Work", "light-work.html"
+      = yield
