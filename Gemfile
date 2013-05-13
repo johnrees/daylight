@@ -3,6 +3,7 @@ ruby "1.9.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc1'
+gem 'jquery-turbolinks'
 group :production do
   gem 'pg' # for heroku
   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
