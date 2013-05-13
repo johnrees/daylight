@@ -1,5 +1,7 @@
 Daylight::Application.routes.draw do
 
+  resources :clients
+
   resources :videos, path: 'work'
 
   %w(light_work featured showreel).each do |page|

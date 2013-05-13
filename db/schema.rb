@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130512195351) do
+ActiveRecord::Schema.define(version: 20130513012215) do
+
+  create_table "clients", force: true do |t|
+    t.integer  "ordinal"
+    t.string   "name"
+    t.string   "slug"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "clients", ["ordinal"], name: "index_clients_on_ordinal"
 
   create_table "videos", force: true do |t|
     t.string   "name"
