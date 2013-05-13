@@ -1,18 +1,20 @@
+// $visual-grid: true;
+$column: 165px;
+$gutter: 0px;
+$grid-columns: 6;
+$max-width: $column * $grid-columns;
+$orange: #F9A518;
+
 @import "bourbon";
 // @import "grid-settings";
 @import "neat-helpers";
 @import "neat";
 
-$visual-grid: true;
-$column: 158px;
-$gutter: 0;
-$grid-columns: 6;
-
-$orange: #F9A518;
 
 body {
   font-family: $helvetica;
   font-size: 13px;
+  color: #8F8F8F;
 }
 
 h1,h2,h3,h4,h5 {
@@ -31,14 +33,16 @@ header {
   @include span-columns(6);
   margin-bottom: 16px;
   overflow: hidden;
+  p {
+    margin: 0 0 1em 0;
+  }
 }
 
 nav {
   li {
-    margin: 0;
-    padding: 0;
     @include span-columns(1);
     background: #FCA33D;
+
   }
 }
 
@@ -95,11 +99,17 @@ a {
 #main-nav {
   @include span-columns(6);
   @include omega();
+  margin-top: 3em;
   a {
     @include span-columns(1 of 6);
     // padding: 3px;
-    background: $orange;
-    color: #FFF;
+
+      display: block;
+      padding: 3px 8px;
+      &:hover {
+        background: $orange;
+        color: #FFF;
+      }
   }
 }
 
@@ -137,4 +147,8 @@ a {
 
 #video {
 
+}
+
+.row.logo {
+  margin-bottom: 1em;
 }
