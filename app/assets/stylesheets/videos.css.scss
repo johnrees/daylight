@@ -2,13 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$tablet: new-breakpoint(max-width 780px 4);
+$mobile: new-breakpoint(max-width 480px 4);
 
 .video {
+  @include media($tablet) {
+    @include span-columns(2);
+  }
+  @include media($mobile) {
+    @include span-columns(4);
+    height: 120px;
+    font-size: 1.1em;
+  }
   &, * {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", 'Lato', sans-serif;
     font-weight: 300 !important;
   }
-    background: center center url('http://www.digital-links.org/news/bridge2.jpg');
+    background: center center url('http://www.digital-links.org/news/bridge2.jpg') no-repeat;
+    background-size: cover;
     &:nth-child(even) {
       background-image: url('http://www.placenorthwest.co.uk/assets/_files/cached/img/402x255.568359375/mar_11/pnw__1301389056_Salford_University_plans.jpg');
     }
