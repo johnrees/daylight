@@ -29,14 +29,33 @@ div.container {
 .row {
   @include span-columns(6);
 }
-
 header {
   @include span-columns(6);
+  z-index: 5;
+  background: white;
   margin-bottom: 16px;
   overflow: hidden;
   p {
     margin: 0 0 1em 0;
   }
+}
+
+
+@media only screen and (min-height: 840px) and (min-width: 500px) {
+
+  header {
+    position: fixed;
+    max-width: 990px;
+  }
+
+  #main {
+    margin-top: 240px;
+  }
+
+}
+
+body {
+  margin-top: 0;
 }
 
 nav {
@@ -124,6 +143,7 @@ a {
 .top-nav {
   @include span-columns(6);
   text-align: right;
+  line-height: 40px;
 }
 
 #aperture {
