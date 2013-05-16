@@ -1,25 +1,28 @@
-%h1 Listing clients
+- 10.times do
+  .client
 
-%table
-  %tr
-    %th Ordinal
-    %th Name
-    %th Slug
-    %th Description
-    %th
-    %th
-    %th
+/ %h1 Listing clients
 
-  - @clients.each do |client|
-    %tr
-      %td= client.ordinal
-      %td= client.name
-      %td= client.slug
-      %td= client.description
-      %td= link_to 'Show', client
-      %td= link_to 'Edit', edit_client_path(client)
-      %td= link_to 'Destroy', client, :method => :delete, :data => { :confirm => 'Are you sure?' }
+/ %table
+/   %tr
+/     %th Ordinal
+/     %th Name
+/     %th Slug
+/     %th Description
+/     %th
+/     %th
+/     %th
 
-%br
+/   - @clients.each do |client|
+/     %tr
+/       %td= client.ordinal
+/       %td= client.name
+/       %td= client.slug
+/       %td= client.description
+/       %td= link_to 'Show', client
+/       %td= link_to 'Edit', edit_client_path(client)
+/       %td= link_to 'Destroy', client, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to 'New Client', new_client_path
+/ %br
+
+/ = link_to 'New Client', new_client_path

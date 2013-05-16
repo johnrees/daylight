@@ -1,3 +1,5 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+jQuery ->
+  $('.video').mouseenter ->
+    TweenMax.to( $(this).find('.bg'), 0.1, { opacity: 1 })
+  $('.video').mouseleave ->
+    TweenMax.to( $(this).find('.bg'), 0.8, { opacity: 0 })

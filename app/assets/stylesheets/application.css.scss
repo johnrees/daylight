@@ -9,6 +9,7 @@ $orange: #F9A518;
 // @import "grid-settings";
 @import "neat-helpers";
 @import "neat";
+@import "videos";
 
 
 body {
@@ -62,11 +63,6 @@ a {
   @include span-columns(4);
 }
 
-.video {
-  @include span-columns(2);
-  background: green;
-  height: 200px;
-}
 
 .client {
   @include span-columns(1);
@@ -145,9 +141,6 @@ a {
 }
 
 
-#video {
-
-}
 
 .row.logo {
   margin-bottom: 1em;
