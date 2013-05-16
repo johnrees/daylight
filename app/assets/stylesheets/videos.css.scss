@@ -4,11 +4,13 @@
 
 
 .video {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300 !important;
-    background: url('http://www.digital-links.org/news/bridge2.jpg');
+  &, * {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", 'Lato', sans-serif;
+    font-weight: 300 !important;
+  }
+    background: center center url('http://www.digital-links.org/news/bridge2.jpg');
     &:nth-child(even) {
-      background: url('http://www.placenorthwest.co.uk/assets/_files/cached/img/402x255.568359375/mar_11/pnw__1301389056_Salford_University_plans.jpg');
+      background-image: url('http://www.placenorthwest.co.uk/assets/_files/cached/img/402x255.568359375/mar_11/pnw__1301389056_Salford_University_plans.jpg');
     }
   position: relative;
   overflow: hidden;
