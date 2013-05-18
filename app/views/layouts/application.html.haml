@@ -9,8 +9,7 @@
     / Use title if it's in the page YAML frontmatter
     %title= "Daylight Moving Image"
     = stylesheet_link_tag    "application", "http://fonts.googleapis.com/css?family=Lato:300,400", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js", "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+
 
     = csrf_meta_tags
   %body
@@ -21,9 +20,10 @@
           = link_to "Blog", "http://blog.day-light.co.uk"
 
         .row.logo
-          #aperture *
+          #aperture-container
+            #aperture{style: 'width: 70px; height: 70px'}
           #logo
-            #daylight Daylight
+            = link_to "Daylight", root_path, id: 'daylight'
             #moving-image Moving Image
 
         #contact
@@ -36,11 +36,15 @@
           We like working in natural light.
 
         %nav#main-nav
-          = link_to "Showreel", showreel_path
-          = link_to "Featured", featured_path
-          = link_to "Work", videos_path
-          = link_to "About", about_path
-          = link_to "Clients", clients_path
-          = link_to "Light Work", light_work_path
+          %ul
+            %li= link_to "Showreel", showreel_path
+            %li= link_to "Featured", featured_path
+            %li= link_to "Work", videos_path
+            %li= link_to "About", about_path
+            %li= link_to "Clients", clients_path
+            %li= link_to "Light Work", light_work_path
       #main
         = yield
+
+    = javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js", "https://www.gstatic.com/swiffy/v5.1/runtime.js", "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"
+    = javascript_include_tag "application", "data-turbolinks-track" => true

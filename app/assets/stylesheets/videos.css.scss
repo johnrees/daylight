@@ -5,6 +5,7 @@
 $tablet: new-breakpoint(max-width 780px 4);
 $mobile: new-breakpoint(max-width 480px 4);
 
+
 .video {
   @include media($tablet) {
     @include span-columns(2);
@@ -83,3 +84,17 @@ $mobile: new-breakpoint(max-width 480px 4);
 }
 
 
+.description {
+  @include shift(2);
+  @include media($tablet, $mobile) {
+    @include shift(0);
+  }
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.thumbnail {
+  height: 200px;
+  @include span-columns(2);
+  background: black;
+}

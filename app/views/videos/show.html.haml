@@ -1,18 +1,21 @@
-%p#notice= notice
+= @video.vimeoid
+.row
+  #video= vimeo_player @video.vimeoid
 
-%p
-  %b Name:
-  = @video.name
-%p
-  %b Slug:
-  = @video.slug
-%p
-  %b Vimeoid:
-  = @video.vimeoid
-%p
-  %b Description:
-  = @video.description
+.row
+  .description
+    %h3= @video.name
+    = simple_format @video.description
 
-= link_to 'Edit', edit_video_path(@video)
-\|
-= link_to 'Back', videos_path
+.row
+  - 3.times do
+    .thumbnail
+
+/ %p#notice= notice
+/ = vimeo_player @video.vimeoid
+/ %h3= @video.name
+/ = simple_format @video.description
+
+/ = link_to 'Edit', edit_video_path(@video)
+/ \|
+/ = link_to 'Back', videos_path

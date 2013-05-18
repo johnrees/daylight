@@ -10,7 +10,7 @@ $orange: #F9A518;
 @import "neat-helpers";
 @import "neat";
 @import "videos";
-
+// @import "clients";
 
 body {
   font-family: 'Helvetica Neue', $helvetica;
@@ -62,13 +62,25 @@ body {
   margin-top: 0;
 }
 
-nav {
-  li {
-    @include span-columns(1);
-    background: #FCA33D;
+header {
+  nav {
+    ul, li {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      @include span-columns(1);
 
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        // background: #FCA33D;
+      }
+    }
   }
 }
+
 
 a {
   text-decoration: none;
@@ -82,20 +94,6 @@ a {
 }
 
 .video-description {
-  @include shift(2);
-  @include span-columns(4);
-}
-
-
-.client {
-  @include span-columns(1);
-  @include omega(6n);
-  background: green;
-  height: 75px;
-  margin-bottom: 10px;
-}
-
-.clients-description {
   @include shift(2);
   @include span-columns(4);
 }
@@ -120,7 +118,7 @@ a {
   @include omega();
   margin-top: 3em;
   a {
-    @include span-columns(1 of 6);
+    // @include span-columns(1 of 6);
     // padding: 3px;
 
       display: block;
@@ -150,8 +148,13 @@ a {
   line-height: 40px;
 }
 
-#aperture {
+#aperture-container {
   @include span-columns(1);
+}
+#aperture {
+
+  width: 70px;
+  height: 70px;
 }
 
 .about-column {
@@ -169,3 +172,5 @@ a {
 .row.logo {
   margin-bottom: 1em;
 }
+
+

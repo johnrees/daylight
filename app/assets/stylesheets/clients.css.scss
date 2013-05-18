@@ -5,9 +5,26 @@
 .client {
   @include span-columns(1);
   @include omega(6);
-  height: 80px;
+
+  // @include media($tablet) {
+  //   @include span-columns(3);
+  // }
+  height: 100px;
   background: red;
   &:nth-child(odd) {
     background: orange;
   }
 }
+
+// .client {
+//   @include span-columns(1);
+//   @include omega(6n);
+//   background: green;
+//   height: 75px;
+//   margin-bottom: 10px;
+// }
+
+// .clients-description {
+//   @include shift(2);
+//   @include span-columns(4);
+// }
