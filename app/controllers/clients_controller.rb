@@ -1,10 +1,19 @@
+require 'ostruct'
+
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
 
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.all
+
+    # @clients = Client.all
+
+    @clients = []
+    %w(asda bt sony jvc bbc o2 sainsburys bp m_and_s tk_maxx lilly sky).each do |client|
+      @clients.push OpenStruct.new(name: client.humanize.capitalize, description: Faker::Lorem.paragraphs.join(''), slug: client)
+    end
+
   end
 
   # GET /clients/1

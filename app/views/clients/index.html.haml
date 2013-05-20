@@ -1,7 +1,15 @@
 %p Whether it was graphics or a full production, we have done work for these people on some capacity over the last few years. Rollover below for some testimonials.
 
-- 10.times do
-  .client
+- @clients.each_with_index do |client, index|
+  .client{data: {name: client.name, description: client.description }, class: ('active' if index == 0)}
+    = image_tag "clients/#{client.slug}.png"
+
+
+
+.row
+  .description
+    %h3#client-name= @clients.first.name
+    %p#client-description= @clients.first.description
 
 / %h1 Listing clients
 
