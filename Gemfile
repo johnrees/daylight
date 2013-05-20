@@ -14,6 +14,7 @@ group :development do
   gem 'sqlite3'
 end
 
+gem 'holder_rails'
 gem 'ffaker'
 
 # Use SCSS for stylesheets

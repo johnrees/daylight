@@ -1,7 +1,10 @@
-// Place all the styles related to the Clients controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
+.padded {
+  padding: 10px 0 0 10px;
+}
+img {
+  width: 100% !important;
+  height: auto !important;
+}
 .client {
   @include span-columns(1);
   @include omega(6);
