@@ -50,12 +50,12 @@
 
         %nav#main-nav
           %ul
-            %li= link_to "Showreel", showreel_path
-            %li= link_to "Featured", featured_path
-            %li= link_to "Work", videos_path
-            %li= link_to "About", about_path
-            %li= link_to "Clients", clients_path
-            %li= link_to "Light Work", light_work_path
+            %li= link_to "Showreel", showreel_path, class: ('active' if request.path.include? showreel_path)
+            %li= link_to "Featured", featured_path, class: ('active' if request.path.include? featured_path)
+            %li= link_to "Work", videos_path, class: ('active' if request.path.include? videos_path)
+            %li= link_to "About", about_path, class: ('active' if request.path.include? about_path)
+            %li= link_to "Clients", clients_path, class: ('active' if request.path.include? clients_path)
+            %li= link_to "Light Work", light_work_path, class: ('active' if request.path.include? light_work_path)
       #main
         = yield
 
