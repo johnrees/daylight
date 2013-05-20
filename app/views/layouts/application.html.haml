@@ -16,8 +16,21 @@
     .container
       %header
         %nav.top-nav
-          = link_to "Backstage", "http://day-light.co.uk/backstage"
-          = link_to "Blog", "http://blog.day-light.co.uk"
+
+          = link_to "Backstage", "http://day-light.co.uk/backstage", class: 'link'
+          = link_to "Blog", "http://blog.day-light.co.uk", class: 'link'
+
+          = link_to "Email", "#", class: 'sprite Email'
+          / = link_to "Tumblr", "#", class: 'sprite Tumblr'
+          = link_to "Facebook", "#", class: 'sprite Facebook'
+          = link_to "Twitter", "#", class: 'sprite Twitter'
+          = link_to "Pinterest", "#", class: 'sprite Pinterest'
+          = link_to "Instagram", "#", class: 'sprite Instagram'
+
+          = link_to "YouTube", "#", class: 'sprite YouTube'
+          = link_to "Vimeo", "#", class: 'sprite Vimeo'
+
+
 
         .row.logo
           #aperture-container

@@ -6,6 +6,7 @@ $max-width: $column * $grid-columns;
 $orange: #F9A518;
 
 @import "bourbon";
+@import "sprite";
 // @import "grid-settings";
 @import "neat-helpers";
 @import "neat";
@@ -130,6 +131,7 @@ a {
   }
 }
 
+
 #daylight, #moving-image {
   text-decoration: none;
   font-weight: bold;
@@ -145,7 +147,10 @@ a {
 .top-nav {
   @include span-columns(6);
   text-align: right;
-  line-height: 40px;
+  line-height: 25px;
+  .link {
+    margin-right: 20px;
+  }
 }
 
 #aperture-container {
