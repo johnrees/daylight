@@ -1,9 +1,10 @@
 - 30.times do |i|
   .video
-    .bg
-      .info
-        .name=Faker::Lorem.words.to_sentence.capitalize
-        =Faker::Company.name
+    = link_to Video.first do
+      .bg
+        .info
+          .name=Faker::Lorem.words.to_sentence.capitalize
+          .company=Faker::Company.name
 
 
 / %h1 Listing videos

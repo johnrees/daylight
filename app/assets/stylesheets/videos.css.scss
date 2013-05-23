@@ -98,3 +98,7 @@ $mobile: new-breakpoint(max-width 480px 4);
   @include span-columns(2);
   background: black;
 }
+
+.company {
+  color: #393939;
+}
