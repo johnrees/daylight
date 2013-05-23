@@ -9,8 +9,8 @@
     / Use title if it's in the page YAML frontmatter
     %title= "Daylight Moving Image"
     = stylesheet_link_tag    "application", "http://fonts.googleapis.com/css?family=Lato:300,400", media: "all", "data-turbolinks-track" => true
-
-
+    = javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js", "https://www.gstatic.com/swiffy/v5.1/runtime.js", "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"
+    = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
     .container
@@ -58,6 +58,3 @@
             %li= link_to "Light Work", light_work_path, class: ('active' if request.path.include? light_work_path)
       #main
         = yield
-
-    = javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js", "https://www.gstatic.com/swiffy/v5.1/runtime.js", "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"
-    = javascript_include_tag "application", "data-turbolinks-track" => true
