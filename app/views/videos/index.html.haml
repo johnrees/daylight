@@ -1,3 +1,9 @@
+%nav#sub-nav.inline
+  %ul
+    %li= link_to_with_active_state "All", request.env['PATH_INFO']
+    - @categories.each do |category|
+      %li= link_to_with_active_state category, '#'
+
 - 30.times do |i|
   .video
     = link_to Video.first do

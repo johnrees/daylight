@@ -3,6 +3,7 @@ class VideosController < ApplicationController
 
   def light_work
     @videos = Video.all
+    @categories = %w(TV Business Public_Sector Education Music/Fashion)
     render :index
   end
 
@@ -16,6 +17,7 @@ class VideosController < ApplicationController
   # GET /videos.json
   def index
     @videos = Video.all
+    @categories = %w(TV Business Public_Sector Education Music/Fashion)
   end
 
   # GET /videos/1

@@ -12,7 +12,7 @@
     = javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js", "https://www.gstatic.com/swiffy/v5.1/runtime.js", "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
-  %body
+  %body{class: "c-#{controller_name} a-#{action_name}"}
     .container
       %header
         %nav.top-nav
@@ -30,8 +30,6 @@
           = link_to "YouTube", "#", class: 'sprite YouTube'
           = link_to "Vimeo", "#", class: 'sprite Vimeo'
 
-
-
         .row.logo
           #aperture-container
             #aperture{style: 'width: 70px; height: 70px'}
@@ -48,13 +46,13 @@
 
           We like working in natural light.
 
-        %nav#main-nav
+        %nav#main-nav.inline
           %ul
-            %li= link_to "Showreel", showreel_path, class: ('active' if request.path.include? showreel_path)
-            %li= link_to "Featured", featured_path, class: ('active' if request.path.include? featured_path)
-            %li= link_to "Work", videos_path, class: ('active' if request.path.include? videos_path)
-            %li= link_to "About", about_path, class: ('active' if request.path.include? about_path)
-            %li= link_to "Clients", clients_path, class: ('active' if request.path.include? clients_path)
-            %li= link_to "Light Work", light_work_path, class: ('active' if request.path.include? light_work_path)
+            %li= link_to_with_active_state "Showreel", showreel_path
+            %li= link_to_with_active_state "Featured", featured_path
+            %li= link_to_with_active_state "Work", videos_path
+            %li= link_to_with_active_state "About", about_path
+            %li= link_to_with_active_state "Clients", clients_path
+            %li= link_to_with_active_state "Light Work", light_work_path
       #main
         = yield

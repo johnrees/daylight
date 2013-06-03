@@ -1,4 +1,5 @@
 jQuery ->
+
   $('.video').mouseenter ->
     # TweenMax.to( $(this), 0.1, { backgroundSize: '400px 400px' })
     TweenMax.to( $(this).find('.bg'), 0.1, { opacity: 1 })

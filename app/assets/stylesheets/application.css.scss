@@ -4,6 +4,7 @@ $gutter: 0px;
 $grid-columns: 6;
 $max-width: $column * $grid-columns;
 $orange: #F9A518;
+$yellow: #FFDC48;
 
 @import "bourbon";
 @import "sprite";
@@ -17,6 +18,7 @@ body {
   font-family: 'Helvetica Neue', $helvetica;
   font-size: 13px;
   color: #8F8F8F;
+  margin-top: 0;
 }
 
 h1,h2,h3,h4,h5 {
@@ -45,6 +47,10 @@ body {
   overflow-y: scroll;
 }
 
+#main {
+  @include span-columns(6);
+}
+
 
 @media only screen and (min-height: 840px) and (min-width: 500px) {
 
@@ -56,29 +62,42 @@ body {
   #main {
     margin-top: 280px;
   }
+}
+
+a:hover, a:active, a.active {
+  nav#main-nav li & {
+    background: $orange;
+  }
+  nav#sub-nav li & {
+    background: $yellow;
+  }
 
 }
 
-body {
-  margin-top: 0;
-}
+#sub-nav {
+    margin-bottom: 10px;
+    display: block;
+    overflow: hidden;
+  }
 
-header {
-  nav {
-    ul, li {
-      margin: 0;
-      padding: 0;
-    }
-    li {
-      @include span-columns(1);
+nav.inline {
+  ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    @include span-columns(1);
 
-      a {
-        display: block;
-        width: 100%;
-        height: 100%;
-        // background: #FCA33D;
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 3px 8px;
+      &:hover, &.active {
+        color: #FFF;
       }
     }
+
   }
 }
 
@@ -118,17 +137,6 @@ a {
   @include span-columns(6);
   @include omega();
   margin-top: 3em;
-  a {
-    // @include span-columns(1 of 6);
-    // padding: 3px;
-
-      display: block;
-      padding: 3px 8px;
-      &:hover, &.active {
-        background: $orange;
-        color: #FFF;
-      }
-  }
 }
 
 
@@ -172,8 +180,6 @@ a {
   }
 }
 
-
-
 .row.logo {
   margin-bottom: 1em;
 }
@@ -181,4 +187,18 @@ a {
 
 .company {
   color: #000;
+}
+
+body.c-clients {
+  #main {
+    margin-top: 20px;
+  }
+}
+
+body.c-videos {
+  &.a-index, &.a-light_work {
+    header {
+      margin-bottom: 0;
+    }
+  }
 }
