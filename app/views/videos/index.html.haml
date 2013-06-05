@@ -1,16 +1,17 @@
-%nav#sub-nav.inline
+%nav#sub-nav.inline{data: {bgcolor: '#ffdc48'}}
   %ul
-    %li= link_to_with_active_state "All", request.env['PATH_INFO']
+    %li.all= link_to_with_active_state "All", request.env['PATH_INFO']
     - @categories.each do |category|
-      %li= link_to_with_active_state category, '#'
+      %li= link_to_with_active_state category, '#', data: {filter: category.parameterize}
 
-- 30.times do |i|
-  .video
-    = link_to Video.first do
-      .bg
-        .info
-          .name=Faker::Lorem.words.to_sentence.capitalize
-          .company=Faker::Company.name
+#videos
+  - 30.times do |i|
+    .video{class: @categories.sample.parameterize}
+      = link_to Video.first do
+        .bg
+          .info
+            .name=Faker::Lorem.words.to_sentence.capitalize
+            .company=Faker::Company.name
 
 
 / %h1 Listing videos
