@@ -165,9 +165,10 @@ a {
   @include span-columns(1);
 }
 #aperture {
-
+  display: block;
   width: 70px;
   height: 70px;
+  background: image-url('aperture.png') no-repeat;
 }
 
 .about-column {
