@@ -6,6 +6,9 @@ $max-width: $column * $grid-columns;
 $orange: #F9A518;
 $yellow: #FFDC48;
 
+$tablet: new-breakpoint(max-width 780px 4);
+$mobile: new-breakpoint(max-width 480px 4);
+
 @import "bourbon";
 @import "sprite";
 // @import "grid-settings";
@@ -13,6 +16,16 @@ $yellow: #FFDC48;
 @import "neat";
 @import "videos";
 @import "clients";
+
+.fluid-width-video-wrapper, iframe {
+  background: #000;
+}
+
+header {
+  @include media($mobile) {
+    display: none;
+  }
+}
 
 body {
   font-family: 'Helvetica Neue', $helvetica;
