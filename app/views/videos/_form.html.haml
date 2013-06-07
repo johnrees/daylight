@@ -7,14 +7,15 @@
           %li= msg
 
   .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :slug
-    = f.text_field :slug
-  .field
     = f.label :vimeoid
     = f.text_field :vimeoid
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  / .field
+  /   = f.label :slug
+  /   = f.text_field :slug
   .field
     = f.label :description
     = f.text_area :description

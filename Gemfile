@@ -16,6 +16,7 @@ end
 
 gem 'holder_rails'
 gem 'ffaker'
+gem 'friendly_id', github: 'FriendlyId/friendly_id'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0.rc1'

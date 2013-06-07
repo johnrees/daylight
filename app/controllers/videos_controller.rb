@@ -7,17 +7,16 @@ class VideosController < ApplicationController
     render :index
   end
 
+  def work
+    @videos = Video.all
+    @categories = %w(TV Business Public_Sector Education Music/Fashion)
+    render :index
+  end
+
   def featured
   end
 
   def showreel
-  end
-
-  # GET /videos
-  # GET /videos.json
-  def index
-    @videos = Video.all
-    @categories = %w(TV Business Public_Sector Education Music/Fashion)
   end
 
   # GET /videos/1
@@ -77,7 +76,7 @@ class VideosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_video
-      @video = Video.find(params[:id])
+      @video = Video.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

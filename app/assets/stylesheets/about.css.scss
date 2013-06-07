@@ -1,0 +1,16 @@
+.about-column {
+  @include span-columns(3);
+  &.first {
+    clear: left;
+  }
+  &.last {
+    @include omega();
+  }
+  @include media($mobile) {
+    @include fill-parent;
+  }
+}
+
+.row {
+  @include row();
+}

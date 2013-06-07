@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require jquery.fitvids
 //= require holder
+//= require urlify
 //= require jquery.isotope
 //= require_tree .

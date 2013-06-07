@@ -16,15 +16,10 @@ $mobile: new-breakpoint(max-width 480px 4);
 @import "neat";
 @import "videos";
 @import "clients";
+@import "about";
 
 .fluid-width-video-wrapper, iframe {
   background: #000;
-}
-
-header {
-  @include media($mobile) {
-    display: none;
-  }
 }
 
 body {
@@ -32,6 +27,7 @@ body {
   font-size: 13px;
   color: #8F8F8F;
   margin-top: 0;
+  overflow-y: scroll;
 }
 
 h1,h2,h3,h4,h5 {
@@ -42,9 +38,7 @@ div.container {
   @include outer-container;
 }
 
-.row {
-  @include span-columns(6);
-}
+
 header {
   @include span-columns(6);
   z-index: 5;
@@ -54,10 +48,9 @@ header {
   p {
     margin: 0 0 1em 0;
   }
-}
-
-body {
-  overflow-y: scroll;
+  @include media($mobile) {
+    display: none;
+  }
 }
 
 #main {
@@ -184,15 +177,6 @@ a {
   background: image-url('aperture.png') no-repeat;
 }
 
-.about-column {
-  @include span-columns(3);
-  &.first {
-    clear: left;
-  }
-  &.last {
-    @include omega();
-  }
-}
 
 .row.logo {
   margin-bottom: 1em;

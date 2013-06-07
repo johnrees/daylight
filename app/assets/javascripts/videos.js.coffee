@@ -19,6 +19,14 @@ jQuery ->
     $(this).delay(counter).fadeIn()
     counter += 30
 
+  $('#video_vimeoid').change ->
+    $(this).val $(this).val().match(/(\d{3,10})/)[0]
+    url = "http://vimeo.com/api/v2/video/#{$(this).val()}.json?callback=?"
+    $.getJSON url, (data) ->
+      if data[0]
+        $('#video_name').val( data[0].title )
+        $('#video_description').val( data[0].description.replace(/(<([^>]+)>)/ig,"") )
+
   $('body.c-videos #videos').isotope
     itemSelector : '.video'
     layoutMode : 'fitRows'
