@@ -4,7 +4,11 @@ Daylight::Application.routes.draw do
 
   resources :videos, except: :index
 
-  %w(work light_work featured showreel).each do |page|
+  %w(work light_work).each do |page|
+    get "#{page.gsub('_', '-')}(/:category)", to: "videos##{page}", as: page
+  end
+
+  %w(featured showreel).each do |page|
     get page.gsub('_', '-'), to: "videos##{page}", as: page
   end
 

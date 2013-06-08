@@ -12,7 +12,7 @@ module ApplicationHelper
   end
 
   def link_to_with_active_state text, link, html_options = {}
-    link_to text, link, class: ('active' if request.path.include? link), data: { name: text.parameterize }
+    link_to text, link, class: ('active' if request.path == link), data: { name: text.parameterize }
   end
 
 end

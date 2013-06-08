@@ -1,8 +1,10 @@
 %nav#sub-nav.inline{data: {bgcolor: '#ffdc48'}}
   %ul
-    %li.all= link_to_with_active_state "All", request.env['PATH_INFO']
+    %li.all= link_to_with_active_state "All", url_for(params.merge(category: nil))
     - @categories.each do |category|
-      %li= link_to_with_active_state category, '#', data: {filter: category.parameterize}
+      %li= link_to_with_active_state category,
+        url_for(params.merge(category: category.parameterize)),
+        data: {filter: category.parameterize}
 
 #videos
   - 30.times do |i|
@@ -12,30 +14,3 @@
           .info
             .name=Faker::Lorem.words.to_sentence.capitalize
             .company=Faker::Company.name
-
-
-/ %h1 Listing videos
-
-/ %table
-/   %tr
-/     %th Name
-/     %th Slug
-/     %th Vimeoid
-/     %th Description
-/     %th
-/     %th
-/     %th
-
-/   - @videos.each do |video|
-/     %tr
-/       %td= video.name
-/       %td= video.slug
-/       %td= video.vimeoid
-/       %td= video.description
-/       %td= link_to 'Show', video
-/       %td= link_to 'Edit', edit_video_path(video)
-/       %td= link_to 'Destroy', video, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-/ %br
-
-/ = link_to 'New Video', new_video_path

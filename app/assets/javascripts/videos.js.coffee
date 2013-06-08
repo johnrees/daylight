@@ -27,20 +27,24 @@ ready = ->
         $('#video_name').val( data[0].title )
         $('#video_description').val( data[0].description.replace(/(<([^>]+)>)/ig,"") )
 
-  $('body.c-videos #videos').isotope
-    itemSelector : '.video'
-    layoutMode : 'fitRows'
+  # $('body.c-videos #videos').isotope( 'destroy' ).isotope
+  #   itemSelector : '.video'
+  #   layoutMode : 'fitRows'
 
   $('.c-videos.a-index #sub-nav li:eq(2)').after $('li.all')
   $('.c-videos.a-light_work #sub-nav').append $('li.all')
 
-  $('#sub-nav a').click (e) ->
-    e.preventDefault()
-    $('#sub-nav a').removeClass('active').css('background', 'none')
-    $(this).addClass('active').trigger('mouseenter')
-    filter =  if $(this).data('name') is "all" then "*" else ".#{$(this).data('name')}"
-    $('.c-videos #videos').isotope
-      filter: filter
+  # $('#sub-nav a').click (e) ->
+  #   e.preventDefault()
+  #   $('#sub-nav a').removeClass('active').css('background', 'none')
+  #   $(this).addClass('active').trigger('mouseenter')
+  #   filter =  if $(this).data('name') is "all" then "*" else ".#{$(this).data('name')}"
+
+  filter = window.location.toString().split('/')[4]
+  filter = if filter then ".#{filter}" else "*"
+  console.log filter
+  $('.c-videos #videos').isotope
+    filter: filter
 
 
 $(document).ready ready
