@@ -7,8 +7,8 @@ module ApplicationHelper
       mozallowfullscreen: true,
       src: "http://player.vimeo.com/video/#{src}?color=F9A518",
       webkitallowfullscreen: true,
-      width: 960,
-      height: 540
+      width: 980,
+      height: 550
   end
 
   def link_to_with_active_state text, link, html_options = {}

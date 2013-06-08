@@ -1,4 +1,4 @@
-jQuery ->
+ready = ->
 
   $('.video').mouseenter ->
     # TweenMax.to( $(this), 0.1, { backgroundSize: '400px 400px' })
@@ -43,3 +43,5 @@ jQuery ->
       filter: filter
 
 
+$(document).ready ready
+$(document).on 'page:load', ready
