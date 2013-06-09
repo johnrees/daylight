@@ -1,5 +1,6 @@
 module ApplicationHelper
   def vimeo_player src
+    # content_tag :div, id: 'vimeo-container' do
     content_tag :iframe,
       nil,
       allowfullscreen: true,
@@ -7,9 +8,11 @@ module ApplicationHelper
       mozallowfullscreen: true,
       src: "http://player.vimeo.com/video/#{src}?color=F9A518",
       webkitallowfullscreen: true,
-      width: 980,
-      height: 550
+      id: 'vimeo',
+      width: 990,
+      height: 558
   end
+  # end
 
   def link_to_with_active_state text, link, html_options = {}
     link_to text, link, class: ('active' if request.path == link), data: { name: text.parameterize }

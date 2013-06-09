@@ -31,7 +31,7 @@ ready = ->
   #   itemSelector : '.video'
   #   layoutMode : 'fitRows'
 
-  $('.c-videos.a-index #sub-nav li:eq(2)').after $('li.all')
+  $('.c-videos.a-work #sub-nav li:eq(2)').after $('li.all')
   $('.c-videos.a-light_work #sub-nav').append $('li.all')
 
   # $('#sub-nav a').click (e) ->
