@@ -7,10 +7,10 @@
         data: {filter: category.parameterize}
 
 #videos
-  - 30.times do |i|
+  - @videos.each do |video|
     .video{class: @categories.sample.parameterize}
-      = link_to video_path(Video.first) do
+      = link_to video do
         .bg
           .info
-            .name=Faker::Lorem.words.to_sentence.capitalize
+            .name=video
             .company=Faker::Company.name

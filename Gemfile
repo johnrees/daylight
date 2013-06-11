@@ -15,6 +15,7 @@ group :development do
   gem 'sqlite3'
 end
 
+gem 'dotenv-rails', :groups => [:development, :test]
 gem 'holder_rails'
 gem 'ffaker'
 gem 'friendly_id', github: 'FriendlyId/friendly_id'

@@ -1,8 +1,13 @@
 Daylight::Application.routes.draw do
 
-  resources :clients
-
+  resources :clients, only: :index
   resources :videos, except: :index
+
+  namespace :admin do
+    resources :videos
+    resources :clients
+    root to: 'videos#index'
+  end
 
   %w(work light_work).each do |page|
     get "#{page.gsub('_', '-')}(/:category)", to: "videos##{page}", as: page
@@ -14,10 +19,6 @@ Daylight::Application.routes.draw do
 
   %w(home about).each do |page|
     get page, to: "static##{page}"
-  end
-
-  namespace :admin do
-    root to: 'admin#dashboard'
   end
 
   root to: "static#home"

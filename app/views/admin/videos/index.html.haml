@@ -1,0 +1,6 @@
+%table
+  - @videos.each do |video|
+    %tr
+      %td= link_to video.name, edit_admin_video_path(video)
+
+= link_to "New Video", new_admin_video_path
