@@ -1,4 +1,5 @@
 ready = ->
+
   $('.client').hover ->
     $('.client').removeClass('active')
     $(this).addClass('active')

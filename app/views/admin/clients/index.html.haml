@@ -1,6 +1,12 @@
-%table
-  - @clients.each do |client|
-    %tr
-      %td= link_to client.name, edit_admin_client_path(client)
-
-= link_to "New Client", new_admin_client_path
+.row
+  .columns.large-10
+    %h3 Manage Clients
+  .columns.large-2
+    = link_to "Add Client", new_admin_client_path, class: 'button'
+  .columns.large-12
+    %p Drag to reorder, click to edit
+  .columns.large-8{style: 'float: left'}
+    %ul#clients
+      - @clients.each do |client|
+        = content_tag_for :li, client do
+          = link_to client.name, edit_admin_client_path(client)

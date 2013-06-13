@@ -1,14 +1,15 @@
 %nav#sub-nav.inline{data: {bgcolor: '#ffdc48'}}
   %ul
-    %li.all= link_to_with_active_state "All", url_for(params.merge(category: nil))
-    - @categories.each do |category|
-      %li= link_to_with_active_state category,
-        url_for(params.merge(category: category.parameterize)),
-        data: {filter: category.parameterize}
+    %li.all= link_to_with_active_state "All", url_for(params.merge(tag: nil))
+    - @tags.each do |tag|
+      %li= link_to_with_active_state tag.name,
+        url_for(params.merge(tag: tag.slug)),
+        data: { filter: tag.slug}
 
 #videos
   - @videos.each do |video|
-    .video{class: @categories.sample.parameterize}
+    .video.tile
+      /{class: @tags.sample.parameterize}
       = link_to video do
         .bg
           .info

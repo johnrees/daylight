@@ -1,0 +1,67 @@
+//= require foundation_and_overrides
+$orange: #F9A518;
+$yellow: #FFDC48;
+
+.showreel {
+  background: $yellow;
+}
+.featured {
+  background: $orange;
+}
+
+#main {
+  textarea {
+    height: auto;
+  }
+  ul {
+    min-height: 80px;
+    background: #EEE;
+    margin: 0;
+    padding: 4px;
+    list-style: none;
+  }
+  li.all {
+    background: $yellow;
+  }
+  li {
+    display: block;
+    clear: both;
+    padding: 2px 4px;
+    background: $orange;
+    margin: 2px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    a {
+      display: block;
+      width: 100%;
+      color: #FFF;
+    }
+  }
+  .placeholder { height: 1.5em; line-height: 1.2em; background: rgba(0,0,0,0.3); margin: 2px; }
+
+
+  table {
+    width: 100%;
+    &,td,tr {
+      vertical-align: top;
+    }
+    td {
+      width: 20%;
+      text-align: left;
+    }
+  }
+}
+
+.field {
+  margin-bottom: 1em;
+}
+
+p {
+  color: #999;
+}
+
+body {
+  margin-bottom: 50px;
+}

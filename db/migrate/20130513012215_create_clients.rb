@@ -3,6 +3,7 @@ class CreateClients < ActiveRecord::Migration
     create_table :clients do |t|
       t.integer :ordinal
       t.string :name
+      t.string :logo
       t.string :slug
       t.text :description
 

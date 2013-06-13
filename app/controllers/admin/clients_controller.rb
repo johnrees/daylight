@@ -3,11 +3,17 @@ require 'ostruct'
 class Admin::ClientsController < Admin::AdminController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
 
+  def sort
+    # order =
+    Client.do_order(params[:client])
+    render :text => params[:client].inspect
+  end
+
   # GET /clients
   # GET /clients.json
   def index
 
-    @clients = Client.all
+    @clients = Client.order('ordinal ASC')
     # @clients = []
     # %w(asda bt sony jvc bbc o2 sainsburys bp m_and_s tk_maxx lilly sky).each do |client|
     #   @clients.push OpenStruct.new(name: client.humanize.capitalize, description: Faker::Lorem.paragraphs.join(''), slug: client)
@@ -35,7 +41,7 @@ class Admin::ClientsController < Admin::AdminController
 
     respond_to do |format|
       if @client.save
-        format.html { redirect_to @client, notice: 'Client was successfully created.' }
+        format.html { redirect_to admin_clients_url, notice: 'Client was successfully created.' }
         format.json { render action: 'show', status: :created, location: @client }
       else
         format.html { render action: 'new' }
@@ -49,7 +55,7 @@ class Admin::ClientsController < Admin::AdminController
   def update
     respond_to do |format|
       if @client.update(client_params)
-        format.html { redirect_to @client, notice: 'Client was successfully updated.' }
+        format.html { redirect_to admin_clients_url, notice: 'Client was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -63,7 +69,7 @@ class Admin::ClientsController < Admin::AdminController
   def destroy
     @client.destroy
     respond_to do |format|
-      format.html { redirect_to clients_url }
+      format.html { redirect_to admin_clients_url }
       format.json { head :no_content }
     end
   end
@@ -76,6 +82,6 @@ class Admin::ClientsController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:ordinal, :name, :slug, :description)
+      params.require(:client).permit(:ordinal, :name, :slug, :description, :logo)
     end
 end

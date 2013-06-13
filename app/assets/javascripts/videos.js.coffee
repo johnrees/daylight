@@ -1,5 +1,11 @@
 ready = ->
 
+  $('body.admin.a-index.c-videos input').change ->
+    $(this).parents('form').submit()
+
+  $('body.c-videos.a-work a[data-name="work"]').addClass('active')
+  $('body.c-videos.a-light_work a[data-name="light-work"]').addClass('active')
+
   $('.video').mouseenter ->
     # TweenMax.to( $(this), 0.1, { backgroundSize: '400px 400px' })
     TweenMax.to( $(this).find('.bg'), 0.1, { opacity: 1 })
@@ -14,18 +20,12 @@ ready = ->
     unless $(this).hasClass('active')
       TweenMax.to( $(this), 0.8, { backgroundColor: '#FFF' })
 
-  counter = 100
-  $('.video').each ->
-    $(this).delay(counter).fadeIn()
-    counter += 30
+  # counter = 100
+  # $('.video').each ->
+  #   $(this).delay(counter).fadeIn()
+  #   counter += 30
 
-  $('#video_vimeoid').change ->
-    $(this).val $(this).val().match(/(\d{3,10})/)[0]
-    url = "http://vimeo.com/api/v2/video/#{$(this).val()}.json?callback=?"
-    $.getJSON url, (data) ->
-      if data[0]
-        $('#video_name').val( data[0].title )
-        $('#video_description').val( data[0].description.replace(/(<([^>]+)>)/ig,"") )
+
 
   # $('body.c-videos #videos').isotope( 'destroy' ).isotope
   #   itemSelector : '.video'
@@ -40,11 +40,11 @@ ready = ->
   #   $(this).addClass('active').trigger('mouseenter')
   #   filter =  if $(this).data('name') is "all" then "*" else ".#{$(this).data('name')}"
 
-  filter = window.location.toString().split('/')[4]
-  filter = if filter then ".#{filter}" else "*"
-  console.log filter
-  $('.c-videos #videos').isotope
-    filter: filter
+  # filter = window.location.toString().split('/')[4]
+  # filter = if filter then ".#{filter}" else "*"
+  # console.log filter
+  # $('.c-videos #videos').isotope
+  #   filter: filter
 
 
 $(document).ready ready

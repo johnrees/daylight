@@ -1,4 +1,7 @@
-%h1 Editing video
-
-= link_to "Delete Video", admin_video_path(@video), method: 'delete', confirm: 'Are you sure?'
-= render 'form'
+.row
+  .columns.large-10
+    %h1 Editing video
+  .columns.large-2
+    = link_to "Delete", admin_video_path(@video), method: 'delete', confirm: 'Are you sure?', class: 'button alert round'
+  .columns.large-12
+    = render 'form'

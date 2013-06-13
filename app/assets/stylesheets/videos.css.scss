@@ -4,142 +4,145 @@
 $tablet: new-breakpoint(max-width 780px 4);
 $mobile: new-breakpoint(max-width 480px 4);
 
+.app {
 
-.video {
-  @include media($tablet) {
-    @include span-columns(2);
-  }
-  @include media($mobile) {
-    @include span-columns(4);
-    height: 120px;
-    font-size: 1.1em;
-  }
-  &, * {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", 'Lato', sans-serif;
-    font-weight: 300 !important;
-  }
-    background: center center url('http://www.digital-links.org/news/bridge2.jpg') no-repeat;
-    background-size: cover;
-    &:nth-child(even) {
-      background-image: url('http://www.placenorthwest.co.uk/assets/_files/cached/img/402x255.568359375/mar_11/pnw__1301389056_Salford_University_plans.jpg');
+  .video {
+    @include media($tablet) {
+      @include span-columns(2);
     }
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  .bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-  }
-  font-size: 1.5em;
-  padding: 0 20px;
-  display:table-cell;
-  vertical-align:middle;
-  color: #393939;
-
-  &:hover .highlight {
-    display: block;
-  }
-
-  .name {
-    color: #FFF;
-    margin-bottom: 1em;
-  }
-
-
-  @include span-columns(2);
-  height: 180px;
-
-  .bg:before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    margin-right: -0.25em; /* Adjusts for spacing */
-  }
-
-  .info {
+    @include media($mobile) {
+      @include span-columns(4);
+      height: 120px;
+      font-size: 1.1em;
+    }
+    &, * {
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", 'Lato', sans-serif;
+      font-weight: 300 !important;
+    }
+      background: center center url('http://www.digital-links.org/news/bridge2.jpg') no-repeat;
+      background-size: cover;
+      &:nth-child(even) {
+        background-image: url('http://www.placenorthwest.co.uk/assets/_files/cached/img/402x255.568359375/mar_11/pnw__1301389056_Salford_University_plans.jpg');
+      }
     position: relative;
-    z-index: 2;
-    display: inline-block;
-    vertical-align: middle;
-    width: 200px;
-    word-break: break-word;
-  }
-
-  .bg {
-    opacity: 0;
+    overflow: hidden;
+    cursor: pointer;
+    .bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+    font-size: 1.5em;
     padding: 0 20px;
-    background: rgba(yellow, 0.5);
+    display:table-cell;
+    vertical-align:middle;
+    color: #393939;
+
+    &:hover .highlight {
+      display: block;
+    }
+
+    .name {
+      color: #FFF;
+      margin-bottom: 1em;
+    }
+
+
+    @include span-columns(2);
+    height: 180px;
+
+    .bg:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      margin-right: -0.25em; /* Adjusts for spacing */
+    }
+
+    .info {
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      vertical-align: middle;
+      width: 200px;
+      word-break: break-word;
+    }
+
+    .bg {
+      opacity: 0;
+      padding: 0 20px;
+      background: rgba(yellow, 0.5);
+    }
+
+    // &:hover {
+    //   .bg {
+    //     display: block;
+    //   }
+    // }
   }
 
-  // &:hover {
-  //   .bg {
-  //     display: block;
-  //   }
+
+  .description {
+    @include shift(2);
+    @include media($tablet, $mobile) {
+      @include shift(0);
+    }
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  .thumbnail {
+    height: 200px;
+    @include span-columns(2);
+    background: black;
+  }
+
+  .company {
+    color: #393939;
+  }
+
+
+
+
+
+  .isotope,
+  .isotope .isotope-item {
+    /* change duration value to whatever you like */
+    -webkit-transition-duration: 0.4s;
+       -moz-transition-duration: 0.4s;
+        -ms-transition-duration: 0.4s;
+         -o-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+  }
+
+  // // .isotope {
+  // //   -webkit-transition-property: height, width;
+  // //      -moz-transition-property: height, width;
+  // //       -ms-transition-property: height, width;
+  // //        -o-transition-property: height, width;
+  // //           transition-property: height, width;
+  // // }
+
+  // // .isotope .isotope-item {
+  // //   -webkit-transition-property: -webkit-transform, opacity;
+  // //      -moz-transition-property:    -moz-transform, opacity;
+  // //       -ms-transition-property:     -ms-transform, opacity;
+  // //        -o-transition-property:      -o-transform, opacity;
+  // //           transition-property:         transform, opacity;
+  // // }
+
+  // /**** disabling Isotope CSS3 transitions ****/
+
+  // .isotope.no-transition,
+  // .isotope.no-transition .isotope-item,
+  // .isotope .isotope-item.no-transition {
+  //   -webkit-transition-duration: 0s;
+  //      -moz-transition-duration: 0s;
+  //       -ms-transition-duration: 0s;
+  //        -o-transition-duration: 0s;
+  //           transition-duration: 0s;
   // }
+
 }
-
-
-.description {
-  @include shift(2);
-  @include media($tablet, $mobile) {
-    @include shift(0);
-  }
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
-
-.thumbnail {
-  height: 200px;
-  @include span-columns(2);
-  background: black;
-}
-
-.company {
-  color: #393939;
-}
-
-
-
-
-
-.isotope,
-.isotope .isotope-item {
-  /* change duration value to whatever you like */
-  -webkit-transition-duration: 0.4s;
-     -moz-transition-duration: 0.4s;
-      -ms-transition-duration: 0.4s;
-       -o-transition-duration: 0.4s;
-          transition-duration: 0.4s;
-}
-
-// // .isotope {
-// //   -webkit-transition-property: height, width;
-// //      -moz-transition-property: height, width;
-// //       -ms-transition-property: height, width;
-// //        -o-transition-property: height, width;
-// //           transition-property: height, width;
-// // }
-
-// // .isotope .isotope-item {
-// //   -webkit-transition-property: -webkit-transform, opacity;
-// //      -moz-transition-property:    -moz-transform, opacity;
-// //       -ms-transition-property:     -ms-transform, opacity;
-// //        -o-transition-property:      -o-transform, opacity;
-// //           transition-property:         transform, opacity;
-// // }
-
-// /**** disabling Isotope CSS3 transitions ****/
-
-// .isotope.no-transition,
-// .isotope.no-transition .isotope-item,
-// .isotope .isotope-item.no-transition {
-//   -webkit-transition-duration: 0s;
-//      -moz-transition-duration: 0s;
-//       -ms-transition-duration: 0s;
-//        -o-transition-duration: 0s;
-//           transition-duration: 0s;
-// }

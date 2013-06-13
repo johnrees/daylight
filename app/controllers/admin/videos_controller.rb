@@ -1,7 +1,21 @@
 class Admin::VideosController < Admin::AdminController
 
+  before_action :set_video, only: [:show, :edit, :update, :destroy]
+
+  def sort
+    if params[:video].present?
+      if params[:tag_id].present?
+        Video.do_order(params[:video], params[:tag_id])
+      else
+        Video.do_order(params[:video])
+      end
+    end
+    render :text => params[:video].inspect
+  end
+
   def index
-    @videos = Video.all
+    @videos = Video.includes(:tag).order('tag_ordinal ASC').group_by { |v| v.tag_id }
+    # @videos[0] = @videos[nil]
   end
 
   def show
@@ -14,7 +28,6 @@ class Admin::VideosController < Admin::AdminController
 
   # GET /videos/1/edit
   def edit
-    @video = Video.friendly.find(params[:id])
   end
 
   # POST /videos
@@ -24,7 +37,7 @@ class Admin::VideosController < Admin::AdminController
 
     respond_to do |format|
       if @video.save
-        format.html { redirect_to @video, notice: 'Video was successfully created.' }
+        format.html { redirect_to admin_videos_url, notice: 'Video was successfully created.' }
         format.json { render action: 'show', status: :created, location: @video }
       else
         format.html { render action: 'new' }
@@ -38,7 +51,7 @@ class Admin::VideosController < Admin::AdminController
   def update
     respond_to do |format|
       if @video.update(video_params)
-        format.html { redirect_to @video, notice: 'Video was successfully updated.' }
+        format.html { redirect_to admin_videos_url, notice: 'Video was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -52,7 +65,7 @@ class Admin::VideosController < Admin::AdminController
   def destroy
     @video.destroy
     respond_to do |format|
-      format.html { redirect_to videos_url }
+      format.html { redirect_to admin_videos_url }
       format.json { head :no_content }
     end
   end
@@ -65,7 +78,7 @@ class Admin::VideosController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params
-      params.require(:video).permit(:name, :slug, :vimeoid, :description)
+      params.require(:video).permit(:name, :slug, :vimeoid, :description, :tag_id, :feature)#, :tag_ids => [])
     end
 
 end

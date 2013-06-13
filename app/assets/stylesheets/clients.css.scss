@@ -8,6 +8,7 @@ img {
 }
 
 .clients {
+  overflow: hidden;
   .client-description {
     display: none;
     @include media($mobile) {
@@ -18,7 +19,7 @@ img {
 
 #client-info {
   @include media($mobile) {
-    display: none;
+    display: none !important;
   }
 }
 

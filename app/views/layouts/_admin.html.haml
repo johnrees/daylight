@@ -1,0 +1,137 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{content: "width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0", name: "viewport"}/
+    %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
+    %meta{:content => "black", :name => "apple-mobile-web-app-status-bar-style"}/
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %title= "Backstage"
+
+    = stylesheet_link_tag    "admin", media: "all"
+    = javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js", "https://www.gstatic.com/swiffy/v5.1/runtime.js", "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+
+  %body.admin{class: "c-#{controller_name} a-#{action_name}"}
+
+    %nav.top-bar
+      %ul.title-area
+        / Title Area
+        %li.name
+          %h1= link_to "Daylight", admin_root_path
+        / Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
+        %li.toggle-topbar.menu-icon
+          %a{:href => "#"}
+            %span Menu
+      %section.top-bar-section
+        / Left Nav Section
+        %ul.left
+          %li.divider
+          %li.active
+            %a{:href => "#"} Main Item 1
+          %li.divider
+          %li
+            %a{:href => "#"} Main Item 2
+          %li.divider
+          %li.has-dropdown
+            %a{:href => "#"} Main Item 3
+            %ul.dropdown
+              %li.has-dropdown
+                %a{:href => "#"} Dropdown Level 1a
+                %ul.dropdown
+                  %li
+                    %label Dropdown Level 2 Label
+                  %li
+                    %a{:href => "#"} Dropdown Level 2a
+                  %li
+                    %a{:href => "#"} Dropdown Level 2b
+                  %li.has-dropdown
+                    %a{:href => "#"} Dropdown Level 2c
+                    %ul.dropdown
+                      %li
+                        %label Dropdown Level 3 Label
+                      %li
+                        %a{:href => "#"} Dropdown Level 3a
+                      %li
+                        %a{:href => "#"} Dropdown Level 3b
+                      %li.divider
+                      %li
+                        %a{:href => "#"} Dropdown Level 3c
+                  %li
+                    %a{:href => "#"} Dropdown Level 2d
+                  %li
+                    %a{:href => "#"} Dropdown Level 2e
+                  %li
+                    %a{:href => "#"} Dropdown Level 2f
+              %li
+                %a{:href => "#"} Dropdown Level 1b
+              %li
+                %a{:href => "#"} Dropdown Level 1c
+              %li.divider
+              %li
+                %a{:href => "#"} Dropdown Level 1d
+              %li
+                %a{:href => "#"} Dropdown Level 1e
+              %li
+                %a{:href => "#"} Dropdown Level 1f
+              %li.divider
+              %li
+                %a{:href => "#"} See all →
+          %li.divider
+        / Right Nav Section
+        %ul.right
+          %li.divider.hide-for-small
+          %li.has-dropdown
+            %a{:href => "#"} Main Item 4
+            %ul.dropdown
+              %li
+                %label Dropdown Level 1 Label
+              %li.has-dropdown
+                %a{:href => "#"} Dropdown Level 1a
+                %ul.dropdown
+                  %li
+                    %a{:href => "#"} Dropdown Level 2a
+                  %li
+                    %a{:href => "#"} Dropdown Level 2b
+                  %li.has-dropdown
+                    %a{:href => "#"} Dropdown Level 2c
+                    %ul.dropdown
+                      %li
+                        %a{:href => "#"} Dropdown Level 3a
+                      %li
+                        %a{:href => "#"} Dropdown Level 3b
+                      %li
+                        %a{:href => "#"} Dropdown Level 3c
+                  %li
+                    %a{:href => "#"} Dropdown Level 2d
+                  %li
+                    %a{:href => "#"} Dropdown Level 2e
+                  %li
+                    %a{:href => "#"} Dropdown Level 2f
+              %li
+                %a{:href => "#"} Dropdown Level 1b
+              %li
+                %a{:href => "#"} Dropdown Level 1c
+              %li.divider
+              %li
+                %label Dropdown Level 1 Label
+              %li
+                %a{:href => "#"} Dropdown Level 1d
+              %li
+                %a{:href => "#"} Dropdown Level 1e
+              %li
+                %a{:href => "#"} Dropdown Level 1f
+              %li.divider
+              %li
+                %a{:href => "#"} See all →
+
+
+    .container
+      %header
+        %ul
+          %li= link_to "Videos", admin_videos_path
+          %li= link_to "Clients", admin_clients_path
+
+      #main
+        = yield

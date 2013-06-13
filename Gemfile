@@ -4,17 +4,29 @@ ruby "1.9.3"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc1'
 gem 'turbolinks'
+gem 'acts-as-taggable-on'
 # gem 'jquery-turbolinks'
+gem 'pg' # for heroku
+
+
 group :production do
-  gem 'pg' # for heroku
+
   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 end
 group :development do
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  # gem 'sqlite3'
+  gem 'quiet_assets'
+  gem 'bullet'
 end
 
+
+gem 'zurb-foundation', '~> 4.0.0'
+
+gem 'jquery-ui-rails'
+
+gem 'carrierwave'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'holder_rails'
 gem 'ffaker'

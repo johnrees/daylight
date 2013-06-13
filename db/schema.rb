@@ -11,26 +11,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130513012215) do
+ActiveRecord::Schema.define(version: 20130612153348) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "clients", force: true do |t|
     t.integer  "ordinal"
     t.string   "name"
+    t.string   "logo"
     t.string   "slug"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "clients", ["ordinal"], name: "index_clients_on_ordinal"
+  add_index "clients", ["ordinal"], name: "index_clients_on_ordinal", using: :btree
+
+  create_table "featured_videos", force: true do |t|
+    t.integer  "video_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "featured_videos", ["video_id"], name: "index_featured_videos_on_video_id", using: :btree
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.string   "category"
+    t.integer  "ordinal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags_videos", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "video_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tags_videos", ["tag_id", "video_id"], name: "index_tags_videos_on_tag_id_and_video_id", unique: true, using: :btree
 
   create_table "videos", force: true do |t|
+    t.integer  "ordinal"
     t.string   "name"
+    t.integer  "tag_ordinal"
+    t.integer  "tag_id"
     t.string   "slug"
     t.string   "vimeoid"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "videos", ["tag_id", "tag_ordinal", "ordinal"], name: "index_videos_on_tag_id_and_tag_ordinal_and_ordinal", using: :btree
 
 end

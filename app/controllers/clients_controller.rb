@@ -7,12 +7,12 @@ class ClientsController < ApplicationController
   # GET /clients.json
   def index
 
-    # @clients = Client.all
+    @clients = Client.order('ordinal ASC')
 
-    @clients = []
-    %w(asda bt sony jvc bbc o2 sainsburys bp m_and_s tk_maxx lilly sky).each do |client|
-      @clients.push OpenStruct.new(name: client.humanize.capitalize, description: Faker::Lorem.paragraphs.join(''), slug: client)
-    end
+    # @clients = []
+    # %w(asda bt sony jvc bbc o2 sainsburys bp m_and_s tk_maxx lilly sky).each do |client|
+    #   @clients.push OpenStruct.new(name: client.humanize.capitalize, description: Faker::Lorem.paragraphs.join(''), slug: client)
+    # end
 
   end
 

@@ -6,9 +6,19 @@
         - @video.errors.full_messages.each do |msg|
           %li= msg
 
+
+  .field
+    - if @video.featured?
+      %strong This is the Featured Video
+    - else
+      = f.label :feature
+      = f.check_box :feature
+
   .field
     = f.label :vimeoid
     = f.text_field :vimeoid
+
+  #vimeo-holder.field
 
   .field
     = f.label :name
@@ -18,6 +28,22 @@
   /   = f.text_field :slug
   .field
     = f.label :description
-    = f.text_area :description
+    = f.text_area :description, rows: 10
+
+  .field
+    = f.label :tag
+    = f.select :tag_id, options_for_select( Tag.all.map{|t| ["#{t.category.humanize} > #{t.name}", t.id]}, @video.tag_id ), include_blank: true
+
+  / .field
+  /   %table
+  /     %tbody
+  /       - %w(work light_work).each do |category|
+  /         %tr
+  /           %th= category.humanize
+  /           - Tag.all.where("category = ?", category).each do |tag|
+  /             %td
+  /               = label_tag dom_id(tag) do
+  /                 = check_box_tag "video[tag_ids][]", tag.id, @video.tags.include?(tag), id: dom_id(tag)
+  /                 = tag
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: 'button'

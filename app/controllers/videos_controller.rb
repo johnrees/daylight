@@ -1,22 +1,26 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
-  def light_work
-    @videos = Video.all
-    @categories = %w(TV Business Public_Sector Education Music/Fashion)
-    render :index
-  end
-
-  def work
-    @videos = Video.all
-    @categories = %w(TV Business Public_Sector Education Music/Fashion)
-    render :index
+  %w(work light_work).each do |method|
+    define_method(method) do
+      @tags = Tag.where('category = ?', method).order('ordinal ASC')
+      if params[:tag].present?
+        tag = Tag.where('category = ? and slug = ?', method, params[:tag]).first
+        @videos = tag.videos.order('tag_ordinal asc')
+      else
+        @videos = Video.joins(:tag).where('tags.category = ?', method).order('ordinal asc')
+      end
+      render :index
+    end
   end
 
   def featured
+    @video = FeaturedVideo.last.video
+    render :show
   end
 
   def showreel
+    @video = Video.where("name = ?", 'showreel').first
   end
 
   private
@@ -27,7 +31,7 @@ class VideosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params
-      params.require(:video).permit(:name, :slug, :vimeoid, :description)
+      params.require(:video).permit(:name, :slug, :vimeoid, :description, :tag_id, :tag)
     end
 
 end
