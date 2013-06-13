@@ -10,6 +10,9 @@ updateAllVideos = (el) ->
 
 jQuery ->
 
+  $('body.admin.a-index.c-videos input').change ->
+    $(this).parents('form').submit()
+
   $('#video_vimeoid').change ->
     id = $(this).val().match(/(\d{3,10})/)[0]
     $(this).val id

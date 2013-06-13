@@ -1,8 +1,5 @@
 ready = ->
 
-  $('body.admin.a-index.c-videos input').change ->
-    $(this).parents('form').submit()
-
   $('body.c-videos.a-work a[data-name="work"]').addClass('active')
   $('body.c-videos.a-light_work a[data-name="light-work"]').addClass('active')
 

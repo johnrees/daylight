@@ -21,7 +21,7 @@
   = javascript_include_tag "admin"
   = csrf_meta_tag
 
-%body
+%body.admin{class: "c-#{controller_name} a-#{action_name}"}
 
 
   %nav.top-bar
