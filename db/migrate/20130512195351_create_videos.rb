@@ -8,7 +8,6 @@ class CreateVideos < ActiveRecord::Migration
       t.string :slug
       t.string :vimeoid
       t.text :description
-
       t.timestamps
     end
     add_index :videos, [:tag_id, :tag_ordinal, :ordinal]

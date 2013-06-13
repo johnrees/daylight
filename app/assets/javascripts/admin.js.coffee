@@ -21,6 +21,7 @@ jQuery ->
     unless $('#video_name').val()
       $.getJSON url, (data) ->
         if data[0]
+          $('#video_image').val( data[0].thumbnail_large )
           $('#video_name').val( data[0].title )
           $('#video_description').val( data[0].description.replace(/(<([^>]+)>)/ig,"") )
   .trigger 'change'

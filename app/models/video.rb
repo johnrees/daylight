@@ -26,7 +26,9 @@ class Video < ActiveRecord::Base
   end
 
   def featured?
-    FeaturedVideo.last.video == self
+    if FeaturedVideo.count > 0
+      FeaturedVideo.last.video == self
+    end
   end
 
   def set_tag_id

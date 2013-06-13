@@ -8,7 +8,7 @@
 
 #videos
   - @videos.each do |video|
-    .video.tile
+    .video.tile{style: "background-image: url(#{video.image});"}
       /{class: @tags.sample.parameterize}
       = link_to video do
         .bg
