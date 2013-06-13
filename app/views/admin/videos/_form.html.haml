@@ -8,7 +8,7 @@
 
 
   .field
-    - if @video.featured?
+    - if @video and @video.featured?
       %strong This is the Featured Video
     - else
       = f.label :feature
