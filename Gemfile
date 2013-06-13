@@ -25,7 +25,7 @@ end
 gem 'zurb-foundation', '~> 4.0.0'
 
 gem 'jquery-ui-rails'
-
+gem 'fog'
 gem 'carrierwave'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'holder_rails'

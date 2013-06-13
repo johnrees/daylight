@@ -45,15 +45,6 @@ ActiveRecord::Schema.define(version: 20130612153348) do
     t.datetime "updated_at"
   end
 
-  create_table "tags_videos", force: true do |t|
-    t.integer  "tag_id"
-    t.integer  "video_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "tags_videos", ["tag_id", "video_id"], name: "index_tags_videos_on_tag_id_and_video_id", unique: true, using: :btree
-
   create_table "videos", force: true do |t|
     t.integer  "ordinal"
     t.string   "name"
