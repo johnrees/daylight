@@ -10,7 +10,7 @@ module ApplicationHelper
       webkitallowfullscreen: true,
       id: 'vimeo',
       width: 990,
-      height: 558
+      height: 557
   end
   end
 
