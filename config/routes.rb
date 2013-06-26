@@ -4,14 +4,10 @@ Daylight::Application.routes.draw do
   resources :videos, except: :index
 
   namespace :admin do
-    resources :videos do
-      put :sort, on: :collection
-    end
-    resources :tags do
-      put :sort, on: :collection
-    end
-    resources :clients do
-      put :sort, on: :collection
+    %w(videos tags clients homepage_videos).each do |resource|
+      resources resource do
+        put :sort, on: :collection
+      end
     end
     root to: 'videos#index'
   end

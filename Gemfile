@@ -20,9 +20,10 @@ group :development do
   gem 'bullet'
 end
 
-
+gem 'fog'
+gem 'carrierwave'
 gem 'zurb-foundation', '~> 4.0.0'
-
+gem 'simple_form'
 gem 'jquery-ui-rails'
 gem 'fog'
 gem 'carrierwave'
