@@ -78,7 +78,7 @@ class Admin::VideosController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params
-      params.require(:video).permit(:name, :slug, :vimeoid, :description, :tag_id, :feature, :image)#, :tag_ids => [])
+      params.require(:video).permit(:name, :slug, :vimeoid, :description, :tag_id, :feature, :image, :blurb)#, :tag_ids => [])
     end
 
 end
