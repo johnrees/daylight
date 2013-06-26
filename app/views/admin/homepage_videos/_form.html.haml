@@ -1,4 +1,3 @@
 = simple_form_for [:admin, @homepage_video] do |f|
-  = f.input :video
-  = f.input :image
+  = f.filepicker_field :video
   = f.submit

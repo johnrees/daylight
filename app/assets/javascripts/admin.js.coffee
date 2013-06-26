@@ -5,10 +5,18 @@
 #= require jquery.ui.sortable
 #= require foundation
 
+
+
 updateAllVideos = (el) ->
   $.post '/admin/videos/sort', "_method=put&#{el.sortable('serialize')}"
 
 jQuery ->
+
+  $('input[type=filepicker]').change (e) ->
+    console.log e
+
+  filepicker.pick (InkBlob) ->
+    console.log InkBlob.url
 
   $('body.admin.a-index.c-videos input').change ->
     $(this).parents('form').submit()

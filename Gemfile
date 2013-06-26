@@ -19,7 +19,7 @@ group :development do
   gem 'quiet_assets'
   gem 'bullet'
 end
-
+gem 'filepicker-rails'
 gem 'fog'
 gem 'carrierwave'
 gem 'zurb-foundation', '~> 4.0.0'
