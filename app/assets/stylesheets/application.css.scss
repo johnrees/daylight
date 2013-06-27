@@ -17,6 +17,16 @@ $mobile: new-breakpoint(max-width 480px 4);
 @import "videos";
 @import "clients";
 @import "about";
+// @import "flexnav";
+
+::selection, ::-moz-selection, ::-webkit-selection {
+  background: $yellow; /* Firefox */
+}
+
+header.fixed {
+  position: absolute;
+  top: 150px;
+}
 
 .fluid-width-video-wrapper, iframe {
   background: #000;
@@ -26,8 +36,8 @@ body {
   font-family: 'Helvetica Neue', $helvetica;
   font-size: 13px;
   color: #8F8F8F;
-  margin-top: 0;
   overflow-y: scroll;
+  margin-top: 0;
 }
 
 h1,h2,h3,h4,h5 {
@@ -39,8 +49,35 @@ div.container {
 }
 
 
+body.scrolled {
+  header {
+    .row.logo {
+      position: absolute;
+      top: 20px;
+    }
+    height: 130px;
+    .contact, #summary {
+      display: none;
+    }
+  }
+}
+
 header {
+  max-width: 990px !important;
+
+  // // // vendor-specific and general transition CSS
+  // -moz-transition:    all 0.05s ease;
+  // -webkit-transition: all 0.05s ease;
+  // -o-transition:      all 0.05s ease;
+  // -ms-transition:     all 0.05s ease;
+  // transition:         all 0.05s ease;
+
   @include span-columns(6);
+
+  position: fixed;
+  top: 0;
+
+  height: 270px;
   z-index: 5;
   background: white;
   margin-bottom: 16px;
@@ -48,12 +85,29 @@ header {
   p {
     margin: 0 0 1em 0;
   }
+}
+
+// .desktop {
+//   @include media($mobile) {
+//     display: none !important;
+//   }
+// }
+
+.mobile {
+  display: none;
   @include media($mobile) {
-    display: none;
+    display: block;
+  }
+}
+
+.a-work.c-videos, .a-light_work.c-videos {
+  #main {
+    margin-top: 270px;
   }
 }
 
 #main {
+  margin-top: 270px;
   @include span-columns(6);
 }
 
@@ -124,12 +178,12 @@ a {
   @include span-columns(4);
 }
 
-#logo {
-  @include span-columns(5);
-  @include omega();
-}
+// .logo {
+//   @include span-columns(5);
+//   @include omega();
+// }
 
-#contact {
+.contact {
   @include shift(1);
   @include span-columns(1);
 }
@@ -140,13 +194,16 @@ a {
   @include omega();
 }
 #main-nav {
+  background: #FFF;
   @include span-columns(6);
   @include omega();
   margin-top: 3em;
+  position: absolute;
+  bottom: 10px;
 }
 
 
-#daylight, #moving-image {
+.aperture, #moving-image {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2em;
@@ -170,6 +227,7 @@ a {
 #aperture-container {
   @include span-columns(1);
 }
+
 #aperture {
   display: block;
   width: 70px;

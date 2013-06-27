@@ -16,48 +16,51 @@
   %body.app{class: "c-#{controller_name} a-#{action_name}"}
     .container
       %header
-        %nav.top-nav
+        / .mobile
+        /   Mobile
+        .desktop
+          %nav.top-nav
 
-          = link_to "Backstage", "http://day-light.co.uk/backstage", class: 'link'
-          = link_to "Blog", "http://blog.day-light.co.uk", class: 'link'
+            = link_to "Backstage", "http://day-light.co.uk/backstage", class: 'link'
+            = link_to "Blog", "http://blog.day-light.co.uk", class: 'link'
 
-          = link_to "Email", "#", class: 'sprite Email'
-          / = link_to "Tumblr", "#", class: 'sprite Tumblr'
-          = link_to "Facebook", "#", class: 'sprite Facebook'
-          = link_to "Twitter", "#", class: 'sprite Twitter'
-          = link_to "Pinterest", "#", class: 'sprite Pinterest'
-          = link_to "Instagram", "#", class: 'sprite Instagram'
+            = link_to "Email", "#", class: 'sprite Email'
+            / = link_to "Tumblr", "#", class: 'sprite Tumblr'
+            = link_to "Facebook", "#", class: 'sprite Facebook'
+            = link_to "Twitter", "#", class: 'sprite Twitter'
+            = link_to "Pinterest", "#", class: 'sprite Pinterest'
+            = link_to "Instagram", "#", class: 'sprite Instagram'
 
-          = link_to "YouTube", "#", class: 'sprite YouTube'
-          = link_to "Vimeo", "#", class: 'sprite Vimeo'
+            = link_to "YouTube", "#", class: 'sprite YouTube'
+            = link_to "Vimeo", "#", class: 'sprite Vimeo'
 
-        .row.logo
-          #aperture-container
-            %a#aperture{style: 'width: 70px; height: 70px', href: root_path}
-          #logo
-            = link_to "Daylight", root_path, id: 'daylight'
-            #moving-image Moving Image
+          .row.logo
+            #aperture-container
+              %a#aperture{style: 'width: 70px; height: 70px', href: root_path}
+            .logo
+              = link_to "Daylight", root_path, class: 'aperture'
+              #moving-image Moving Image
 
-        #contact
-          %p Penthouse, 37 Turner Street, Manchester, M4 1DW
-          %p
-            T: 0161 839 9088
-            %br/
-            E:
-            = mail_to "talk@day-light.co.uk"
+          .contact.fade
+            %p Penthouse, 37 Turner Street, Manchester, M4 1DW
+            %p
+              T: 0161 839 9088
+              %br/
+              E:
+              = mail_to "talk@day-light.co.uk"
 
-        #summary
-          Established in 2004, Daylight is an award winning, independent, creative moving image company based in the northern quarter of Manchester.
+          #summary.fade
+            Established in 2004, Daylight is an award winning, independent, creative moving image company based in the northern quarter of Manchester.
 
-          We like working in natural light.
+            We like working in natural light.
 
-        %nav#main-nav.inline{data: {bgcolor: '#f9a518'}}
-          %ul
-            %li= link_to_with_active_state "Showreel", showreel_path
-            %li= link_to_with_active_state "Featured", featured_path
-            %li= link_to_with_active_state "Work", work_path
-            %li= link_to_with_active_state "About", about_path
-            %li= link_to_with_active_state "Clients", clients_path
-            %li= link_to_with_active_state "Light Work", light_work_path
+          %nav#main-nav.inline{data: {bgcolor: '#f9a518', breakpoint: 800}}
+            %ul
+              %li= link_to_with_active_state "Showreel", showreel_path
+              %li= link_to_with_active_state "Featured", featured_path
+              %li= link_to_with_active_state "Work", work_path
+              %li= link_to_with_active_state "About", about_path
+              %li= link_to_with_active_state "Clients", clients_path
+              %li= link_to_with_active_state "Light Work", light_work_path
       #main
         = yield

@@ -1,2 +1,2 @@
-jQuery ->
-  $("#video").fitVids();
+# jQuery ->
+#   $("#video").fitVids();
