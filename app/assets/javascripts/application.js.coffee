@@ -34,9 +34,9 @@ jQuery ->
   # $.throttle( 50,
   $(document).on 'scroll', (event) ->
     scroll = parseInt $(window).scrollTop()
-    if scroll <= 150
+    if scroll <= 130
       $('header').toggleClass 'fixed', false
-      $('header').css 'height', Math.max(150, headerheight - scroll)
+      $('header').css 'height', Math.max(130, headerheight - scroll)
       $('.fade').css 'opacity', (60 - scroll) / 60
     else
       $('header').toggleClass 'fixed', true

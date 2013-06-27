@@ -24,8 +24,8 @@ $mobile: new-breakpoint(max-width 480px 4);
 }
 
 header.fixed {
-  position: absolute;
-  top: 150px;
+  position: absolute !important;
+  top: 130px;
 }
 
 .fluid-width-video-wrapper, iframe {
