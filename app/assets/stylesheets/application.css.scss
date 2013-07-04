@@ -6,6 +6,8 @@ $max-width: $column * $grid-columns;
 $orange: #F9A518;
 $yellow: #FFDC48;
 
+$headerHeight: 180px;
+
 $tablet: new-breakpoint(max-width 780px 4);
 $mobile: new-breakpoint(max-width 480px 4);
 
@@ -23,10 +25,6 @@ $mobile: new-breakpoint(max-width 480px 4);
   background: $yellow; /* Firefox */
 }
 
-header.fixed {
-  position: absolute !important;
-  top: 130px;
-}
 
 .fluid-width-video-wrapper, iframe {
   background: #000;
@@ -55,14 +53,19 @@ body.scrolled {
       position: absolute;
       top: 20px;
     }
-    height: 130px;
+    height: $headerHeight;
     .contact, #summary {
       display: none;
     }
   }
 }
 
+
 header {
+  &.fixed {
+    position: absolute !important;
+    top: 100px;
+  }
   max-width: 990px !important;
 
   // // // vendor-specific and general transition CSS
@@ -128,17 +131,17 @@ a:hover, a:active, a.active {
   nav#main-nav li & {
     background: $orange;
   }
-  nav#sub-nav li & {
-    background: $yellow;
+  ul.subnav li & {
+    background: $yellow !important;
   }
 
 }
 
-#sub-nav {
-    margin-bottom: 10px;
-    display: block;
-    overflow: hidden;
-  }
+// .subnav {
+//     margin-bottom: 10px;
+//     display: block;
+//     overflow: hidden;
+//   }
 
 nav.inline {
   ul, li {
@@ -267,3 +270,18 @@ body.c-videos {
   background: #F0F0F0 image-url('loader.gif') center center no-repeat;
 }
  //= require foundation_and_overrides
+
+ul.subnav {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.a-light_work.c-videos #light-work-subnav {
+  display: block;
+}
+.a-work.c-videos #work-subnav {
+  display: block;
+}

@@ -11,6 +11,7 @@
 #= require videos
 
 init = ->
+  $('#main-nav').css 'height', parseInt($('#main-nav').css('height')) * 2
   $('iframe#vimeo').css 'visibility', 'hidden'
   $('iframe#vimeo').load -> $(this).fadeIn()
 
@@ -26,7 +27,7 @@ scroll = ->
 
 jQuery ->
 
-  distance    = 60
+  fadeDistance    = 30
   className   = 'scrolled'
 
   headerheight = $('header').height()
@@ -34,17 +35,14 @@ jQuery ->
   # $.throttle( 50,
   $(document).on 'scroll', (event) ->
     scroll = parseInt $(window).scrollTop()
-    if scroll <= 130
+    console.log scroll
+    if scroll <= 100
       $('header').toggleClass 'fixed', false
-      $('header').css 'height', Math.max(130, headerheight - scroll)
-      $('.fade').css 'opacity', (60 - scroll) / 60
+      $('header').css 'height', Math.max(100, headerheight - scroll)
+      $('.fade').css 'opacity', (fadeDistance - scroll) / fadeDistance
     else
       $('header').toggleClass 'fixed', true
 
-  # if (parseInt($(window).scrollTop(), 10) > distance)
-  #   $('body').addClass(className)
-  # else
-  #   $('body').removeClass(className)
 
   $(".flexnav").flexNav();
   # $('header nav#main-nav').meanmenu()

@@ -12,7 +12,7 @@ ready = ->
   $('.video').hide()
 
   $('nav li a').mouseenter ->
-    TweenMax.to( $(this), 0.1, { backgroundColor: $(this).parents('nav').data('bgcolor') })
+    TweenMax.to( $(this), 0.1, { backgroundColor: $(this).parents('ul').data('bgcolor') })
   $('nav li a').mouseleave ->
     unless $(this).hasClass('active')
       TweenMax.to( $(this), 0.8, { backgroundColor: '#FFF' })
@@ -28,8 +28,8 @@ ready = ->
   #   itemSelector : '.video'
   #   layoutMode : 'fitRows'
 
-  $('.c-videos.a-work #sub-nav li:eq(2)').after $('li.all')
-  $('.c-videos.a-light_work #sub-nav').append $('li.all')
+  $('.c-videos.a-work #work-subnav li:eq(2)').after $('.c-videos.a-work #work-subnav li.all')
+  $('.c-videos.a-light_work #light-work-subnav').append $('.c-videos.a-light_work #light-work-subnav li.all')
 
   # $('#sub-nav a').click (e) ->
   #   e.preventDefault()
