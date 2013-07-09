@@ -1,0 +1,21 @@
+$tablet: new-breakpoint(max-width 780px 4);
+$mobile: new-breakpoint(max-width 480px 4);
+
+#homepage-video {
+  video {
+    display: block;
+  }
+  img {
+    display: none;
+  }
+  @include media($mobile) {
+
+      video {
+        display: none;
+      }
+      img {
+        display: block;
+      }
+
+  }
+}

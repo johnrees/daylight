@@ -1,6 +1,6 @@
 CarrierWave.configure do |config|
   # config.storage = :file
-  if Rails.env.production?
+  # if Rails.env.production?
     config.storage = :fog
     config.fog_credentials = {
       :provider               => 'AWS',
@@ -16,8 +16,8 @@ CarrierWave.configure do |config|
       # 'access-control-allow-origin' => '*',
       # 'access-control-allow-credentials' => 'true'
     }
-  else#if Rails.env.test?
-    config.storage = :file
-    config.enable_processing = true
-  end
+  # else#if Rails.env.test?
+  #   config.storage = :file
+  #   config.enable_processing = true
+  # end
 end

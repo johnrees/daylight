@@ -1,0 +1,164 @@
+$tablet: new-breakpoint(max-width 780px 4);
+$mobile: new-breakpoint(max-width 480px 4);
+$headerHeight: 180px;
+
+
+
+header {
+  width: 100%;
+  background: orange;
+
+  top: 0;
+  left: 0;
+
+  // height: 270px;
+  z-index: 5;
+  background: white;
+  margin-bottom: 16px;
+  overflow: hidden;
+
+  position: fixed;
+
+
+  #head {
+    @include outer-container;
+    overflow: hidden;
+    position: relative;
+    height: 270px;
+  }
+
+  @include media($mobile) {
+
+      height: 70px !important;
+      position: relative;
+      margin-bottom: 0;
+
+      #main-nav {
+        display: none;
+      }
+
+      .top-nav {
+        display: none;
+      }
+      .row.logo {
+        // width: 100%;
+        // position: absolute;
+        top: 15px;
+      }
+
+      a.aperture {
+        display: block;
+        margin: 5px 0;
+      }
+
+      a#aperture {
+        width: 40px !important;
+        height: 40px !important;
+        background-image: url(small-aperture.png);
+      }
+
+      .contact, #summary {
+        display: none;
+      }
+  }
+
+  body.scrolled & {
+      height: $headerHeight;
+  }
+
+  &.fixed {
+    position: absolute !important;
+    top: 100px;
+  }
+
+  p {
+    margin: 0 0 1em 0;
+  }
+}
+
+body.c-videos {
+  &.a-work, &.a-light_work {
+    header {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+a:hover, a:active, a.active {
+  nav#main-nav li & {
+    background: $orange;
+  }
+  ul.subnav li & {
+    background: $yellow !important;
+  }
+}
+
+
+nav.inline {
+  ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    @include span-columns(1);
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 3px 8px;
+      &:hover, &.active {
+        color: #FFF;
+      }
+    }
+
+  }
+}
+
+#main-nav {
+  background: #FFF;
+  @include span-columns(6);
+  @include omega();
+  // margin-top: 3em;
+  position: absolute;
+  bottom: 0;
+}
+
+
+#aperture-container {
+  @include span-columns(1);
+}
+
+#aperture {
+  display: block;
+  width: 70px;
+  height: 70px;
+  background: image-url('aperture.png') no-repeat;
+}
+
+
+.row.logo {
+  margin-bottom: 1em;
+}
+
+
+.company {
+  color: #000;
+}
+
+
+ul.subnav {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.a-light_work.c-videos #light-work-subnav {
+  display: block;
+}
+.a-work.c-videos #work-subnav {
+  display: block;
+}

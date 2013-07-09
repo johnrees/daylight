@@ -7,23 +7,35 @@ $mobile: new-breakpoint(max-width 480px 4);
 .app {
 
   .video {
+
+    background: center center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 1.5em;
+    padding: 0 20px;
+    display:table-cell;
+    vertical-align:middle;
+    color: #393939;
+    @include span-columns(2);
+    height: 180px;
+
     @include media($tablet) {
       @include span-columns(2);
     }
+
     @include media($mobile) {
       @include span-columns(4);
       height: 120px;
       font-size: 1.1em;
     }
+
     &, * {
       font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", 'Lato', sans-serif;
       font-weight: 300 !important;
     }
-      background: center center no-repeat;
-      background-size: cover;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
+
     .bg {
       position: absolute;
       top: 0;
@@ -31,11 +43,6 @@ $mobile: new-breakpoint(max-width 480px 4);
       height: 100%;
       width: 100%;
     }
-    font-size: 1.5em;
-    padding: 0 20px;
-    display:table-cell;
-    vertical-align:middle;
-    color: #393939;
 
     &:hover .highlight {
       display: block;
@@ -47,8 +54,6 @@ $mobile: new-breakpoint(max-width 480px 4);
     }
 
 
-    @include span-columns(2);
-    height: 180px;
 
     .bg:before {
       content: '';
@@ -104,15 +109,15 @@ $mobile: new-breakpoint(max-width 480px 4);
 
 
 
-  .isotope,
-  .isotope .isotope-item {
-    /* change duration value to whatever you like */
-    -webkit-transition-duration: 0.4s;
-       -moz-transition-duration: 0.4s;
-        -ms-transition-duration: 0.4s;
-         -o-transition-duration: 0.4s;
-            transition-duration: 0.4s;
-  }
+  // .isotope,
+  // .isotope .isotope-item {
+  //   /* change duration value to whatever you like */
+  //   -webkit-transition-duration: 0.4s;
+  //      -moz-transition-duration: 0.4s;
+  //       -ms-transition-duration: 0.4s;
+  //        -o-transition-duration: 0.4s;
+  //           transition-duration: 0.4s;
+  // }
 
   // // .isotope {
   // //   -webkit-transition-property: height, width;

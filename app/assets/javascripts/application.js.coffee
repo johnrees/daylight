@@ -4,6 +4,7 @@
 #= require urlify
 #= require jquery.isotope
 #= require jquery.flexnav
+#= require jquery.fitvids
 #= require jquery.ba-throttle-debounce.js
 #= require clients
 #= require logo
@@ -15,6 +16,8 @@ init = ->
   $('iframe#vimeo').css 'visibility', 'hidden'
   $('iframe#vimeo').load -> $(this).fadeIn()
 
+  $('#vimeo-container').fitVids()
+
   $('#main .tile').hide()
   loaded()
 
@@ -24,6 +27,7 @@ loaded = ->
 
 scroll = ->
 
+jQuery.fn.reverse = [].reverse
 
 jQuery ->
 
@@ -34,14 +38,14 @@ jQuery ->
 
   # $.throttle( 50,
   $(document).on 'scroll', (event) ->
-    scroll = parseInt $(window).scrollTop()
-    console.log scroll
-    if scroll <= 100
-      $('header').toggleClass 'fixed', false
-      $('header').css 'height', Math.max(100, headerheight - scroll)
-      $('.fade').css 'opacity', (fadeDistance - scroll) / fadeDistance
-    else
-      $('header').toggleClass 'fixed', true
+    if $(window).width() > 480
+      scroll = parseInt $(window).scrollTop()
+      if scroll <= 100
+        $('header').toggleClass 'fixed', false
+        $('#head').css 'height', Math.max(100, headerheight - scroll)
+        $('.fade').css 'opacity', (fadeDistance - scroll) / fadeDistance
+      else
+        $('header').toggleClass 'fixed', true
 
 
   $(".flexnav").flexNav();

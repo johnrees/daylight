@@ -3,11 +3,12 @@
 .clients
 
   - @clients.each_with_index do |client, index|
-    .client.tile{class: ('active' if index == 0)}
-      = image_tag client.logo_url
-    .client-description
-      %h3.client-name= client.name
-      %p.client-description= client.description
+    - 10.times do
+      .client.tile{class: ('active' if index == 0)}
+        = image_tag client.logo_url
+      .client-description
+        %h3.client-name= client.name
+        %p.client-description= client.description
 
 .row
   #client-info.description.tile

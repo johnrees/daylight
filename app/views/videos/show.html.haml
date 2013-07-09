@@ -7,9 +7,18 @@
     %h3= @video.name
     = simple_format @video.description
 
-.row
-  - 3.times do
-    .thumbnail
+#videos.thumbs
+  - 3.times do |index|
+    - Video.all.sample(1).each do |video|
+      .video.tile{style: "background-image: url(#{video.image});", class: ("active" if index == 2)}
+        /{class: @tags.sample.parameterize}
+        = link_to video do
+          .bg
+            .info
+              .name=video
+              - if video.blurb.present?
+                .company=video.blurb
+
 
 / %p#notice= notice
 / = vimeo_player @video.vimeoid
