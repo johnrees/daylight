@@ -21,6 +21,10 @@ init = ->
   $('#vimeo-container').fitVids()
 
   $('#main .tile').hide()
+
+  if $('#homepage-video video').length > 0
+    $('#homepage-video video').get(0).play()
+
   loaded()
 
 loaded = ->
