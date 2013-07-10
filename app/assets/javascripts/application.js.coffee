@@ -25,6 +25,10 @@ init = ->
   if $('#homepage-video video').length > 0
     $('#homepage-video video').get(0).play()
 
+  $('#nav-button').on 'click', (event) ->
+    # $('#responsive-nav').append $('nav#main-nav')
+    event.preventDefault()
+    $('#responsive-nav').css('max-height', '500px')
   loaded()
 
 loaded = ->
@@ -33,9 +37,6 @@ loaded = ->
 
 jQuery ->
 
-  $('#nav-button').click ->
-    # $('#responsive-nav').append $('nav#main-nav')
-    $('#responsive-nav').css('max-height', '500px')
 
   fadeDistance    = 30
   className   = 'scrolled'
