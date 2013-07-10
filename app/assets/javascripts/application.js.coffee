@@ -11,9 +11,11 @@
 #= require static
 #= require videos
 
+jQuery.fn.reverse = [].reverse
+
 init = ->
   $('#main-nav').css 'height', parseInt($('#main-nav').css('height')) * 2
-  $('iframe#vimeo').css 'visibility', 'hidden'
+  $('iframe#vimeo').hide()
   $('iframe#vimeo').load -> $(this).fadeIn()
 
   $('#vimeo-container').fitVids()
@@ -25,10 +27,6 @@ loaded = ->
   $('#main .tile').each (index) ->
     $(this).delay(index * 200).fadeIn 'slow'
 
-scroll = ->
-
-jQuery.fn.reverse = [].reverse
-
 jQuery ->
 
   fadeDistance    = 30
@@ -39,7 +37,7 @@ jQuery ->
   # $.throttle( 50,
   $(document).on 'scroll', (event) ->
     if $(window).width() > 480
-      scroll = parseInt $(window).scrollTop()
+      scroll = parseInt Math.max(0,$(window).scrollTop())
       if scroll <= 100
         $('header').toggleClass 'fixed', false
         $('#head').css 'height', Math.max(100, headerheight - scroll)
