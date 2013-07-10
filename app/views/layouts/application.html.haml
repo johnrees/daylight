@@ -29,8 +29,15 @@
     /             data: { filter: tag.slug}
     /             / url_for(params.merge(tag: tag.slug)),
 
+    #responsive-nav
+      %ul
+        %li something
+        %li something
+
     %header
       #head
+        #nav-button
+          Menu
         %nav.top-nav
 
           = link_to "Backstage", "http://day-light.co.uk/backstage", class: 'link'

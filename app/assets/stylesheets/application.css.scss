@@ -22,6 +22,17 @@ $mobile: new-breakpoint(max-width 480px 4);
 @import "home";
 // @import "flexnav";
 
+#responsive-nav {
+  background: black;
+  max-height: 0;
+  margin: -10px -10px 0;
+  overflow: hidden;
+  @include transition (all 1.0s ease-in-out);
+  li {
+    padding: 10px;
+  }
+}
+
 #top-nav {
   background: black;
   overflow: hidden;
@@ -41,7 +52,7 @@ body {
   font-size: 13px;
   color: #8F8F8F;
   overflow-y: scroll;
-  margin: 0;
+  margin: 8px;
   @include media($mobile){ margin: 10px; }
 }
 

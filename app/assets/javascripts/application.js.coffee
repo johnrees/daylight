@@ -29,6 +29,10 @@ loaded = ->
 
 jQuery ->
 
+  $('#nav-button').click ->
+    # $('#responsive-nav').append $('nav#main-nav')
+    $('#responsive-nav').css('max-height', '500px')
+
   fadeDistance    = 30
   className   = 'scrolled'
 
