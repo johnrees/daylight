@@ -52,7 +52,7 @@ body {
   font-size: 13px;
   color: #8F8F8F;
   overflow-y: scroll;
-  margin: 8px;
+  margin: 0 8px;
   @include media($mobile){ margin: 10px; }
 }
 
@@ -75,7 +75,7 @@ h1,h2,h3,h4,h5 {
 
 .a-work.c-videos, .a-light_work.c-videos {
   #main {
-    margin-top: 280px;
+    margin-top: 300px;
   }
 }
 
@@ -83,7 +83,7 @@ h1,h2,h3,h4,h5 {
   @include media($mobile) {
     margin-top: 0 !important;
   }
-  margin-top: 270px;
+  margin-top: 290px;
   @include span-columns(6);
 }
 

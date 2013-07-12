@@ -17,9 +17,9 @@
 
   %title= content_for?(:title) ? yield(:title) : "Admin"
   = stylesheet_link_tag "admin"
-  = filepicker_js_include_tag
-  :javascript
-    filepicker.setKey("#{ENV['FILEPICKER_API_KEY']}")
+  / = filepicker_js_include_tag
+  / :javascript
+  /   filepicker.setKey("#{ENV['FILEPICKER_API_KEY']}")
   = javascript_include_tag "admin"
   = csrf_meta_tag
 
