@@ -12,11 +12,11 @@ updateAllVideos = (el) ->
 
 jQuery ->
 
-  $('input[type=filepicker]').change (e) ->
-    console.log e
+  # $('input[type=filepicker]').change (e) ->
+  #   console.log e
 
-  filepicker.pick (InkBlob) ->
-    console.log InkBlob.url
+  # filepicker.pick (InkBlob) ->
+  #   console.log InkBlob.url
 
   $('body.admin.a-index.c-videos input').change ->
     $(this).parents('form').submit()
