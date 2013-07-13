@@ -14,6 +14,10 @@ module ApplicationHelper
   end
   end
 
+    def title(page_title)
+    content_for :title, page_title.to_s
+  end
+
   def link_to_with_active_state text, link, html_options = {}
     link_to text, link, class: ('active' if request.path == link), data: { name: text.parameterize }
     #  or request.path == data[:active]

@@ -15,6 +15,10 @@ class Video < ActiveRecord::Base
     name.downcase == 'showreel'
   end
 
+  def fullpath
+    "/#{tag.category.gsub('_','-')}/#{tag.slug}/#{slug}"
+  end
+
   def feature
     featured?
   end

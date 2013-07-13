@@ -6,14 +6,14 @@
     %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
     %meta{:content => "black", :name => "apple-mobile-web-app-status-bar-style"}/
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
-    %title= "Daylight Moving Image"
+    %title= yield(:title) || "Daylight Moving Image"
 
     = stylesheet_link_tag    "application", "http://fonts.googleapis.com/css?family=Lato:300,400", media: "all"
     = javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js", "https://www.gstatic.com/swiffy/v5.1/runtime.js", "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
-  %body.app{class: "c-#{controller_name} a-#{action_name}"}
+  %body.app{class: "c-#{controller_name} a-#{action_name} #{request.fullpath.split('/')[1]}"}
 
     / %nav#top-nav
     /   %ul{data: {bgcolor: '#f9a518', breakpoint: 800}}
@@ -37,7 +37,7 @@
     %header
       #head
         #nav-button
-          Menu
+          = yield(:title)
         %nav.top-nav
 
           = link_to "Backstage", "http://day-light.co.uk/backstage", class: 'link'

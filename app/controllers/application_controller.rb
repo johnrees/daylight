@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
 
 private
 
+
+
   def set_instance_vars
 
     %w(work light_work).each do |action|

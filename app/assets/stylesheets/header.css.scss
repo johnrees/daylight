@@ -151,7 +151,7 @@ nav.inline {
   display: block;
   width: 70px;
   height: 70px;
-  background: image-url('aperture.png') no-repeat;
+  background: image-url('aperture.png') no-repeat center center;
 }
 
 
@@ -173,9 +173,9 @@ ul.subnav {
   width: 100%;
 }
 
-.a-light_work.c-videos #light-work-subnav {
+body.light-work #light-work-subnav {
   display: block;
 }
-.a-work.c-videos #work-subnav {
+body.work #work-subnav {
   display: block;
 }

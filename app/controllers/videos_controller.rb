@@ -1,8 +1,11 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
+  include ApplicationHelper
+
   %w(work light_work).each do |method|
     define_method(method) do
+      view_context.title(method)
       @tags = Tag.where('category = ?', method).order('ordinal ASC')
       if params[:tag].present?
         tag = Tag.where('category = ? and slug = ?', method, params[:tag]).first

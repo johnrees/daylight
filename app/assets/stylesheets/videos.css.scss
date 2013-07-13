@@ -4,6 +4,18 @@
 $tablet: new-breakpoint(max-width 780px 4);
 $mobile: new-breakpoint(max-width 480px 4);
 
+.video.active {
+  .bg {
+    opacity: 1 !important;
+  }
+}
+
+// .video {
+//   .bg {
+//     @include transition (all 0.2s ease-in-out);
+//   }
+// }
+
 .app {
 
   .video {

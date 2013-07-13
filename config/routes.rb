@@ -14,6 +14,8 @@ Daylight::Application.routes.draw do
 
   %w(work light_work).each do |page|
     get "#{page.gsub('_', '-')}(/:tag)", to: "videos##{page}", as: page
+
+    get "#{page.gsub('_', '-')}/:tag/:id", to: "videos#show", as: "full_#{page}"
   end
 
   %w(featured showreel).each do |page|

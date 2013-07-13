@@ -10,9 +10,9 @@
 #videos.thumbs
   - 3.times do |index|
     - Video.all.sample(1).each do |video|
-      .video.tile{style: "background-image: url(#{video.image});", class: ("active" if index == 2)}
+      .video.tile{style: "background-image: url(#{video.image});", class: ("active" if index == 1)}
         /{class: @tags.sample.parameterize}
-        = link_to video do
+        = link_to video.fullpath do
           .bg
             .info
               .name=video

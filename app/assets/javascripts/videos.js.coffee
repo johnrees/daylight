@@ -4,9 +4,11 @@ ready = ->
   $('body.c-videos.a-light_work a[data-name="light-work"]').addClass('active')
 
   $('.video').mouseenter ->
+    # $(this).addClass('active')
     # TweenMax.to( $(this), 0.1, { backgroundSize: '400px 400px' })
     TweenMax.to( $(this).find('.bg'), 0.1, { opacity: 1 })
   $('.video').mouseleave ->
+    # $(this).removeClass('active')
     # TweenMax.to( $(this), 1, { backgroundSize: '400px 400px' })
     TweenMax.to( $(this).find('.bg'), 0.8, { opacity: 0 })
   $('.video').hide()
