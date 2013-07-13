@@ -1,7 +1,7 @@
 ready = ->
 
-  $('body.c-videos.a-work a[data-name="work"]').addClass('active')
-  $('body.c-videos.a-light_work a[data-name="light-work"]').addClass('active')
+  $('body.work a[data-name="work"]').addClass('active')
+  $('body.light-work a[data-name="light-work"]').addClass('active')
 
   $('.video').mouseenter ->
     # $(this).addClass('active')
@@ -30,8 +30,8 @@ ready = ->
   #   itemSelector : '.video'
   #   layoutMode : 'fitRows'
 
-  $('.c-videos.a-work #work-subnav li:eq(2)').after $('.c-videos.a-work #work-subnav li.all')
-  $('.c-videos.a-light_work #light-work-subnav').append $('.c-videos.a-light_work #light-work-subnav li.all')
+  $('body.work #work-subnav li:eq(2)').after $('body.work #work-subnav li.all')
+  $('body.light-work #light-work-subnav').append $('body.light-work #light-work-subnav li.all')
 
   # $('#sub-nav a').click (e) ->
   #   e.preventDefault()
