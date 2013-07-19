@@ -7,12 +7,11 @@
 /         data: { filter: tag.slug}
 
 
-
+/every 12, 1 and 9 should be big
 
 #videos
   - @videos.each_with_index do |video,index|
-    .video.tile{style: "background-image: url(#{video.image});", class: ("big" if index == 0)}
-      /{class: @tags.sample.parameterize}
+    .video.tile{style: "background-image: url(#{video.image});", class: ("big" if index % 12 == 0)}
       = link_to video.fullpath do
         .bg{style: "background: ##{cycle('FFDC48', 'F2142B', 'F65830', 'FA9039', 'FFB740')}"}
           .info

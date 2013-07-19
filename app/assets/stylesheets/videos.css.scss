@@ -1,3 +1,5 @@
+@import "bourbon";
+
 // Place all the styles related to the Videos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -21,7 +23,7 @@ $videoHeight: 180px;
 .app {
 
   .video {
-
+    @include animation-duration(2s);
 
     &.big {
       @include span-columns(4);
