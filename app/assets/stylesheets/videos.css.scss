@@ -16,10 +16,18 @@ $mobile: new-breakpoint(max-width 480px 4);
 //   }
 // }
 
+$videoHeight: 180px;
+
 .app {
 
   .video {
 
+
+    &.big {
+      @include span-columns(4);
+      height: $videoHeight * 2;
+    }
+    height: $videoHeight;
     background: center center no-repeat;
     background-size: cover;
     position: relative;
@@ -31,7 +39,6 @@ $mobile: new-breakpoint(max-width 480px 4);
     vertical-align:middle;
     color: #393939;
     @include span-columns(2);
-    height: 180px;
 
     @include media($tablet) {
       @include span-columns(2);
@@ -87,7 +94,7 @@ $mobile: new-breakpoint(max-width 480px 4);
     .bg {
       opacity: 0;
       padding: 0 20px;
-      background: rgba(yellow, 0.5);
+      //background: rgba(yellow, 1);
     }
 
     // &:hover {

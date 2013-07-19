@@ -6,12 +6,15 @@
 /         url_for(params.merge(tag: tag.slug)),
 /         data: { filter: tag.slug}
 
+
+
+
 #videos
-  - @videos.each do |video|
-    .video.tile{style: "background-image: url(#{video.image});"}
+  - @videos.each_with_index do |video,index|
+    .video.tile{style: "background-image: url(#{video.image});", class: ("big" if index == 0)}
       /{class: @tags.sample.parameterize}
       = link_to video.fullpath do
-        .bg
+        .bg{style: "background: ##{cycle('FFDC48', 'F2142B', 'F65830', 'FA9039', 'FFB740')}"}
           .info
             .name=video
             - if video.blurb.present?
