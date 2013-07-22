@@ -5,6 +5,7 @@
 
   - @clients.each_with_index do |client, index|
     .client.tile{class: ('active' if index == 0)}
+      .overlay
       = image_tag client.logo_url
     .client-description
       %h3.client-name= client.name

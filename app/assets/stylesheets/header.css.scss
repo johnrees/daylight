@@ -6,7 +6,6 @@ $headerHeight: 180px;
 
 header {
 
-
   width: 100%;
   background: orange;
 
@@ -34,49 +33,57 @@ header {
   }
 
   @include media($mobile) {
-      padding: 12px 0 0;
-      height: 70px !important;
-      position: relative;
-      margin-bottom: 0;
+    padding: 12px 0 0;
+    //height: 70px !important;
+    position: relative;
+    margin-bottom: 0;
 
- #nav-button {
-    float: right;
-    display: block;
-    padding: 8px;
-    line-height: 20px;
-    border-radius: 4px;
-    border: 1px solid #CCC;
-    background: #FFF;
-    cursor: pointer;
-  }
+    #nav-button {
+      float: right;
+      display: block;
+      padding: 8px;
+      line-height: 20px;
+      border-radius: 4px;
+      border: 1px solid #CCC;
+      background: #FFF;
+      cursor: pointer;
+    }
 
-      #main-nav {
-        display: none;
-      }
-
-      .top-nav {
-        display: none;
-      }
-      .row.logo {
-        // width: 100%;
-        // position: absolute;
-        top: 15px;
-      }
-
-      a.aperture {
+    #main-nav {
+      position: static;
+      li {
+        width: 100%;
         display: block;
-        margin: 5px 0;
+        clear: both;
+        a {
+          padding: 10px 10px 10px 16.6%;
+        }
       }
+    }
 
-      a#aperture {
-        width: 40px !important;
-        height: 40px !important;
-        background-image: image-url("small-aperture.png");
-      }
+    .top-nav {
+      display: none;
+    }
+    .row.logo {
+      // width: 100%;
+      // position: absolute;
+      top: 15px;
+    }
 
-      .contact, #summary {
-        display: none;
-      }
+    a.aperture {
+      display: block;
+      margin: 5px 0;
+    }
+
+    a#aperture {
+      width: 40px !important;
+      height: 40px !important;
+      background-image: image-url("small-aperture.png");
+    }
+
+    .contact, #summary {
+      display: none;
+    }
   }
 
   body.scrolled & {
