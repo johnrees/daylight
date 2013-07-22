@@ -14,9 +14,13 @@
 jQuery.fn.reverse = [].reverse
 
 init = ->
+  #$(document).scrollTop = 100
+
   $('#main-nav').css 'height', parseInt($('#main-nav').css('height')) * 2
   $('iframe#vimeo').hide()
-  $('iframe#vimeo').load -> $(this).fadeIn()
+  $('iframe#vimeo').load ->
+    $(this).fadeIn()
+    
 
   $('#vimeo-container').fitVids()
 
