@@ -13,9 +13,19 @@
 
 jQuery.fn.reverse = [].reverse
 
+createMap = ->
+  map = L.map('map', { zoomControl: false }).setView([55.43119, -2.60000], 12);
+
+  L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
+    maxZoom: 20
+  }).addTo(map)
+
+  L.marker([55.43119, -2.60000]).addTo(map)
+  new L.Control.Zoom({ position: 'topright' }).addTo(map)
+
 init = ->
   #$(document).scrollTop = 100
-
+  
   $('#main-nav').css 'height', parseInt($('#main-nav').css('height')) * 2
   $('iframe#vimeo').hide()
   $('iframe#vimeo').load ->
@@ -35,13 +45,16 @@ init = ->
     $('#responsive-nav').css('max-height', '500px')
   loaded()
 
+  createMap()
+  
+
 loaded = ->
   $('#main .tile').each (index) ->
     $(this).delay(index * 200).fadeIn 'slow'
 
 jQuery ->
 
-
+  #window.scrollTo 0, 100
   fadeDistance    = 30
   className   = 'scrolled'
 

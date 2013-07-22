@@ -8,8 +8,8 @@
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
     %title= yield(:title) || "Daylight Moving Image"
 
-    = stylesheet_link_tag    "application", "http://fonts.googleapis.com/css?family=Lato:300,400", media: "all"
-    = javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js", "https://www.gstatic.com/swiffy/v5.1/runtime.js", "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"
+    = stylesheet_link_tag    "application", "http://fonts.googleapis.com/css?family=Lato:300,400", "http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css", media: "all"
+    = javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js", "https://www.gstatic.com/swiffy/v5.1/runtime.js", "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js", "http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
@@ -69,7 +69,7 @@
 
             %li= link_to_with_active_state "About", about_path
             %li= link_to_with_active_state "Clients", clients_path
-            %li= link_to_with_active_state "Contact", light_work_path
+            %li= link_to_with_active_state "Contact", contact_path
             /%ul#light-work-subnav.subnav{data: {bgcolor: '#ffdc48'}}
             /  %li.all= link_to_with_active_state "All", light_work_path(tag: nil)
             /  - @light_work_tags.each do |tag|

@@ -3,6 +3,8 @@ Daylight::Application.routes.draw do
   resources :clients, only: :index
   resources :videos, except: :index
 
+  get 'contact', to: 'static#contact'
+
   namespace :admin do
     %w(videos tags clients homepage_videos).each do |resource|
       resources resource do
