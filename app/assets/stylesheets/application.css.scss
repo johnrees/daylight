@@ -145,6 +145,7 @@ a {
 
 #moving-image {
   font-weight: normal;
+  color: #999;
 }
 
 .top-nav {
@@ -177,3 +178,9 @@ a {
 // .a-show.c-videos #work-subnav {
 //   display: block;
 // }
+
+#featured-videos {
+  margin-top: 1em;
+  font-size: 1.4em;
+  margin-bottom: 0.3em;
+}
