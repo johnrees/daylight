@@ -10,7 +10,7 @@ ready = ->
   $('.video').mouseleave ->
     # $(this).removeClass('active')
     # TweenMax.to( $(this), 1, { backgroundSize: '400px 400px' })
-    TweenMax.to( $(this).find('.bg'), 0.8, { opacity: 0 })
+    TweenMax.to( $(this).find('.bg'), 2, { opacity: 0 })
   $('.video').hide()
 
   $('nav li a').mouseenter ->

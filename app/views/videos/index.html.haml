@@ -13,7 +13,8 @@
   - @videos.each_with_index do |video,index|
     .video.tile{style: "background-image: url(#{video.image});", class: ("big" if index % 12 == 0)}
       = link_to video.fullpath do
-        .bg{style: "background: ##{cycle('FFDC48', 'F2142B', 'F65830', 'FA9039', 'FFB740')}"}
+        .bg{style: "background: #FFDC48"}
+          /{style: "background: ##{cycle('FFDC48', 'F2142B', 'F65830', 'FA9039', 'FFB740')}"}
           .info
             .name=video
             - if video.blurb.present?

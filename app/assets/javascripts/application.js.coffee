@@ -24,13 +24,12 @@ createMap = ->
   new L.Control.Zoom({ position: 'topright' }).addTo(map)
 
 init = ->
-  #$(document).scrollTop = 100
-  
+
   $('#main-nav').css 'height', parseInt($('#main-nav').css('height')) * 2
   $('iframe#vimeo').hide()
   $('iframe#vimeo').load ->
     $(this).fadeIn()
-    
+
 
   $('#vimeo-container').fitVids()
 
@@ -46,7 +45,7 @@ init = ->
   loaded()
 
   createMap()
-  
+
 
 loaded = ->
   $('#main .tile').each (index) ->
@@ -84,5 +83,8 @@ jQuery ->
       $(this).delay(index * 200).fadeOut 'slow'
 
   $(document).on 'page:change', init
+  $(document).on 'page:load', ->
+    $(window).scrollTo(0,100)
 
   init()
+
