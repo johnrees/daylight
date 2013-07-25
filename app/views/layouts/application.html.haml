@@ -8,8 +8,8 @@
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
     %title= yield(:title) || "Daylight Moving Image"
 
-    = stylesheet_link_tag    "application", "http://fonts.googleapis.com/css?family=Lato:300,400", "http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css", media: "all"
-    = javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js", "https://www.gstatic.com/swiffy/v5.1/runtime.js", "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js", "http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"
+    = stylesheet_link_tag    "application", "http://fonts.googleapis.com/css?family=Lato:300,400", "http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css", "http://vjs.zencdn.net/4.1/video-js.css", media: "all"
+    = javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js", "https://www.gstatic.com/swiffy/v5.1/runtime.js", "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js", "http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js", "http://vjs.zencdn.net/4.1/video.js"
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 

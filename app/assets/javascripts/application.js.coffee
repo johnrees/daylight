@@ -10,6 +10,7 @@
 #= require logo
 #= require static
 #= require videos
+#= require mediaelement-and-player
 
 jQuery.fn.reverse = [].reverse
 
@@ -24,6 +25,12 @@ createMap = ->
   new L.Control.Zoom({ position: 'topright' }).addTo(map)
 
 init = ->
+
+  $('#homepage-video').mediaelementplayer
+    loop: true
+    defaultVideoWidth: "100%"
+    defaultVideoHeight: 300
+
 
   $('#main-nav').css 'height', parseInt($('#main-nav').css('height')) * 2
   $('iframe#vimeo').hide()
