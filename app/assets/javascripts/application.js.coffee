@@ -44,7 +44,8 @@ init = ->
     $('#responsive-nav').css('max-height', '500px')
   loaded()
 
-  createMap()
+  createMap() if $('#map').length > 0
+
 
 
 loaded = ->
@@ -84,7 +85,7 @@ jQuery ->
 
   $(document).on 'page:change', init
   $(document).on 'page:load', ->
-    $(window).scrollTo(0,100)
+    $(window).scrollTop(0,100)
 
   init()
 

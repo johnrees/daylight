@@ -119,9 +119,11 @@ a {
 //   @include omega();
 // }
 
-.contact {
-  @include shift(1);
-  @include span-columns(2);
+body {
+  .contact {
+    @include shift(1);
+    @include span-columns(2);
+  }
 }
 
 #summary {

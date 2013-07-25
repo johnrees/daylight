@@ -1,4 +1,18 @@
 #map {
-  @include span-columns(3);
-  height: 250px;
+  height: 350px;
+}
+
+#map-holder {
+  @include span-columns(4);
+}
+
+#address {
+  @include span-columns(2);
+  padding: 0 10px;
+}
+
+iframe {
+  @include fill-parent();
+  height: 360px;
+  border: none;
 }
