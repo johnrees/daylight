@@ -15,9 +15,10 @@
     = f.text_area :description, rows: 10
 
   .field
-    = image_tag @client.logo_url
+    = image_tag @client.logo
     = f.label :logo
-    = f.file_field :logo
+    /= f.file_field :logo
+    %input{name: "client[logo]", type: 'filepicker-dragdrop'}
 
   .actions
     = f.submit 'Save', class: 'button'

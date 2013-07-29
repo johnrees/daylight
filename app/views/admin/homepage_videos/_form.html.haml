@@ -1,3 +1,14 @@
 = simple_form_for [:admin, @homepage_video] do |f|
-  = f.filepicker_field :video
-  = f.submit
+  - if @homepage_video.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@homepage_video.errors.count, "error")} prohibited this video from being saved:"
+      %ul
+        - @homepage_video.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = image_tag @homepage_video.video
+    %input{name: "homepage_video[video]", type: 'filepicker-dragdrop'}
+
+  .actions
+    = f.submit 'Save', class: 'button'

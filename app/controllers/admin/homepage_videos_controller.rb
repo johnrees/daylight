@@ -36,7 +36,7 @@ class Admin::HomepageVideosController < Admin::AdminController
 
     respond_to do |format|
       if @homepage_video.save
-        format.html { redirect_to homepage_admin_videos_url, notice: 'HomepageVideo was successfully created.' }
+        format.html { redirect_to admin_homepage_videos_url, notice: 'HomepageVideo was successfully created.' }
         format.json { render action: 'show', status: :created, location: @homepage_video }
       else
         format.html { render action: 'new' }
@@ -50,7 +50,7 @@ class Admin::HomepageVideosController < Admin::AdminController
   def update
     respond_to do |format|
       if @homepage_video.update(homepage_video_params)
-        format.html { redirect_to homepage_admin_videos_url, notice: 'HomepageVideo was successfully updated.' }
+        format.html { redirect_to admin_homepage_videos_url, notice: 'HomepageVideo was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -64,7 +64,7 @@ class Admin::HomepageVideosController < Admin::AdminController
   def destroy
     @homepage_video.destroy
     respond_to do |format|
-      format.html { redirect_to homepage_admin_videos_url }
+      format.html { redirect_to admin_homepage_videos_url }
       format.json { head :no_content }
     end
   end

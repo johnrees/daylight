@@ -1,0 +1,7 @@
+.row
+  .columns.large-12
+    %h1 Edit homepage video
+
+    = link_to "Delete Video", [:admin,@homepage_video], method: 'delete', confirm: 'Are you sure?', class: 'button alert round small'
+
+    = render 'form'
