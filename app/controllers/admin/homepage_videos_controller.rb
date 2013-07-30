@@ -77,7 +77,7 @@ class Admin::HomepageVideosController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def homepage_video_params
-      params.require(:homepage_video).permit(:video, :ordinal)
+      params.require(:homepage_video).permit(:video, :ordinal, :name)
     end
 
 end

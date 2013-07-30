@@ -11,6 +11,14 @@ class Video < ActiveRecord::Base
   #   true#new_record?
   # end
 
+  def self.featured
+    where('featured_ordinal > 0').order('featured_ordinal ASC').limit(3)
+  end
+
+  def self.unfeatured
+    all - where('featured_ordinal > 0').order('featured_ordinal ASC').limit(3)
+  end
+
   def showreel?
     name.downcase == 'showreel'
   end
@@ -39,10 +47,18 @@ class Video < ActiveRecord::Base
     self.tag_id = 0 if tag_id.blank?
   end
 
-  def self.do_order(ids, tag_id = nil)
+  def self.do_order(ids, tag_id = nil, featured_id = nil)
     if tag_id
       where({ :id => ids }).update_all(
         ["tag_id = ?, tag_ordinal = STRPOS(?, ','||id||',')", tag_id, ",#{ids.join(',')},"]
+      )
+    elsif featured_id == 0
+      where({ :id => ids }).update_all(
+        ["featured_ordinal = STRPOS(?, ','||id||',')", ",#{ids.join(',')},"]
+      )
+    elsif featured_id == 1
+      where({ :id => ids }).update_all(
+        ["featured_ordinal = NULL", ",#{ids.join(',')},"]
       )
     else
       where({ :id => ids }).update_all(

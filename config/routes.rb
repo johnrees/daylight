@@ -6,7 +6,7 @@ Daylight::Application.routes.draw do
   get 'contact', to: 'static#contact'
 
   namespace :admin do
-    %w(videos tags clients homepage_videos).each do |resource|
+    %w(videos tags clients homepage_videos featured_videos).each do |resource|
       resources resource do
         put :sort, on: :collection
       end

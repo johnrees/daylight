@@ -2,8 +2,17 @@ $tablet: new-breakpoint(max-width 780px 4);
 $mobile: new-breakpoint(max-width 480px 4);
 
 #homepage-video {
+  margin-bottom: 10px;
+  .mejs-container {
+    background: none;
+    height: auto !important;
+  }
+  .mejs-mediaelement {
+    position: static !important;
+  }
   video {
     display: block;
+    width: 100%;
   }
   img {
     display: none;

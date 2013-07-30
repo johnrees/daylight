@@ -17,8 +17,13 @@ class VideosController < ApplicationController
     end
   end
 
+  def show
+    @videos = Video.all.limit(3)
+  end
+
   def featured
     @video = FeaturedVideo.last.video
+    @videos = Video.featured.all
     render :show
   end
 

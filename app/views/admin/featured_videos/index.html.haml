@@ -1,0 +1,14 @@
+.row
+  .columns.large-10
+    %h2 Featured Videos
+
+  .columns.large-12
+    %p Drag 3 videos from the right column into the left column.
+
+  - %w(featured unfeatured).each_with_index do |action,index|
+    .columns.large-6.small-6
+      %h4= "#{action.capitalize} Videos"
+      %ul.videos.ui-sortable{data: { sorturl: '/admin/featured_videos/sort', tag: index }, class: "#{action}-videos"}
+        - Video.send(action).each do |video|
+          = content_tag_for :li, video, data: { id: video.id }, class: 'all' do
+            = link_to video, edit_admin_video_path(video)

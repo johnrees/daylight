@@ -1,27 +1,27 @@
 #content
   .row
     #homepage-video.tile
-      %video#homepage-video{:poster => "poster.jpg", :preload => "true"}
-        %source{:src => "http://bitsushi.s3.amazonaws.com/noaudio.mp4", :type => "video/mp4"}
+      %video#homepage-video{:loop => true}
+        /{:poster => "poster.jpg", :preload => "true"}
+        %source{:src => @video.video, :type => "video/mp4"}
         %object{:data => "flashmediaelement.swf", :type => "application/x-shockwave-flash"}
           %param{:name => "movie", :value => "flashmediaelement.swf"}/
-          %param{:name => "flashvars", :value => "controls=true&file=http://bitsushi.s3.amazonaws.com/noaudio.mp4"}/
-          %img{:src => "myvideo.jpg", :title => "No video playback capabilities"}/
+          %param{:name => "flashvars", :value => "controls=true&file=#{@video.video}"}/
+          /%img{:src => "myvideo.jpg", :title => "No video playback capabilities"}/
       -# %video.video-js.vjs-default-skin
       -#   %source{ src: 'http://bitsushi.s3.amazonaws.com/noaudio.mp4', type: 'video/mp4'}
       -#   /, width: '100%', autoplay: true, loop: true}
-      = image_tag "homepagevideoplaceholder.jpg"
+      -# = image_tag "homepagevideoplaceholder.jpg"
 
   .row
     #featured-videos Featured Videos
 
     #videos.thumbs
-      - 3.times do |index|
-        - Video.all.sample(1).each do |video|
-          .video.tile{style: "background-image: url(#{video.image});"}
-            = link_to video.fullpath do
-              .bg
-                .info
-                  .name=video
-                  - if video.blurb.present?
-                    .company=video.blurb
+      - @videos.each do |video|
+        .video.tile{style: "background-image: url(#{video.image});"}
+          = link_to video.fullpath do
+            .bg
+              .info
+                .name=video
+                - if video.blurb.present?
+                  .company=video.blurb

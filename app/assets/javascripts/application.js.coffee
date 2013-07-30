@@ -29,7 +29,9 @@ init = ->
   $('#homepage-video').mediaelementplayer
     loop: true
     defaultVideoWidth: "100%"
-    defaultVideoHeight: 300
+    defaultVideoHeight: 600
+    videoWidth: -1
+    videoHeight: -1
 
 
   $('#main-nav').css 'height', parseInt($('#main-nav').css('height')) * 2

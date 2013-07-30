@@ -6,7 +6,7 @@
   .columns.large-12
     %p Reordering videos in the left column will determine their position on the 'all' section. Moving them around in the right column will determine which category they are in. You can also rename the categories, or reorder them by dragging them left and right.
 
-  - %w(work light_work).each do |category|
+  - %w(work).each do |category|
     .category{data: { category: category }}
       .columns.large-12
         %h3= category.humanize
@@ -26,7 +26,7 @@
                 / %h4= link_to tag.name, edit_admin_tag_path(tag)
                 = form_for [:admin, tag], url: admin_tag_path(tag.id), remote: true do |f|
                   = f.text_field :name
-                %ul.videos{data: { tag: tag.id }}
+                %ul.videos{data: { tag: tag.id, sorturl: '/admin/videos/sort' }}
                   - if @videos.keys.include? tag.id
                     - @videos[tag.id].each do |video|
                       = content_tag_for :li, video, data: { id: video.id } do

@@ -48,14 +48,16 @@ jQuery ->
     connectWith: 'ul.videos'
     placeholder: 'placeholder'
     update: (event, element) ->
+
       all = $(this).closest('.category').find('ul.all-videos').first()
-      if all.find( $("li[data-id='#{element.item.data('id')}']") ).length == 0
-        all.append( $("ul.all-videos li[data-id='#{element.item.data('id')}']").first() )
-        updateAllVideos all
-      # element.item.closest('ul.all-videos').append $("ul.all-videos li[data-id='#{element.item.data('id')}']")
-      # # window.updateInitialPosition()
+      if all.length > 0
+        if all.find( $("li[data-id='#{element.item.data('id')}']") ).length == 0
+          all.append( $("ul.all-videos li[data-id='#{element.item.data('id')}']").first() )
+          updateAllVideos all
+        # element.item.closest('ul.all-videos').append $("ul.all-videos li[data-id='#{element.item.data('id')}']")
+        # # window.updateInitialPosition()
       tag = $(this).data('tag') || 0
-      $.post '/admin/videos/sort', "_method=put&#{$(this).sortable('serialize')}&tag_id=#{tag}"
+      $.post $(this).data('sorturl'), "_method=put&#{$(this).sortable('serialize')}&tag_id=#{tag}"
 
   $('tr.tags').disableSelection().sortable
     items:'td.tag'

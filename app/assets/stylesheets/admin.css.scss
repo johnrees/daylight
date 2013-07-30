@@ -7,6 +7,8 @@ $yellow: #FFDC48;
   padding: 10px;
 }
 
+
+
 .showreel {
   background: $yellow;
 }
@@ -25,6 +27,14 @@ $yellow: #FFDC48;
     padding: 4px;
     list-style: none;
   }
+
+  .featured-videos li:nth-child(n+4) {
+    background: red;
+    a {
+      color: pink;
+    }
+  }
+
   li.all {
     background: $yellow;
   }

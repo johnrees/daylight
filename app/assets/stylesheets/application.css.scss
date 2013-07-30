@@ -20,8 +20,9 @@ $mobile: new-breakpoint(max-width 480px 4);
 @import "about";
 @import "header";
 @import "contact";
-@import "home";
+
 @import "mediaelementplayer";
+@import "home";
 // @import "flexnav";
 
 #responsive-nav {

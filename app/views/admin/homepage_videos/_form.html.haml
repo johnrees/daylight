@@ -7,8 +7,11 @@
           %li= msg
 
   .field
-    = image_tag @homepage_video.video
-    %input{name: "homepage_video[video]", type: 'filepicker-dragdrop'}
+    = f.input :name
+  .field
+    - if @homepage_video.video.present?
+      %video{src: @homepage_video.video, controls: false, width: 300, autoplay: true, loop: true}
+    %input{name: "homepage_video[video]", type: 'filepicker-dragdrop', value: @homepage_video.video}
 
   .actions
     = f.submit 'Save', class: 'button'

@@ -6,13 +6,12 @@
         - @video.errors.full_messages.each do |msg|
           %li= msg
 
-
-  .field
-    - if @video and @video.featured?
-      %strong This is the Featured Video
-    - else
-      = f.label :feature
-      = f.check_box :feature
+  -# .field
+  -#   - if @video and @video.featured?
+  -#     %strong This is the Featured Video
+  -#   - else
+  -#     = f.label :feature
+  -#     = f.check_box :feature
 
   .field
     = f.label :vimeoid

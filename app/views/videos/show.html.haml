@@ -8,23 +8,11 @@
     = simple_format @video.description
 
 #videos.thumbs
-  - 3.times do |index|
-    - Video.all.sample(1).each do |video|
-      .video.tile{style: "background-image: url(#{video.image});", class: ("active" if index == 1)}
-        /{class: @tags.sample.parameterize}
-        = link_to video.fullpath do
-          .bg
-            .info
-              .name=video
-              - if video.blurb.present?
-                .company=video.blurb
-
-
-/ %p#notice= notice
-/ = vimeo_player @video.vimeoid
-/ %h3= @video.name
-/ = simple_format @video.description
-
-/ = link_to 'Edit', edit_video_path(@video)
-/ \|
-/ = link_to 'Back', videos_path
+  - @videos.each do |video|
+    .video.tile{style: "background-image: url(#{video.image});"}
+      = link_to video.fullpath do
+        .bg
+          .info
+            .name=video
+            - if video.blurb.present?
+              .company=video.blurb
