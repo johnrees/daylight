@@ -6,6 +6,10 @@
 $tablet: new-breakpoint(max-width 780px 4);
 $mobile: new-breakpoint(max-width 480px 4);
 
+.bg {
+  background-color: #FFDC48 !important;
+}
+
 .video.active {
   .bg {
     opacity: 1 !important;

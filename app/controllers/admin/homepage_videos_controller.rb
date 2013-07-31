@@ -4,17 +4,13 @@ class Admin::HomepageVideosController < Admin::AdminController
 
   def sort
     if params[:homepage_video].present?
-      if params[:tag_id].present?
-        HomepageVideo.do_order(params[:homepage_video], params[:tag_id])
-      else
-        HomepageVideo.do_order(params[:homepage_video])
-      end
+      HomepageVideo.do_order(params[:homepage_video])
     end
     render :text => params[:homepage_video].inspect
   end
 
   def index
-    @homepage_videos = HomepageVideo.all
+    @homepage_videos = HomepageVideo.order('ordinal ASC')
   end
 
   def show

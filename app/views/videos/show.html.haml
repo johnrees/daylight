@@ -1,4 +1,9 @@
 /= @video.vimeoid
+
+- if action_name == 'show'
+  - title "#{@video} / #{@video.tag}"
+- else
+  - title "Featured"
 .row
   #video= vimeo_player @video.vimeoid
 
@@ -8,9 +13,10 @@
     = simple_format @video.description
 
 #videos.thumbs
-  - @videos.each do |video|
+  - @videos.each_with_index do |video, index|
     .video.tile{style: "background-image: url(#{video.image});"}
-      = link_to video.fullpath do
+      = link_to "/featured/#{index + 1}" do
+        /video.fullpath
         .bg
           .info
             .name=video

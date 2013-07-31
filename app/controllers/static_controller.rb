@@ -1,7 +1,7 @@
 class StaticController < ApplicationController
 
   def home
-    @video = HomepageVideo.first
+    @video = HomepageVideo.first(:order => "RANDOM()")
     @videos = Video.featured.all
   end
 
