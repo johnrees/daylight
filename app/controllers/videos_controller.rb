@@ -18,7 +18,7 @@ class VideosController < ApplicationController
   end
 
   def show
-    @videos = Video.all.limit(3)
+    @videos = Video.joins(:tag).where('tags.category > 0').limit(3)
   end
 
   def featured
