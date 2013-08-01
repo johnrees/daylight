@@ -3,6 +3,7 @@ $mobile: new-breakpoint(max-width 480px 4);
 
 #homepage-video {
   margin-bottom: 10px;
+  display: block !important;
 
   .mejs-container {
     background: none;
@@ -28,4 +29,8 @@ $mobile: new-breakpoint(max-width 480px 4);
       }
 
   }
+}
+
+.me-cannotplay {
+  display: none !important;
 }

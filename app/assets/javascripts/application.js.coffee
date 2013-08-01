@@ -42,7 +42,9 @@ init = ->
 
   $('#vimeo-container').fitVids()
 
-  $('#main .tile').hide()
+  # $('#main .tile').opacity(0)
+  $('#main .tile').each ->
+    TweenLite.to($(this), 0, {opacity: 0})
 
   if $('#homepage-video video').length > 0
     $('#homepage-video video').get(0).play()
@@ -59,7 +61,8 @@ init = ->
 
 loaded = ->
   $('#main .tile').each (index) ->
-    $(this).delay(index * 200).fadeIn 'slow'
+    TweenLite.to($(this), 2, {delay: 0.3 + index * 0.2, opacity: 1})
+    #$(this).animate()#delay(index * 200).fadeIn 'slow'
 
 jQuery ->
 
