@@ -6,6 +6,13 @@
 $tablet: new-breakpoint(max-width 780px 4);
 $mobile: new-breakpoint(max-width 480px 4);
 
+// .c-videos.a-show {
+//   .description {
+//     max-height: 200px;
+//     margin-bottom: 20px;
+//   }
+// }
+
 .bg {
   background-color: #FFDC48 !important;
 }
@@ -29,9 +36,12 @@ $videoHeight: 180px;
   .video {
     @include animation-duration(2s);
 
-    &.big {
+    &.big-left, &.big-right {
       @include span-columns(4);
       height: $videoHeight * 2;
+    }
+    &.big-right {
+      float: right;
     }
     height: $videoHeight;
     background: center center no-repeat;

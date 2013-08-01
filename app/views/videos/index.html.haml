@@ -12,7 +12,14 @@
 
 #videos
   - @videos.each_with_index do |video,index|
-    .video.tile{style: "background-image: url(#{video.image});", class: ("big" if index % 12 == 0)}
+    - klass = ''
+    - if index % 12 == 0
+      - klass = 'big-left'
+    - elsif index % 6 == 0
+      - klass = 'big-right'
+    .video.tile{style: "background-image: url(#{video.image});", class: klass}
+
+
       = link_to video.fullpath do
         .bg{style: "background: #FFDC48"}
           /{style: "background: ##{cycle('FFDC48', 'F2142B', 'F65830', 'FA9039', 'FFB740')}"}
