@@ -15,8 +15,7 @@
 #videos.thumbs
   - @videos.each_with_index do |video, index|
     .video.tile{style: "background-image: url(#{video.image});"}
-      = link_to "/featured/#{index + 1}" do
-        /video.fullpath
+      = link_to (action_name == 'show' ? video.fullpath : featured_path(index + 1)) do
         .bg
           .info
             .name=video

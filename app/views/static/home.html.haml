@@ -18,9 +18,9 @@
     #featured-videos Featured Videos
 
     #videos.thumbs
-      - @videos.each do |video|
+      - @videos.each_with_index do |video, index|
         .video.tile{style: "background-image: url(#{video.image});"}
-          = link_to video.fullpath do
+          = link_to featured_path(index + 1) do
             .bg
               .info
                 .name=video
