@@ -27,9 +27,12 @@ header {
 
   #head {
     @include outer-container;
-    overflow: hidden;
+    // overflow: hidden;
     position: relative;
     height: 270px;
+    @include media($mobile) {
+      height: auto;
+    }
   }
 
   @include media($mobile) {
@@ -50,6 +53,11 @@ header {
     }
 
     #main-nav {
+      @include media($mobile) {
+        display: none;
+        height: auto !important;
+        margin-bottom: 10px;
+      }
       position: static;
       li {
         width: 100%;
@@ -178,6 +186,9 @@ ul.subnav {
   bottom: 0;
   left: 0;
   width: 100%;
+  @include media($mobile) {
+    display: none !important;
+  }
 }
 
 body.light-work #light-work-subnav {

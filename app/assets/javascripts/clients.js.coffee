@@ -3,7 +3,9 @@ ready = ->
   $('.client').hover ->
     $('.client').removeClass('active')
     $(this).addClass('active')
-    $('#client-info').html $(this).next('.client-description').html()
+    #$('.details').hide()
+    $(this).next('.details').css('background','red')
+    $('.client-info').html $(this).next('.client-description').html()
   #.first().trigger 'mouseenter'
 
 $(document).ready ready

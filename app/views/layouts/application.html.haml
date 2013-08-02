@@ -20,7 +20,7 @@
     %header
       #head
         #nav-button
-          = yield(:title)
+          = yield(:button).blank? ? yield(:title) : yield(:button)
         %nav.top-nav
 
           = link_to "Backstage", "http://day-light.co.uk/backstage", class: 'link'

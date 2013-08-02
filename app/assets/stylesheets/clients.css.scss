@@ -8,7 +8,7 @@
 
   img {
     width: 100% !important;
-    height: auto !important;
+    max-height: 100%;
   }
 
   .clients {
@@ -21,7 +21,7 @@
     }
   }
 
-  #client-info {
+  .client-info {
     @include media($mobile) {
       display: none !important;
     }

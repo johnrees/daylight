@@ -19,6 +19,9 @@ $mobile: new-breakpoint(max-width 480px 4);
   img {
     display: none;
   }
+  #mep_1 {
+    height: auto !important;
+  }
   @include media($mobile) {
 
       video {

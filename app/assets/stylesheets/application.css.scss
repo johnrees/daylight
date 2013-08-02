@@ -125,6 +125,7 @@ body {
   .contact {
     @include shift(1);
     @include span-columns(2);
+    @include media($mobile){ display: none; }
   }
 }
 

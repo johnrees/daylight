@@ -26,6 +26,9 @@ createMap = ->
 
 init = ->
 
+  $('#nav-button').click ->
+    $('#main-nav').toggle()
+
   $('#homepage-video').mediaelementplayer
     loop: true
     defaultVideoWidth: "100%"
