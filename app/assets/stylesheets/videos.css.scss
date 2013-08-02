@@ -39,6 +39,9 @@ $videoHeight: 180px;
     &.big-left, &.big-right {
       @include span-columns(4);
       height: $videoHeight * 2;
+      @include media($mobile) {
+        width: 100%;
+      }
     }
     &.big-right {
       float: right;

@@ -2,8 +2,10 @@
 
 - if action_name == 'show'
   - title "#{@video} / #{@video.tag}"
+  - button "Work"
 - else
   - title "Featured"
+  - button "Featured"
 .row
   #video= vimeo_player @video.vimeoid
 

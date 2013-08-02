@@ -30,8 +30,10 @@
   .client {
     @include span-columns(1);
     @include omega(6);
-
     height: 100px;
+    @include media($mobile) {
+      height: auto;
+    }
     text-align: center;
     line-height: 100%;
     -webkit-filter: grayscale(100%);
