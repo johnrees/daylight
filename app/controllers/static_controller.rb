@@ -1,7 +1,7 @@
 class StaticController < ApplicationController
 
   def home
-    @video = HomepageVideo.first(:order => "RANDOM()")
+    @video = HomepageVideo.where('priority > 0').first(order: "RANDOM()")
     @videos = Video.featured.all
   end
 
