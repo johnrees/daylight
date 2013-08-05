@@ -42,13 +42,13 @@ header {
     margin-bottom: 0;
 
     #nav-button {
+      background: #FFF image-url("menu-icon.png") right center no-repeat;
       float: right;
       display: block;
-      padding: 8px;
+      padding: 8px 25px 8px 8px;
       line-height: 20px;
       border-radius: 4px;
       border: 1px solid #CCC;
-      background: #FFF;
       cursor: pointer;
     }
 
