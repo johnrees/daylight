@@ -1,6 +1,6 @@
 $tablet: new-breakpoint(max-width 780px 4);
 $mobile: new-breakpoint(max-width 480px 4);
-$headerHeight: 180px;
+$headerHeight: 240px;
 
 
 
@@ -18,7 +18,6 @@ header {
   background: white;
   margin-bottom: 16px;
   overflow: hidden;
-
   position: fixed;
 
   #nav-button {
@@ -29,7 +28,7 @@ header {
     @include outer-container;
     // overflow: hidden;
     position: relative;
-    height: 270px;
+    height: 320px; // was 270
     @include media($mobile) {
       height: auto;
     }
@@ -100,7 +99,7 @@ header {
 
   &.fixed {
     position: absolute !important;
-    top: 100px;
+    top: 150px;
   }
 
   p {

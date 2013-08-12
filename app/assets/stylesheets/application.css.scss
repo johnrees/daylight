@@ -47,7 +47,7 @@ $mobile: new-breakpoint(max-width 480px 4);
 
 
 .fluid-width-video-wrapper, iframe {
-  background: #000;
+  background: #FFF;
 }
 
 body {
@@ -76,17 +76,17 @@ h1,h2,h3,h4,h5 {
   }
 }
 
-body.work, body.light-work {
-  #main {
-    margin-top: 300px;
-  }
-}
+// body.work, body.light-work {
+//   #main {
+//     margin-top: 340px;
+//   }
+// }
 
 #main {
   @include media($mobile) {
     margin-top: 0 !important;
   }
-  margin-top: 290px;
+  margin-top: 330px;
   @include span-columns(6);
 }
 

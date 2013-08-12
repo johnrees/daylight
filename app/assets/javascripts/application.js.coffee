@@ -1,5 +1,4 @@
 #= require jquery
-#= require turbolinks
 #= require holder
 #= require urlify
 #= require jquery.isotope
@@ -11,6 +10,8 @@
 #= require static
 #= require videos
 #= require mediaelement-and-player
+
+# nooo #= require turbolinks
 
 jQuery.fn.reverse = [].reverse
 
@@ -80,12 +81,12 @@ jQuery ->
 
     if $(window).width() > 480
       scroll = parseInt Math.max(0,$(window).scrollTop())
-      if scroll <= 100
+      if scroll <= 140
 
         TweenLite.to $('#aperture'), 0.1, { rotation: $(window).scrollTop() * 3.6 }
 
         $('header').toggleClass 'fixed', false
-        $('#head').css 'height', Math.max(100, headerheight - scroll)
+        $('#head').css 'height', Math.max(140, headerheight - scroll)
         $('.fade').css 'opacity', (fadeDistance - scroll) / fadeDistance
       else
         $('header').toggleClass 'fixed', true
