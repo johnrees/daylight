@@ -1,7 +1,10 @@
 ready = ->
 
-  # $(window).on 'load', ->
-  $('body').scrollTop(150)
+  $('header').css(opacity: 0).delay(300).animate({opacity: 1})
+  if $('body.a-contact').length == 0
+    $('body').scrollTop(140)
+    $(window).on 'load', ->
+      $('body').scrollTop(140)
 
   $('.client').hover ->
     $('.client').removeClass('active')
