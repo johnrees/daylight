@@ -71,14 +71,16 @@ loaded = ->
 jQuery ->
 
   #window.scrollTo 0, 100
-  fadeDistance    = 30
+  fadeDistance    = 50
   className   = 'scrolled'
 
   headerheight = $('header').height()
+  # $('#head').css 'height', 180
+  # $('.fade').css 'opacity', 0
 
   # $.throttle( 50,
-  $(document).on 'scroll', (event) ->
-
+  $(window).on 'scroll', (event) ->
+    console.log 'scroll'
     if $(window).width() > 480
       scroll = parseInt Math.max(0,$(window).scrollTop())
       if scroll <= 140

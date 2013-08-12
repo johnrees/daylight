@@ -1,7 +1,7 @@
 ready = ->
 
   $(window).on 'load', ->
-    $('html, body').scrollTop(150)
+    $('body').scrollTop(150)
 
   $('.client').hover ->
     $('.client').removeClass('active')
