@@ -70,6 +70,8 @@ loaded = ->
 
 jQuery ->
 
+  $('#head').css('opacity', 0).delay(300).animate({opacity: 1}, 100)
+
   #window.scrollTo 0, 100
   fadeDistance    = 50
   className   = 'scrolled'
@@ -83,7 +85,7 @@ jQuery ->
     console.log 'scroll'
     if $(window).width() > 480
       scroll = parseInt Math.max(0,$(window).scrollTop())
-      if scroll <= 140
+      if scroll <= 160
 
         TweenLite.to $('#aperture'), 0.1, { rotation: $(window).scrollTop() * 3.6 }
 
