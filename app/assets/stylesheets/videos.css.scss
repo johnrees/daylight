@@ -124,9 +124,12 @@ $videoHeight: 180px;
     // }
   }
 
+.client-author, .play-film {
+  @include span-columns(3);
+  }
 
   .description {
-    @include shift(2);
+    // @include shift(2);
     @include media($tablet, $mobile) {
       @include shift(0);
     }

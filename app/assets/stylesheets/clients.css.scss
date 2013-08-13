@@ -4,7 +4,9 @@
 
 
 .c-clients {
-
+  .client-name {
+    font-weight: normal;
+  }
 
   img {
     width: 100% !important;
@@ -22,6 +24,7 @@
   }
 
   .client-info {
+    margin-top: 2em;
     @include media($mobile) {
       display: none !important;
     }
