@@ -1,3 +1,4 @@
+//= require select2
 //= require foundation_and_overrides
 $orange: #F9A518;
 $yellow: #FFDC48;
@@ -7,7 +8,9 @@ $yellow: #FFDC48;
   padding: 10px;
 }
 
-
+.select2-container {
+  width: 100%;
+}
 
 .showreel {
   background: $yellow;

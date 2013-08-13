@@ -6,7 +6,7 @@ ready = ->
     $(window).on 'load', ->
       $('body').scrollTop(140)
 
-  $('.client').hover ->
+  $('.client').click ->
     $('.client').removeClass('active')
     $(this).addClass('active')
     #$('.details').hide()

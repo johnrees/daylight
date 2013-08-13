@@ -71,6 +71,8 @@ loaded = ->
 
 jQuery ->
 
+
+
   $(".flexnav").flexNav();
   # $('header nav#main-nav').meanmenu()
 

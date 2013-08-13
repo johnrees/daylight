@@ -82,6 +82,6 @@ class Admin::ClientsController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:ordinal, :name, :slug, :description, :logo)
+      params.require(:client).permit!
     end
 end

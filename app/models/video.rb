@@ -5,6 +5,7 @@ class Video < ActiveRecord::Base
   belongs_to :tag
   before_save :set_tag_id
   has_many :featured_videos
+  has_many :clients
 
 
   # def should_generate_new_friendly_id?

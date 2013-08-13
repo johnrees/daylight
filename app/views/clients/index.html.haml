@@ -13,14 +13,18 @@
       %p.client-description= client.description
       .client-author
         %h3.client-name
-          Dan Rowles, Bolton University
-          %br/
-          www.bolton.ac.uk
-      .play-film
-        %h3.client-name play film
-      /= client.description
-    -# - if index % 6 == 5
-    -#   .details
-    -#     .client-info.description.tile
+          = client.person
+          - if client.website.present?
+            %br/
+            = link_to client.website, client.website
+
+      - if client.video.present?
+        .play-film
+          %h3.client-name= link_to "play film", client.video
 
 .client-info.description
+
+/= client.description
+-# - if index % 6 == 5
+-#   .details
+-#     .client-info.description.tile

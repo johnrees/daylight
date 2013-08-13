@@ -6,6 +6,7 @@
 #= require jquery.ui.droppable
 #= require jquery.ui.sortable
 #= require foundation
+#= require select2
 
 
 
@@ -19,6 +20,8 @@ jQuery ->
 
   # filepicker.pick (InkBlob) ->
   #   console.log InkBlob.url
+
+  $("select").select2();
 
   $('body.admin.a-index.c-videos input').change ->
     $(this).parents('form').submit()
