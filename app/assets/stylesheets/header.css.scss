@@ -23,7 +23,10 @@ header {
     @include outer-container;
     position: relative;
     height: 320px; // was 270
-    min-height: 180px !important;
+    min-height: 180px;
+    @include media($mobile) {
+      min-height: none;
+    }
     // background: red;
     @include media($mobile) {
       height: auto;
