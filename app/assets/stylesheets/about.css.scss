@@ -11,6 +11,10 @@
   }
 }
 
+h3 {
+  margin: 0;
+}
+
 .row {
   @include row();
 }

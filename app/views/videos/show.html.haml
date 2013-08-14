@@ -13,6 +13,12 @@
   .description
     %h3= @video.name
     = simple_format @video.description
+  .social
+    .share-container
+      %span.share-text Share:
+      = link_to "Share on Twitter", "http://twitter.com/home?status=#{@video.name} - #{video_url(@video)}", class: "share twitter"
+      = link_to "Share on Facebook", "http://www.facebook.com/sharer/sharer.php?s=100&p[url]=#{video_url(@video)}&p[images][0]=#{@video.image}&p[title]=#{@video.name}&p[summary]=#{@video.description}", class: "share facebook"
+      = link_to "Share on Pinterest", "http://pinterest.com/pin/create/button/?url=#{video_url(@video)}&media=#{@video.image}&description=#{@video.description}", class: "share pinterest"
 
 #videos.thumbs
   - @videos.each_with_index do |video, index|
