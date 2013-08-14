@@ -25,11 +25,8 @@ header {
     height: 320px; // was 270
     min-height: 180px;
     @include media($mobile) {
-      min-height: none;
-    }
-    // background: red;
-    @include media($mobile) {
-      height: auto;
+      min-height: 0 !important;
+      height: auto !important;
     }
   }
 

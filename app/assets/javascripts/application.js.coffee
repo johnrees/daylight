@@ -80,9 +80,10 @@ jQuery ->
     $('#main .tile').reverse().each (index) ->
       $(this).delay(index * 200).fadeOut 'slow'
 
-  $(document).on 'page:change', init
-  $(document).on 'page:load', ->
-    $(window).scrollTop(0,100)
+  # $(document).on 'page:change', init
+  # $(document).on 'page:load', ->
+  #   if $(window).width() > 480
+  #     $(window).scrollTop(0,100)
 
   init()
 

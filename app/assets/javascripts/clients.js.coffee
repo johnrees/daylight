@@ -4,7 +4,10 @@ ready = ->
   if $('body.a-contact').length == 0
     $('body').scrollTop(140)
     $(window).on 'load', ->
-      $('body').scrollTop(140)
+      if $(window).width() > 480
+        $('body').scrollTop(140)
+      else
+        $('body').scrollTop(0)
 
   $('.client').click ->
     $('.client').removeClass('active')
