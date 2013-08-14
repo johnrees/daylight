@@ -52,6 +52,10 @@ $mobile: new-breakpoint(max-width 480px 4);
   background: #FFF;
 }
 
+.hide-mobile {
+  @include media($mobile){ display: none; }
+}
+
 body {
   font-family: 'Helvetica Neue', $helvetica;
   font-size: 13px;

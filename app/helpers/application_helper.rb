@@ -23,8 +23,9 @@ module ApplicationHelper
   end
 
   def link_to_with_active_state text, link, html_options = {}, condition = nil
-    link_to text, link, class: ('active' if request.path == link || condition), data: { name: text.parameterize }
-    #  or request.path == data[:active]
+    link_to text, link,
+      class: ('active' if request.path == link || condition),
+      data: { name: text.parameterize }
   end
 
 end

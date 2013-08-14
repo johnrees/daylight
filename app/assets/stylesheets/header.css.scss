@@ -94,6 +94,9 @@ header {
   }
 
   &.fixed {
+    @include media($mobile) {
+      position: static !important;
+    }
     position: absolute !important;
     top: 135px;
   }

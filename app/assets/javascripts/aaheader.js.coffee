@@ -8,7 +8,6 @@ headerStuff = (event) ->
 
   if $(window).width() > 480
     scroll = parseInt Math.max(0,$(window).scrollTop())
-    console.log scroll
 
     TweenLite.to $('#aperture'), 0.1, { rotation: Math.min($(window).scrollTop() * 2.11, 360) }
     $('#head').css 'height', (headerheight - scroll)

@@ -4,7 +4,7 @@ class Admin::HomepageVideosController < Admin::AdminController
 
   def sort
     if params[:homepage_video].present?
-      HomepageVideo.do_order(params[:homepage_video])
+      HomepageVideo.do_order(params[:homepage_video], params[:tag_id].to_i)
     end
     render :text => params[:homepage_video].inspect
   end
@@ -73,7 +73,7 @@ class Admin::HomepageVideosController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def homepage_video_params
-      params.require(:homepage_video).permit(:video, :ordinal, :name, :priority)
+      params.require(:homepage_video).permit!
     end
 
 end

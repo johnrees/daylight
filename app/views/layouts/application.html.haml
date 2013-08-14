@@ -69,16 +69,11 @@
                 %li.all= link_to_with_active_state "All", work_path(tag: nil)
                 - @work_tags.each do |tag|
                   %li= link_to_with_active_state tag.name,
-                    work_path(tag: tag.slug), {}, (request.fullpath.include? tag.slug)
+                    work_path(tag: tag.slug), {}, (request.fullpath.include? "/#{tag.slug}")
 
             %li= link_to_with_active_state "About", about_path
             %li= link_to_with_active_state "Clients", clients_path
             %li= link_to_with_active_state "Contact", contact_path
-            /%ul#light-work-subnav.subnav{data: {bgcolor: '#ffdc48'}}
-            /  %li.all= link_to_with_active_state "All", light_work_path(tag: nil)
-            /  - @light_work_tags.each do |tag|
-            /    %li= link_to_with_active_state tag.name,
-            /      light_work_path(tag: tag.slug), {}, (request.fullpath.include? tag.slug)
 
     #main
       .container

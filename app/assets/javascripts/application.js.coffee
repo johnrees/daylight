@@ -71,14 +71,14 @@ loaded = ->
 
 jQuery ->
 
+  $(".fitvids").fitVids()
 
-
-  $(".flexnav").flexNav();
+  # $(".flexnav").flexNav();
   # $('header nav#main-nav').meanmenu()
 
-  $(document).on 'page:fetch', ->
-    $('#main .tile').reverse().each (index) ->
-      $(this).delay(index * 200).fadeOut 'slow'
+  # # $(document).on 'page:fetch', ->
+  # $('#main .tile').reverse().each (index) ->
+  #   $(this).delay(index * 200).fadeOut 'slow'
 
   # $(document).on 'page:change', init
   # $(document).on 'page:load', ->
