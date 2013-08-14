@@ -1,13 +1,13 @@
 ready = ->
 
   $('header').css(opacity: 0).delay(300).animate({opacity: 1})
-  if $('body.a-contact').length == 0
-    $('body').scrollTop(140)
-    $(window).on 'load', ->
-      if $(window).width() > 480
-        $('body').scrollTop(140)
-      else
-        $('body').scrollTop(0)
+
+
+  $(window).on 'load', ->
+    if $(window).width() > 480
+      $('body.c-videos').scrollTop(140)
+    else
+      $('body').scrollTop(0)
 
   $('.client').click ->
     $('.client').removeClass('active')
