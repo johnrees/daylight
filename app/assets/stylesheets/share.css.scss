@@ -10,18 +10,44 @@
 
 */
 
-.share {
-  display:inline-block;
-  overflow:hidden;
-  background-repeat: no-repeat;
-  background-image:image-url("share.png");
-text-indent: -999px;}
-
-.pinterest {width:32px; height:32px; background-position: -2px -36px}
-
-.facebook {width:32px; height:32px; background-position: -2px -70px}
-.twitter {width:32px; height:32px; background-position: -2px -2px}
-
 span.share-text { line-height: 32px; display: block; float: left; margin-right: 10px;}
+.share {
+  font-size: 30px;
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+
+  -o-transition:.7s;
+  -ms-transition:.7s;
+  -moz-transition:.7s;
+  -webkit-transition:.7s;
+  /* ...and now for the proper property */
+  transition:.7s;
+
+  &.twitter:hover {
+    color: #00ADE9;
+  }
+  &.facebook:hover {
+    color: #45619D;
+  }
+  &.pinterest:hover {
+    color: #CB2027;
+  }
+}
+
+
+// .share {
+//   display:inline-block;
+//   overflow:hidden;
+//   background-repeat: no-repeat;
+//   background-image:image-url("share.png");
+// text-indent: -999px;}
+
+// .pinterest {width:32px; height:32px; background-position: -2px -36px}
+
+// .facebook {width:32px; height:32px; background-position: -2px -70px}
+// .twitter {width:32px; height:32px; background-position: -2px -2px}
+
+
 
 .share-container { float: right; margin-bottom: 40px; }

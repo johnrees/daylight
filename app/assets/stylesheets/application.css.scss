@@ -11,6 +11,7 @@ $tablet: new-breakpoint(max-width 780px 4);
 $mobile: new-breakpoint(max-width 480px 4);
 
 @import "bourbon";
+@import "font-awesome";
 @import "sprite";
 // @import "grid-settings";
 @import "neat-helpers";

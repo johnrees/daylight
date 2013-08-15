@@ -196,3 +196,8 @@ body.light-work #light-work-subnav {
 body.work #work-subnav {
   display: block;
 }
+
+footer .inner {
+
+    @include outer-container;
+}

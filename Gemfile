@@ -6,7 +6,7 @@ gem 'rails', '4.0.0'
 gem 'acts-as-taggable-on'
 # gem 'jquery-turbolinks'
 gem 'pg' # for heroku
-
+gem "font-awesome-rails"
 
 group :production do
 

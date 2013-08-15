@@ -16,9 +16,12 @@
   .social
     .share-container
       %span.share-text Share:
-      = link_to "Share on Twitter", "http://twitter.com/home?status=#{@video.name} - #{video_url(@video)}", class: "share twitter"
-      = link_to "Share on Facebook", "http://www.facebook.com/sharer/sharer.php?s=100&p[url]=#{video_url(@video)}&p[images][0]=#{@video.image}&p[title]=#{@video.name}&p[summary]=#{@video.description}", class: "share facebook"
-      = link_to "Share on Pinterest", "http://pinterest.com/pin/create/button/?url=#{video_url(@video)}&media=#{@video.image}&description=#{@video.description}", class: "share pinterest"
+      = link_to "http://twitter.com/home?status=#{@video.name} - #{video_url(@video)}", target: "_blank", class: "share twitter" do
+        = fa_icon "twitter"
+      = link_to "http://www.facebook.com/sharer/sharer.php?s=100&p[url]=#{video_url(@video)}&p[images][0]=#{@video.image}&p[title]=#{@video.name}&p[summary]=#{@video.description}", target: "_blank", class: "share facebook" do
+        = fa_icon "facebook"
+      = link_to "http://pinterest.com/pin/create/button/?url=#{video_url(@video)}&media=#{@video.image}&description=#{@video.description}", target: "_blank", class: "share pinterest" do
+        = fa_icon "pinterest"
 
 #videos.thumbs
   - @videos.each_with_index do |video, index|
