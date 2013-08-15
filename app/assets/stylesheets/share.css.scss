@@ -10,7 +10,7 @@
 
 */
 
-span.share-text { line-height: 32px; display: block; float: left; margin-right: 10px;}
+span.share-text {  line-height: 32px; display: block; float: left; margin-right: 10px;}
 .share {
   font-size: 30px;
   display: inline-block;
@@ -50,4 +50,4 @@ span.share-text { line-height: 32px; display: block; float: left; margin-right: 
 
 
 
-.share-container { float: right; margin-bottom: 40px; }
+.share-container { @include shift(4); margin-bottom: 40px; }
