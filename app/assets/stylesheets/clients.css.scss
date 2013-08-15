@@ -36,6 +36,7 @@
     height: 100px;
     @include media($mobile) {
       height: auto;
+      opacity: 1;
     }
     text-align: center;
     line-height: 100%;
@@ -53,14 +54,15 @@
       height: 100%;
     }
 
-    border: 3px solid #FFF;
+    // border: 3px solid #FFF;
+    opacity: 0.8;
 
     &.active {
       -webkit-filter: none;
       opacity: 1;
-      border-color: #F9A518;
+      // border-color: #F9A518;
       @include media($mobile) {
-        border-color: #FFF;
+        // border-color: #FFF;
         cursor: default;
       }
       .overlay {
