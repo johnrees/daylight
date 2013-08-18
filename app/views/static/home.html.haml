@@ -9,6 +9,7 @@
         %object{:data => "flashmediaelement.swf", :type => "application/x-shockwave-flash"}
           %param{:name => "movie", :value => "flashmediaelement.swf"}/
           %param{:name => "flashvars", :value => "controls=true&file=#{@video.video}"}/
+          = image_tag @video.image_url
           /%img{:src => "myvideo.jpg", :title => "No video playback capabilities"}/
       -# %video.video-js.vjs-default-skin
       -#   %source{ src: 'http://bitsushi.s3.amazonaws.com/noaudio.mp4', type: 'video/mp4'}
