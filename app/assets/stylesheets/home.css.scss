@@ -1,7 +1,13 @@
 $tablet: new-breakpoint(max-width 780px 4);
 $mobile: new-breakpoint(max-width 480px 4);
 
-#homepage-image, #mep_0 {
+#mep_0 {
+  @include media($mobile) {
+    display: none;
+  }
+}
+
+#homepage-image {
   display: none;
   @include media($mobile) {
     display: block;
