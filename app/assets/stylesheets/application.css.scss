@@ -28,6 +28,13 @@ $mobile: new-breakpoint(max-width 480px 4);
 @import "home";
 // @import "flexnav";
 
+h1,h2,h3,h4,h5 {
+  font-size: 1em;
+}
+p {
+  font-size: 1em;
+}
+
 #responsive-nav {
   background: black;
   max-height: 0;

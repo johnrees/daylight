@@ -54,5 +54,6 @@ span.share-text {  line-height: 32px; display: block; float: left; margin-right:
   @include media($mobile) {
     @include shift(0);
   }
-  @include shift(4);
-  margin-bottom: 40px; }
+  @include shift(2);
+  margin-bottom: 40px;
+}

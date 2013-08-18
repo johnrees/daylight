@@ -1,7 +1,17 @@
 $tablet: new-breakpoint(max-width 780px 4);
 $mobile: new-breakpoint(max-width 480px 4);
 
+#homepage-image {
+  display: none;
+  @include media($mobile) {
+    display: block;
+  }
+}
+
 #homepage-video {
+  @include media($mobile) {
+    display: none !important;
+  }
   margin-bottom: 10px;
   display: block !important;
 
@@ -22,14 +32,6 @@ $mobile: new-breakpoint(max-width 480px 4);
   // }
   #mep_1 {
     height: auto !important;
-  }
-  @include media($mobile) {
-    video {
-      display: none;
-    }
-    img {
-      display: block;
-    }
   }
 }
 

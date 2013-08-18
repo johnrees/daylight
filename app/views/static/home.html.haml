@@ -2,6 +2,7 @@
 - button "Menu"
 #content
   .row
+    = image_tag @video.image_url, id: 'homepage-image'
     #homepage-video.tile
       %video#homepage-video{:loop => true}
         /{:poster => "poster.jpg", :preload => "true"}
