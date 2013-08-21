@@ -15,6 +15,9 @@ $mobile: new-breakpoint(max-width 480px 4);
 }
 
 #homepage-video {
+  p {
+    display: none;
+  }
   @include media($mobile) {
     display: none !important;
   }

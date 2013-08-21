@@ -49,7 +49,9 @@ header {
     }
 
     #main-nav {
+      max-height: 50px;
       @include media($mobile) {
+        max-height: 1000px;
         display: none;
         height: auto !important;
         margin-bottom: 10px;
@@ -202,6 +204,6 @@ body.work #work-subnav {
 }
 
 footer .inner {
-
     @include outer-container;
+    text-align: center;
 }

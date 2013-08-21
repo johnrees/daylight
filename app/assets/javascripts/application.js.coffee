@@ -31,15 +31,19 @@ init = ->
   $('#nav-button').click ->
     $('#main-nav').toggle()
 
-  $('#homepage-video').mediaelementplayer
-    loop: true
-    defaultVideoWidth: "100%"
-    defaultVideoHeight: 600
-    videoWidth: -1
-    videoHeight: -1
+  # $('#homepage-video').mediaelementplayer
+  #   loop: true
+  #   defaultVideoWidth: "100%"
+  #   defaultVideoHeight: 600
+  #   videoWidth: -1
+  #   videoHeight: -1
 
 
-  $('#main-nav').css 'height', parseInt($('#main-nav').css('height')) * 2
+  # if $(window).width() > 480
+  $(window).resize ->
+    $('.a-work.c-videos #main-nav').css 'height', parseInt($('.subnav').css('height')) * 2
+  .trigger 'resize'
+
   $('iframe#vimeo').hide()
   $('iframe#vimeo').load ->
     $(this).fadeIn()
@@ -72,7 +76,7 @@ loaded = ->
 
 jQuery ->
 
-  $(".fitvids").fitVids()
+  $(".fitvids").fitVids({customSelector: 'video'})
 
   # $(".flexnav").flexNav();
   # $('header nav#main-nav').meanmenu()
