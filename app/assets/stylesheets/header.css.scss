@@ -2,7 +2,9 @@ $tablet: new-breakpoint(max-width 780px 4);
 $mobile: new-breakpoint(max-width 480px 4);
 $headerHeight: 240px;
 
-
+body {
+  -webkit-text-size-adjust: none;
+}
 
 header {
 
