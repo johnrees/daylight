@@ -41,7 +41,7 @@ init = ->
 
   # if $(window).width() > 480
   $(window).resize ->
-    $('.a-work.c-videos #main-nav').css 'height', parseInt($('.subnav').css('height')) * 2
+    $('.work.c-videos #main-nav').css 'height', parseInt($('.subnav').css('height')) * 2
   .trigger 'resize'
 
   $('iframe#vimeo').hide()
