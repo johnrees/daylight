@@ -5,7 +5,7 @@
     = image_tag @video.image_url, id: 'homepage-image'
     #homepage-video.tile
       .fit-vids
-        %video#homepage-video{:loop => true, :class => 'video-js', 'data-setup' => true, :poster => @video.image, width: '100%', :autoplay => true}
+        %video#homepage-video{:loop => true, :class => 'video-js', 'data-setup' => true,  width: '100%', :autoplay => true}
           %source{:src => @video.video, :type => "video/mp4"}
 
   .row{style: 'margin-top: 20px'}
