@@ -8,10 +8,10 @@
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
     %title= yield(:title) || "Daylight Moving Image"
 
-    = stylesheet_link_tag    "application", "http://fonts.googleapis.com/css?family=Lato:300,400", "http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css", media: "all"
+    = stylesheet_link_tag    "application", media: "all"
+    -# , "http://fonts.googleapis.com/css?family=Lato:300,400", "http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css",
 
-    = javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js", "https://www.gstatic.com/swiffy/v5.1/runtime.js", "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js", "http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"
-
+    -# = javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js", "https://www.gstatic.com/swiffy/v5.1/runtime.js", "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js", "http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
@@ -19,23 +19,17 @@
 
     %header
       #head
-        #nav-button
-          = yield(:button).blank? ? yield(:title) : yield(:button)
+        #nav-button= yield(:button).blank? ? yield(:title).split(',').first : yield(:button)
         %nav.top-nav
 
           = link_to "Backstage", "http://day-light.co.uk/backstage", class: 'link'
           = link_to "Blog", "http://blog.day-light.co.uk", class: 'link'
 
           = mail_to "talk@day-light.co.uk", "Email", class: 'sprite Email'
-          / = link_to "Tumblr", "#", class: 'sprite Tumblr'
-          / http://www.linkedin.com/company/daylight-moving-image
           = link_to "Facebook", "https://www.facebook.com/DaylightMovingImageltd", class: 'sprite Facebook'
           = link_to "Twitter", "https://twitter.com/Natural_light", class: 'sprite Twitter'
           = link_to "Pinterest", "http://pinterest.com/daylightmatt/", class: 'sprite Pinterest'
           = link_to "Instagram", "http://instagram.com/daylight_matt/", class: 'sprite Instagram'
-
-          /= link_to "YouTube", "http://www.youtube.com/user/DaylightLtd#p/u", class: 'sprite YouTube'
-          /= link_to "Vimeo", "https://vimeo.com/daylightvimeo", class: 'sprite Vimeo'
 
         .row.logo
           #aperture-container
@@ -44,20 +38,8 @@
             = link_to "Daylight", root_path, class: 'aperture'
             #moving-image Moving Image
 
-        .contact.fade
-          %p Penthouse, 37 Turner Street, Manchester, M4 1DW
-          %p
-            T: 0161 839 9088
-            %br/
-            E:
-            = mail_to "talk@day-light.co.uk"
+        = render "contact_details"
 
-        #summary.fade
-
-          Established in 2004, Daylight is an award winning, independent, creative moving image company based in the northern quarter of Manchester.
-          %br/
-          %br/
-          We like working in natural light.
         .row
           %nav#main-nav.inline
             %ul{data: {bgcolor: '#f9a518', breakpoint: 800}}
@@ -81,5 +63,6 @@
 
     %footer
       .inner
+        = render "contact_details"
         %p © Daylight Moving Image Ltd. All rights reserved.
         %p Registered in England & Wales # 5259086. VAT Registration # 849451201

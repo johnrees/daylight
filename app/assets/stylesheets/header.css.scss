@@ -89,8 +89,8 @@ header {
       background-image: image-url("small-aperture.png");
     }
 
-    .contact, #summary {
-      display: none;
+    .contact, .summary {
+      display: none !important;
     }
   }
 
@@ -205,7 +205,23 @@ body.work #work-subnav {
   display: block;
 }
 
-footer .inner {
-    @include outer-container;
+footer {
+  p {
     text-align: center;
+    display: block;
+    clear: both;
+  }
+  .inner {
+    @include outer-container;
+    // text-align: center;
+  }
+
+  .summary, .contact {
+    display: block;
+  }
+  // @include media($mobile) {
+  //   .summary, .contact {
+  //     display: none;
+  //   }
+  // }
 }

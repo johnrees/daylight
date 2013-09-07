@@ -1,4 +1,7 @@
 #= require jquery
+#= require TweenMax.min
+#= require CSSPlugin.min
+#= require swiffy
 #= require aaheader
 #= require holder
 #= require urlify
@@ -10,8 +13,7 @@
 #= require logo
 #= require static
 #= require videos
-#= require mediaelement-and-player
-
+# nooo #= require mediaelement-and-player
 # nooo #= require turbolinks
 
 jQuery.fn.reverse = [].reverse
