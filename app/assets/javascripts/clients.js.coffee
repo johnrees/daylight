@@ -9,7 +9,12 @@ ready = ->
     else
       $('body').scrollTop(0)
 
-  $('.client').click ->
+  $('.client.has-description').mouseover ->
+    $(this).addClass('hovering')
+  $('.client.has-description').mouseout ->
+    $(this).removeClass('hovering')
+
+  $('.client.has-description').click ->
     $('.client').removeClass('active')
     $(this).addClass('active')
     #$('.details').hide()

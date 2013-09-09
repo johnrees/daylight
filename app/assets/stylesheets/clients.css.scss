@@ -42,7 +42,9 @@
     line-height: 100%;
     -webkit-filter: grayscale(100%);
     opacity: 0.6;
-    cursor: pointer;
+    &.has-description {
+      cursor: pointer;
+    }
     position: relative;
 
     .overlay {
@@ -57,7 +59,7 @@
     // border: 3px solid #FFF;
     opacity: 0.8;
 
-    &.active {
+    &.active, &.hovering {
       -webkit-filter: none;
       opacity: 1;
       // border-color: #F9A518;

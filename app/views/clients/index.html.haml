@@ -8,22 +8,23 @@
 
   - @clients.each_with_index do |client, index|
 
-    .client.tile
+    .client.tile{ class: ("has-description" if client.description.present?) }
       .overlay
       = image_tag client.logo_url
     .client-description
       %h3.client-name= client.name
-      %p.client-description= client.description
-      .hide-mobile
-        .client-author
-          %h3.client-name
-            = client.person
-            - if client.website.present?
-              %br/
-              = link_to client.website, client.website
+      - if client.description.present?
+        %p.client-description= client.description
+        .hide-mobile
+          .client-author
+            %h3.client-name
+              = client.person
+              - if client.website.present?
+                %br/
+                = link_to client.website, client.website
 
-        - if client.video.present?
-          .play-film
-            %h3.client-name= link_to "play film", client.video
+          - if client.video.present?
+            .play-film
+              %h3.client-name= link_to "play film", client.video
 
 .client-info.description
