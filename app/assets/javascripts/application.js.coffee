@@ -8,7 +8,6 @@
 #= require jquery.fitvids
 #= require clients
 #= require logo
-#= require static
 #= require videos
 
 jQuery.fn.reverse = [].reverse

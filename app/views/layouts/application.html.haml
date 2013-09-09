@@ -9,9 +9,6 @@
     %title= yield(:title) || "Daylight Moving Image"
 
     = stylesheet_link_tag    "application", media: "all"
-    -# , "http://fonts.googleapis.com/css?family=Lato:300,400", "http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css",
-
-    -# = javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js", "https://www.gstatic.com/swiffy/v5.1/runtime.js", "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js", "http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
