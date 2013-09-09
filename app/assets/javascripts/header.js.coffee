@@ -2,18 +2,19 @@ $('.fade').css('opacity', 0)
 
 headerStuff = (event) ->
 
-  fadeDistance    = 80
-  className   = 'scrolled'
-  headerheight = 320
+  if $('html').hasClass('no-touch')
+    fadeDistance    = 80
+    className   = 'scrolled'
+    headerheight = 320
 
-  if $(window).width() > 480
-    scroll = parseInt Math.max(0,$(window).scrollTop())
+    if $(window).width() > 480
+      scroll = parseInt Math.max(0,$(window).scrollTop())
 
-    TweenLite.to $('#aperture'), 0.1, { rotation: Math.min($(window).scrollTop() * 2.11, 360) }
-    $('#head').css 'height', (headerheight - scroll)
-    $('.fade').css 'opacity', (fadeDistance - scroll) / fadeDistance
+      TweenLite.to $('#aperture'), 0.1, { rotation: Math.min($(window).scrollTop() * 2.11, 360) }
+      $('#head').css 'height', (headerheight - scroll)
+      $('.fade').css 'opacity', (fadeDistance - scroll) / fadeDistance
 
-    $('header').toggleClass 'fixed', (scroll > 145)
+      $('header').toggleClass 'fixed', (scroll > 145)
 
 jQuery ->
   $(document).on 'scroll', headerStuff
