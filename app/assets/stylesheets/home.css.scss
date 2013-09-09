@@ -7,20 +7,20 @@ $mobile: new-breakpoint(max-width 480px 4);
   }
 }
 
-#homepage-image {
-  display: none;
-  @include media($mobile) {
-    display: block;
-  }
-}
+// #homepage-image {
+//   display: none;
+//   @include media($mobile) {
+//     display: block;
+//   }
+// }
 
 #homepage-video {
   p {
     display: none;
   }
-  @include media($mobile) {
-    display: none !important;
-  }
+  // @include media($mobile) {
+  //   display: none !important;
+  // }
   margin-bottom: 10px;
   display: block !important;
 

@@ -1,11 +1,33 @@
 - button "Menu"
 #content
   .row
-    = image_tag @video.image_url, id: 'homepage-image'
-    #homepage-video.tile
-      .fit-vids
-        %video#homepage-video{:loop => true, :class => 'video-js', 'data-setup' => true,  width: '100%', :autoplay => true}
-          %source{:src => @video.video, :type => "video/mp4"}
+    .fit-vids
+      %object{:data => asset_path('fallbackplayer.swf'), :height => "462", :type => "application/x-shockwave-flash", :width => "990"}
+        %param{:name => "movie", :value => asset_path('fallbackplayer.swf')}/
+        %param{:name => "wmode", :value => "opaque"}/
+        %param{:name => "flashVars", :value => "src=#{@video.video}"}/
+        %param{:name => "scale", :value => "noScale"}/
+        %video{:height => "462", :width => "990", :autoplay => true, :loop => true}
+          %source{:src => @video.video, :type => "video/mp4"}/
+          -# %source{:src => "http://clips.vorwaerts-gmbh.de/big_buck_bunny.webm", :type => "video/webm"}/
+          %img{:height => "462", :src => "http://sandbox.thewikies.com/vfe-generator/images/big-buck-bunny_poster.jpg", :width => "990"}/
+
+    -# #homepage-video
+    -#   -# .tile
+    -#   -# .fit-vids
+    -#   %video#homepage-video{:loop => true, :class => 'video-js', 'data-setup' => true,  width: '100%', :autoplay => true, :height => 400 }
+
+    -#     -# HTML5 Options
+    -#     %source{:src => @video.video, :type => "video/adf"}/
+
+    -#     -# Flash Fallback
+    -#     %object{:data => asset_path('fallbackplayer.swf'), :height => "360", :type => "application/x-shockwave-flash", :width => "640"}
+    -#       %param{ :name => "wmode", :value => "opaque" }
+    -#       %param{ :name => "bgcolor", :value => "#000000" }
+    -#       %param{ :name => "movie", :value => asset_path('fallbackplayer.swf') }
+    -#       = image_tag @video.image_url, id: 'homepage-image'
+    -#       -# %param{:name => "flashVars", :value => "src=something"}/
+    -#       -# %img{:alt => "Big Buck Bunny", :height => "360", :src => "http://sandbox.thewikies.com/vfe-generator/images/big-buck-bunny_poster.jpg", :title => "No video playback capabilities, please download the video below", :width => "640"}/
 
   .row{style: 'margin-top: 20px'}
     #featured-videos Featured Videos
