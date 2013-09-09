@@ -22,8 +22,8 @@ class VideosController < ApplicationController
   end
 
   def featured
-    id = params[:id] || 1
-    @video = Video.featured.all[id.to_i - 1]#.video
+    @id = (params[:id] || 1).to_i
+    @video = Video.featured.all[@id - 1]#.video
     @videos = Video.featured.all
     render :show
   end

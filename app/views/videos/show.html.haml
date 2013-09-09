@@ -1,11 +1,10 @@
-/= @video.vimeoid
-
 - if action_name == 'show'
   - title "#{@video} / #{@video.tag}"
   - button "Work"
 - else
   - title "Featured"
   - button "Featured"
+
 .row
   #video= vimeo_player @video.vimeoid
 
@@ -25,7 +24,7 @@
 
 #videos.thumbs
   - @videos.each_with_index do |video, index|
-    .video.tile{style: "background-image: url(#{video.image});"}
+    .video.tile{style: "background-image: url(#{video.image});", class: ('active' if @id == index + 1) }
       = link_to (action_name == 'show' ? video.fullpath : featured_path(index + 1)) do
         .bg
           .info
