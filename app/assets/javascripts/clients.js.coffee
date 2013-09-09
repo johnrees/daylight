@@ -4,7 +4,7 @@ ready = ->
 
 
   $(window).on 'load', ->
-    if $(window).width() > 480
+    if $(window).width() > 480 and $('html').hasClass('no-touch')
       $('body.c-videos, body.a-about, body.c-clients').scrollTop(140)#.c-videos
     else
       $('body').scrollTop(0)
