@@ -2,19 +2,14 @@
 #= require TweenMax.min
 #= require CSSPlugin.min
 #= require swiffy
-#= require aaheader
+#= require header
 #= require holder
 #= require urlify
-#= require jquery.isotope
-#= require jquery.flexnav
 #= require jquery.fitvids
-#= require jquery.ba-throttle-debounce.js
 #= require clients
 #= require logo
 #= require static
 #= require videos
-# nooo #= require mediaelement-and-player
-# nooo #= require turbolinks
 
 jQuery.fn.reverse = [].reverse
 
@@ -33,15 +28,6 @@ init = ->
   $('#nav-button').click ->
     $('#main-nav').toggle()
 
-  # $('#homepage-video').mediaelementplayer
-  #   loop: true
-  #   defaultVideoWidth: "100%"
-  #   defaultVideoHeight: 600
-  #   videoWidth: -1
-  #   videoHeight: -1
-
-
-  # if $(window).width() > 480
   $(window).resize ->
     $('.work.c-videos #main-nav').css 'height', parseInt($('.subnav').css('height')) * 2
   .trigger 'resize'
@@ -50,10 +36,8 @@ init = ->
   $('iframe#vimeo').load ->
     $(this).fadeIn()
 
-
   $('#vimeo-container').fitVids()
 
-  # $('#main .tile').opacity(0)
   $('#main .tile').each ->
     TweenLite.to($(this), 0, {opacity: 0})
 
@@ -69,28 +53,12 @@ init = ->
   createMap() if $('#map').length > 0
 
 
-
 loaded = ->
   opacity = if $('body').hasClass('c-clients') then 0.8 else 1
   $('#main .tile').each (index) ->
     TweenLite.to($(this), 2, {delay: 0.3 + index * 0.2, opacity: opacity})
 
-
 jQuery ->
-
   $(".fitvids").fitVids({customSelector: 'video'})
-
-  # $(".flexnav").flexNav();
-  # $('header nav#main-nav').meanmenu()
-
-  # # $(document).on 'page:fetch', ->
-  # $('#main .tile').reverse().each (index) ->
-  #   $(this).delay(index * 200).fadeOut 'slow'
-
-  # $(document).on 'page:change', init
-  # $(document).on 'page:load', ->
-  #   if $(window).width() > 480
-  #     $(window).scrollTop(0,100)
-
   init()
 
