@@ -1,4 +1,5 @@
 #= require jquery
+#= require jquery.flexslider
 #= require TweenMax.min
 #= require CSSPlugin.min
 #= require swiffy
@@ -60,4 +61,5 @@ loaded = ->
 jQuery ->
   $(".fitvids").fitVids({customSelector: 'video'})
   init()
+  $('.flexslider').flexslider()
 
