@@ -10,6 +10,7 @@
 #= require clients
 #= require logo
 #= require videos
+#= require about
 
 jQuery.fn.reverse = [].reverse
 
