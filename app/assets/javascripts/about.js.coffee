@@ -18,12 +18,14 @@ jQuery ->
     #   $(this).data "startscroll", $(this).offset.top
   .trigger 'resize'
 
-  $(window).scroll ->
-    scroll = $("body").scrollTop()
-    return false  if scroll % 2 is 0
-    i = 0
-    while i < 22
-      break if scroll < window.array[i]
-      $(".scrubsprite").removeClass().addClass("scrubsprite s-" + pad(i + 1, 2))
-      i++
+  if $('body').hasClass('a-about')
+    $(window).on 'scroll touchmove gesturechange', ->
+      scroll = $(document).scrollTop()
+      return false  if scroll % 2 is 0
+      console.log scroll
+      i = 0
+      while i < 22
+        break if scroll < window.array[i]
+        $(".scrubsprite").removeClass().addClass("scrubsprite s-" + pad(i + 1, 2))
+        i++
 
