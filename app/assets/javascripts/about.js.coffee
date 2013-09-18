@@ -22,7 +22,7 @@ jQuery ->
     $(window).on 'scroll touchmove', ->
       # gesturechange
       scroll = $(document).scrollTop()
-      if scroll % 2 is 0
+      if true#scroll % 2 is 0
         i = 0
         while i < 22
           break if scroll < window.array[i]
