@@ -1,10 +1,10 @@
 - button "Menu"
 #content
   .row
-    .fit-vids.tile
+    .fit-vids.tile.vid
       %object{:data => asset_path('fallbackplayer.swf'), :height => "462", :type => "application/x-shockwave-flash", :width => "100%"}
         %param{:name => "movie", :value => asset_path('fallbackplayer.swf')}/
-        %param{:name => "wmode", :value => "opaque"}/
+        %param{:name => "wmode", :value => "transparent"}/
         %param{:name => "flashVars", :value => "src=#{@video.video}"}/
         %param{:name => "scale", :value => "noScale"}/
         %video{:height => "462", :width => "100%", :autoplay => true, :loop => true}

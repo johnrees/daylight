@@ -205,8 +205,8 @@ header {
   background: #444;
 }
 
-#vimeo-container {
-  background: #F0F0F0 image-url('loader.gif') center center no-repeat;
+.fluid-width-video-wrapper, .vid {
+  background: #F8F8F8 image-url('loader.gif') center center no-repeat;
 }
  //= require foundation_and_overrides
 

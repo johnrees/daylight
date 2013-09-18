@@ -62,5 +62,9 @@ loaded = ->
 jQuery ->
   $(".fitvids").fitVids({customSelector: 'video'})
   init()
-  $('.flexslider').flexslider()
+  $('.flexslider').flexslider
+    # animation: "slide"
+    slideshowSpeed: 4000
+    controlNav: false
+
 
