@@ -12,6 +12,10 @@ class Video < ActiveRecord::Base
   #   true#new_record?
   # end
 
+  def self.tagged
+    joins(:tag).where("tags.category <>''")
+  end
+
   def self.featured
     where('featured_ordinal > 0').order('featured_ordinal ASC').limit(3)
   end

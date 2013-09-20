@@ -1,4 +1,4 @@
-$('.fade').css('opacity', 0)
+$('header .fade, #main .fade').css('opacity', 0)
 
 headerStuff = (event = null) ->
 

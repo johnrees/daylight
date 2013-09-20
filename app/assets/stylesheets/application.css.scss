@@ -140,6 +140,8 @@ a {
   height: 400px;
 }
 
+video { max-width: 100%; height: auto; }
+
 .video-description {
   @include shift(2);
   @include span-columns(4);
@@ -150,14 +152,12 @@ a {
 //   @include omega();
 // }
 
-body {
+header {
   .contact {
     @include shift(1);
     @include span-columns(2);
     @include media($mobile){ display: none; }
   }
-}
-header {
   .summary {
     @include shift(1);
     @include span-columns(2);

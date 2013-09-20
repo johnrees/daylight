@@ -24,33 +24,11 @@
 
 #videos.thumbs
 
-  - if @previous_video
-    .video.tile{style: "background-image: url(#{@previous_video.image});"}
-      = link_to @previous_video.fullpath do
+  - @videos.each_with_index do |video, index|
+    .video.tile{style: "background-image: url(#{video.image});", class: ('active' if @id == index + 1) }
+      = link_to (action_name == 'show' ? video.fullpath : featured_path(index + 1)) do
         .bg
           .info
-            .name=@previous_video
-            - if @previous_video.blurb.present?
-              .company=@previous_video.blurb
-  - else
-    .video
-
-  .video.tile.active{style: "background-image: url(#{@video.image});"}
-    = link_to @video.fullpath do
-      .bg
-        .info
-          .name=@video
-          - if @video.blurb.present?
-            .company=@video.blurb
-
-  - if @next_video
-    .video.tile{style: "background-image: url(#{@next_video.image});"}
-      = link_to @next_video.fullpath do
-        .bg
-          .info
-            .name=@next_video
-            - if @next_video.blurb.present?
-              .company=@next_video.blurb
-  - else
-    .video
-
+            .name=video
+            - if video.blurb.present?
+              .company=video.blurb

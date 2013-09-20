@@ -18,14 +18,17 @@ class VideosController < ApplicationController
   end
 
   def show
-    @videos = Video.joins(:tag).where('tag_id > 0').limit(3)
+    @video = Video.friendly.find(params[:id])
+    @previous_video = Video.tagged.where("videos.id > ?", @video.id).order("id ASC").first
+    @next_video = Video.tagged.where("videos.id < ?", @video.id).order("id DESC").first
+    # @videos = Video.joins(:tag).where('tag_id > 0').limit(3)
   end
 
   def featured
     @id = (params[:id] || 1).to_i
     @video = Video.featured.all[@id - 1]#.video
     @videos = Video.featured.all
-    render :show
+    # render :show
   end
 
   def showreel

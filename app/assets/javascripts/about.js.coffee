@@ -8,7 +8,6 @@ pad = (n, width, z) ->
 jQuery ->
   count = 1
 
-
   $(window).resize ->
     window.array = []
     height = $('body').height() - $(window).innerHeight()
@@ -22,9 +21,11 @@ jQuery ->
     $(window).on 'scroll touchmove', ->
       # gesturechange
       scroll = $(document).scrollTop()
-      if true#scroll % 2 is 0
-        i = 0
-        while i < 22
-          break if scroll < window.array[i]
-          $(".scrubsprite").removeClass().addClass("scrubsprite s-" + pad(i + 1, 2))
-          i++
+
+      i = 0
+      while i < 22
+        if scroll < window.array[i]
+          console.log i
+          break
+        $(".scrubsprite").removeClass().addClass("scrubsprite s-" + pad(i + 1, 2))
+        i++

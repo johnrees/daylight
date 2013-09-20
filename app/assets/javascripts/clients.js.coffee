@@ -17,7 +17,7 @@ ready = ->
   $('.client.has-description').mouseout ->
     $(this).removeClass('hovering')
 
-  $('.client.has-description').click ->
+  $('.client.has-description').on 'click touchend', ->
     $('.client').removeClass('active')
     $(this).addClass('active')
     #$('.details').hide()
