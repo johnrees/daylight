@@ -8,7 +8,7 @@ ready = ->
   # $(window).on 'load', ->
   if $(window).width() > 480 and $('html').hasClass('no-touch')
     # unless $('body').hasClass('a-contact')
-    $('body,html').scrollTop(80)#.c-videos, body.a-about, body.c-clients
+    $('body,html').scrollTop(85)#.c-videos, body.a-about, body.c-clients
   else
     $('body').scrollTop(0)
 

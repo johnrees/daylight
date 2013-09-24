@@ -19,14 +19,16 @@
         #nav-button= yield(:button).blank? ? yield(:title).split(',').first : yield(:button)
         %nav.top-nav
 
-          = link_to "Backstage", "http://day-light.co.uk/backstage", class: 'link'
-          = link_to "Blog", "http://blog.day-light.co.uk", class: 'link'
+          .b-links
+            = link_to "Backstage", "http://day-light.co.uk/backstage", class: 'link'
+            = link_to "Blog", "http://blog.day-light.co.uk", class: 'link'
 
-          = mail_to "talk@day-light.co.uk", "Email", class: 'sprite Email'
-          = link_to "Facebook", "https://www.facebook.com/DaylightMovingImageltd", class: 'sprite Facebook'
-          = link_to "Twitter", "https://twitter.com/Natural_light", class: 'sprite Twitter'
-          = link_to "Pinterest", "http://pinterest.com/daylightmatt/", class: 'sprite Pinterest'
-          = link_to "Instagram", "http://instagram.com/daylight_matt/", class: 'sprite Instagram'
+          .icon-links
+            = mail_to "talk@day-light.co.uk", "Email", class: 'sprite Email'
+            = link_to "Facebook", "https://www.facebook.com/DaylightMovingImageltd", class: 'sprite Facebook'
+            = link_to "Twitter", "https://twitter.com/Natural_light", class: 'sprite Twitter'
+            = link_to "Pinterest", "http://pinterest.com/daylightmatt/", class: 'sprite Pinterest'
+            = link_to "Instagram", "http://instagram.com/daylight_matt/", class: 'sprite Instagram'
 
         .row.logo
           #aperture-container

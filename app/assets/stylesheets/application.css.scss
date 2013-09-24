@@ -5,10 +5,12 @@ $grid-columns: 6;
 $max-width: $column * $grid-columns;
 $orange: #F9A518;
 $yellow: #FFDC48;
+// $desktop-size:em(960);
 
-
+$desktop: new-breakpoint(max-width 880px 6);
 $tablet: new-breakpoint(max-width 780px 4);
 $mobile: new-breakpoint(max-width 480px 4);
+
 
 @import "bourbon";
 @import "font-awesome";
@@ -59,10 +61,10 @@ p {
   }
 }
 
-#top-nav {
-  background: black;
-  overflow: hidden;
-}
+// #top-nav {
+//   background: black;
+//   overflow: hidden;
+// }
 
 ::selection, ::-moz-selection, ::-webkit-selection {
   background: $yellow; /* Firefox */
@@ -210,11 +212,25 @@ header {
 }
 
 .top-nav {
-  // @include pad(4);
-  // @include span-columns(1);
-  @include fill-parent();
-  text-align: right;
-  line-height: 25px;
+  clear: both;
+  overflow: hidden;
+  .b-links {
+    line-height: 40px;
+    padding-left: 8px;
+    @include shift(4);
+    @include span-columns(1);
+    @media screen and (max-width: 880px) {
+      @include shift(2);
+      @include span-columns(2);
+    }
+  }
+  .icon-links {
+    padding-left: 8px;
+    @include span-columns(1);
+    @media screen and (max-width: 880px) {
+      @include span-columns(2);
+    }
+  }
   .link {
     margin-right: 20px;
   }
