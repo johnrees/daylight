@@ -17,7 +17,7 @@ jQuery ->
     #   $(this).data "startscroll", $(this).offset.top
   .trigger 'resize'
 
-  if $('body').hasClass('a-about')
+  if $('html').hasClass('no-touch') and $('body').hasClass('a-about')
     $(window).on 'scroll touchmove', ->
       # gesturechange
       scroll = $(document).scrollTop()

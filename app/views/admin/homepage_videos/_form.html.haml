@@ -14,10 +14,11 @@
   .field
     - if @homepage_video.video.present?
       %video{src: @homepage_video.video, controls: false, width: 300, autoplay: true, loop: true}
-    %input{name: "homepage_video[video]", type: 'filepicker-dragdrop', value: @homepage_video.video}
+    -# %input{name: "homepage_video[video]", type: 'filepicker-dragdrop', value: @homepage_video.video}
+    = f.input :video
 
-  .field
-    = f.input :image, hint: "This will be the fallback image for people who can't play the video"
+  -# .field
+  -#   = f.input :image, hint: "This will be the fallback image for people who can't play the video"
 
   .actions
     = f.submit 'Save', class: 'button'

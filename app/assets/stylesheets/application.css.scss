@@ -127,7 +127,22 @@ p.tile {
 //     overflow: hidden;
 //   }
 
+.gif {
+  img {
+    width: 100%;
+  }
+  display: none;
+  html.touch & {
+    display: block;
+  }
+}
 
+.homepage-video {
+  display: block;
+  html.touch & {
+    display: none;
+  }
+}
 
 a {
   text-decoration: none;
@@ -140,7 +155,7 @@ a {
   height: 400px;
 }
 
-video { max-width: 100%; height: auto; }
+video {width: 100%; max-width: 100%; height: auto; background: #FFF; }
 
 .video-description {
   @include shift(2);

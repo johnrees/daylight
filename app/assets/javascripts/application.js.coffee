@@ -57,10 +57,10 @@ init = ->
 loaded = ->
   opacity = if $('body').hasClass('c-clients') then 0.8 else 1
   $('#main .tile').each (index) ->
-    TweenLite.to($(this), 2, {delay: 0.3 + index * 0.2, opacity: opacity})
+    TweenLite.to($(this), 1.8, {delay: 0.4 + index * 0.1, opacity: opacity})
 
 jQuery ->
-  $(".fitvids").fitVids()
+  # $(".fit-vids").fitVids({customSelector: 'video'})
   init()
   $('.flexslider').flexslider
     # animation: "slide"

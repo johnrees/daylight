@@ -7,6 +7,7 @@ gem 'acts-as-taggable-on'
 # gem 'jquery-turbolinks'
 gem 'pg' # for heroku
 gem "font-awesome-rails"
+gem "figaro"
 
 group :production do
   gem 'rails_12factor'
@@ -26,6 +27,8 @@ gem 'zurb-foundation', '~> 4.0.0'
 gem 'simple_form'
 gem 'jquery-ui-rails'
 gem 'fog'
+gem 'zencoder'
+gem 'mini_magick'
 gem 'carrierwave'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'holder_rails'

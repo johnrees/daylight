@@ -6,6 +6,10 @@ body {
   -webkit-text-size-adjust: none;
 }
 
+.player .video-wrapper * {
+  background: none !important;
+}
+
 header {
   background: #FFF;
   width: 100%;
@@ -13,7 +17,15 @@ header {
   left: 0;
   z-index: 5;
   overflow: hidden;
+
   position: fixed;
+
+  html.touch & {
+    position: absolute;
+    @include media($mobile) {
+      position: static;
+    }
+  }
 
   #nav-button {
     display: none;
@@ -51,12 +63,13 @@ header {
     #main-nav {
       max-height: 50px;
       @include media($mobile) {
+        position: static;
         max-height: 1000px;
         display: none;
         height: auto !important;
         margin-bottom: 10px;
       }
-      position: static;
+
       li {
         width: 100%;
         display: block;
@@ -90,6 +103,10 @@ header {
     .contact, .summary {
       display: none !important;
     }
+  }
+
+  .summary {
+    height: 0;
   }
 
   body.scrolled & {

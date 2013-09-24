@@ -37,6 +37,7 @@
     @include media($mobile) {
       height: auto;
       opacity: 1;
+      margin-top: 20px;
     }
     text-align: center;
     line-height: 100%;
