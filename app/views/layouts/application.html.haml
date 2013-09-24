@@ -60,6 +60,9 @@
 
     %footer
       .inner
-        = render "contact_details"
-        %p © Daylight Moving Image Ltd. All rights reserved.
-        %p Registered in England & Wales # 5259086. VAT Registration # 849451201
+        -# = render "contact_details"
+        %p
+          +44 (0)161 839 9088
+          = mail_to "talk@day-light.co.uk", "talk@day-light.co.uk", class: 'email'
+        %p © #{Time.now.year} Daylight Moving Image Ltd
+
