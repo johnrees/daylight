@@ -177,18 +177,18 @@ nav.inline {
 
 
 #aperture-container {
+  padding-left: 6px;
   @include span-columns(1);
 }
 
 #aperture {
   display: block;
-  margin-left: 3px;
-    @include media($mobile) {
-      margin-left: 0;
-    }
   width: 45px;
   height: 45px;
   background: image-url('aperture.png') no-repeat center center;
+  @include media($mobile) {
+    margin-left: 0;
+  }
 }
 
 
