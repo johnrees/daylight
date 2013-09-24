@@ -46,10 +46,9 @@ class HomepageVideoUploader < CarrierWave::Uploader::Base
               base_url: base_url,
               format: "jpg",
               label: "thumb",
-              number: 5,
-              width: 640,
-              height: 480,
-              aspect_mode: "crop",
+              number: 7,
+              size: "640x480",
+              aspect_mode: "preserve",
               filename: "screenshot_{{number}}"
             }
           ]
