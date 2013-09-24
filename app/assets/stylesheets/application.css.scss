@@ -33,6 +33,10 @@ $mobile: new-breakpoint(max-width 480px 4);
   padding-right: 5px;
 }
 
+// .row.logo {
+//   clear: both;
+// }
+
 .a-work.c-videos #main-nav {
   height: 50px;
 }
@@ -103,7 +107,7 @@ h1,h2,h3,h4,h5 {
 
 body.work, body.light-work {
   #main {
-    margin-top: 350px;
+    margin-top: 360px;
   }
 }
 
@@ -115,7 +119,7 @@ p.tile {
   @include media($mobile) {
     margin-top: 0 !important;
   }
-  margin-top: 330px;
+  margin-top: 360px;
   @include span-columns(6);
 }
 
@@ -169,11 +173,13 @@ video {width: 100%; max-width: 100%; height: auto; background: #FFF; }
 
 header {
   .contact {
+    padding-left: 8px;
     @include shift(1);
     @include span-columns(2);
     @include media($mobile){ display: none; }
   }
   .summary {
+    padding-left: 8px;
     @include shift(1);
     @include span-columns(2);
     @include omega();
@@ -185,6 +191,10 @@ header {
   padding-bottom: 20px;
 }
 
+.logo .logo {
+  @include span-columns(2);
+}
+
 
 .aperture, #moving-image {
   text-decoration: none;
@@ -192,15 +202,17 @@ header {
   font-size: 1.2em;
   line-height: 0.8;
   color: #000;
+  padding-left: 8px;
 }
-
 #moving-image {
   font-weight: normal;
   color: #999;
 }
 
 .top-nav {
-  @include span-columns(6);
+  // @include pad(4);
+  // @include span-columns(1);
+  @include fill-parent();
   text-align: right;
   line-height: 25px;
   .link {
