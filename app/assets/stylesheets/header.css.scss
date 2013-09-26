@@ -221,6 +221,7 @@ body.work #work-subnav {
 }
 
 footer {
+  line-height: 0.5em;
   .email {
     margin-left: 60px;
     @include media($mobile) {
