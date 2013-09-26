@@ -13,8 +13,9 @@ ready = ->
     TweenMax.to( $(this).find('.bg'), 2, { opacity: 0 })
   # $('.video').hide()
 
+  $('nav#main-nav a.active').css 'background-color', $('nav#main-nav a.active').parents('li').last().data('bg')
   $('nav li a').mouseenter ->
-    TweenMax.to( $(this), 0.1, { backgroundColor: $(this).parents('ul').data('bgcolor') })
+    TweenMax.to( $(this), 0.1, { backgroundColor: $(this).parents('li').data('bg') })
   $('nav li a').mouseleave ->
     unless $(this).hasClass('active')
       TweenMax.to( $(this), 0.8, { backgroundColor: '#FFF' })

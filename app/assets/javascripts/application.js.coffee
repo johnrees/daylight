@@ -60,6 +60,8 @@ loaded = ->
     TweenLite.to($(this), 1.8, {delay: 0.4 + index * 0.1, opacity: opacity})
 
 jQuery ->
+
+
   # $(".fit-vids").fitVids({customSelector: 'video'})
   init()
   $('.flexslider').flexslider

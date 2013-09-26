@@ -42,19 +42,19 @@
         .row
           %nav#main-nav.inline
             %ul{data: {bgcolor: '#f9a518', breakpoint: 800}}
-              %li= link_to_with_active_state "Showreel", showreel_path
-              %li= link_to_with_active_state "Featured", featured_path, {}, (request.fullpath.include? "/featured")
-              %li
+              %li{ data: { bg: '#F7913C'}}= link_to_with_active_state "Showreel", showreel_path
+              %li{ data: { bg: '#F58038'}}= link_to_with_active_state "Featured", featured_path, {}, (request.fullpath.include? "/featured")
+              %li{ data: { bg: '#F26E36'}}
                 = link_to_with_active_state "Work", work_path
-                %ul#work-subnav.subnav{data: {bgcolor: '#ffdc48'}}
-                  %li.all= link_to_with_active_state "All", work_path(tag: nil)
+                %ul#work-subnav.subnav
+                  %li.all{data: {bg: '#ffdc48'}}= link_to_with_active_state "All", work_path(tag: nil)
                   - @work_tags.each do |tag|
-                    %li= link_to_with_active_state tag.name,
+                    %li{data: {bg: '#ffdc48'}}= link_to_with_active_state tag.name,
                       work_path(tag: tag.slug), {}, (request.fullpath.include? "/#{tag.slug}")
 
-              %li= link_to_with_active_state "About", about_path
-              %li= link_to_with_active_state "Clients", clients_path
-              %li= link_to_with_active_state "Contact", contact_path
+              %li{ data: { bg: '#F05932'}}= link_to_with_active_state "About", about_path
+              %li{ data: { bg: '#EE4031'}}= link_to_with_active_state "Clients", clients_path
+              %li{ data: { bg: '#EB172E'}}= link_to_with_active_state "Contact", contact_path
 
     #main
       .container

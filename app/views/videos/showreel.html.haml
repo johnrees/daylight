@@ -1,3 +1,4 @@
 - title "Showreel"
 .row.tile
   #video= vimeo_player @video.vimeoid if @video
+  = render "socialbuttons", video: @video

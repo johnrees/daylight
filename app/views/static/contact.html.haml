@@ -6,4 +6,39 @@
       - 8.times do |index|
         %li= image_tag "contactslider/image#{index + 1}-w990.jpg"
 
+.row
+  .contactaddress
+    Daylight Moving Image Ltd
+
+.row.info
+  .contactaddress
+
+    %p
+      Penthouse, Margolis Building,
+      %br/
+      37 Turner Street Manchester, M4 1DW
+    %p T: 0161 839 9088
+
+  .enquiries
+    %p
+      For general enquiries please email
+      %br/
+      #{mail_to "talk@day-light.co.uk", "talk@day-light.co.uk"}
+
+    %p For new business enquiries please email #{mail_to "Matt Smith", "matt@day-light.co.uk"}
+
+  .jobs
+    %p
+      For recruitment / work experience email
+      %br/
+      #{mail_to "jobs@day-light.co.uk", "jobs@day-light.co.uk"}
+
+    %p
+      For
+      %span.nightlight Nightlight
+      enquiries please email
+      #{mail_to "talk@nightlightproductions.co.uk", "talk@nightlightproductions.co.uk", class: "nightlight"}
+
+
+.row
   %iframe{src: "https://maps.google.co.uk/maps?q=Daylight+Moving+Image+Ltd&view=map&ll=53.483455,-2.237191&spn=0.006129,0.013833&output=embed&iwloc=near"}

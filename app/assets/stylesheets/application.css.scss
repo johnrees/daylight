@@ -31,6 +31,13 @@ $mobile: new-breakpoint(max-width 480px 4);
 @import "home";
 // @import "flexnav";
 
+body #main {
+  font-family: "Helvetica Neue";
+  font-weight: 200;
+  font-size: 1em;
+  line-height: 1.2em;
+}
+
 .fade {
   padding-right: 5px;
 }
