@@ -39,6 +39,10 @@ $mobile: new-breakpoint(max-width 580px 4);
 
 $videoHeight: 180px;
 
+.videos {
+  overflow: hidden;
+}
+
 .app {
 
   .video {
