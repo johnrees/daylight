@@ -45,6 +45,10 @@ $videoHeight: 180px;
     @include animation-duration(2s);
     width: 33% !important;
 
+    &:nth-child((5*n) + (n-1)) {
+       width: 34% !important;
+    }
+
     &.big-left, &.big-right {
       @include span-columns(4);
       width: 67% !important;
