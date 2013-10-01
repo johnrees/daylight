@@ -2,11 +2,11 @@
   .info {
     margin-bottom: 20px;
   }
-  .contactaddress {
+  .contactaddress, .enquiries, .jobs {
     @include span-columns(2);
-  }
-  .enquiries, .jobs {
-    @include span-columns(2);
+    @include media($mobile) {
+      @include fill-parent();
+    }
   }
   .info .nightlight, a.nightlight {
     color: #1CBEE3;

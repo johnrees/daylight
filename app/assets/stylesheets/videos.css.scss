@@ -12,7 +12,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $tablet: new-breakpoint(max-width 780px 6);
-$mobile: new-breakpoint(max-width 480px 4);
+$mobile: new-breakpoint(max-width 580px 4);
 
 // .c-videos.a-show {
 //   .description {
@@ -43,12 +43,14 @@ $videoHeight: 180px;
 
   .video {
     @include animation-duration(2s);
+    width: 33% !important;
 
     &.big-left, &.big-right {
       @include span-columns(4);
+      width: 67% !important;
       height: $videoHeight * 2;
       @include media($mobile) {
-        width: 100%;
+        width: 100% !important;
       }
     }
     &.big-right {
@@ -74,6 +76,8 @@ $videoHeight: 180px;
 
     @include media($mobile) {
       @include span-columns(4);
+      width: 100% !important;
+      // width: 100% !important;
       height: 120px !important;
       font-size: 1.1em;
     }

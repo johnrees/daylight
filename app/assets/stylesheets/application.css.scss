@@ -9,7 +9,7 @@ $yellow: #FFDC48;
 
 $desktop: new-breakpoint(max-width 880px 6);
 $tablet: new-breakpoint(max-width 780px 4);
-$mobile: new-breakpoint(max-width 480px 4);
+$mobile: new-breakpoint(max-width 580px 4);
 
 
 @import "bourbon";
@@ -30,6 +30,15 @@ $mobile: new-breakpoint(max-width 480px 4);
 @import "mediaelementplayer";
 @import "home";
 // @import "flexnav";
+
+#main-nav {
+  margin-bottom: 21px;
+  @include media($mobile){ margin-bottom: 0; }
+  .a-work & {
+    margin-bottom: 0;
+  }
+}
+
 
 body #main {
   font-family: "Helvetica Neue";
