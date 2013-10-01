@@ -45,7 +45,7 @@ $videoHeight: 180px;
     @include animation-duration(2s);
     width: 33% !important;
 
-    &:nth-child((5*n) + (n-1)) {
+    &:nth-child(6n-1) {
        width: 34% !important;
     }
 
