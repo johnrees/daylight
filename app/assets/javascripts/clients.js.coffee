@@ -14,15 +14,21 @@ ready = ->
 
   $('.client.has-description').mouseover ->
     $(this).addClass('hovering')
-  $('.client.has-description').mouseout ->
-    $(this).removeClass('hovering')
-
-  $('.client.has-description').on 'click touchend', ->
     $('.client').removeClass('active')
     $(this).addClass('active')
     #$('.details').hide()
     $(this).next('.details').css('background','red')
     $('.client-info').html $(this).next('.client-description').html()
+
+  $('.client.has-description').mouseout ->
+    $(this).removeClass('hovering')
+
+  # $('.client.has-description').on 'click touchend', ->
+  #   $('.client').removeClass('active')
+  #   $(this).addClass('active')
+  #   #$('.details').hide()
+  #   $(this).next('.details').css('background','red')
+  #   $('.client-info').html $(this).next('.client-description').html()
   #.first().trigger 'mouseenter'
 
 $(document).ready ready

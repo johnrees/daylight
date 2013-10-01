@@ -29,6 +29,7 @@
   .client-info {
     margin-top: 2em;
     padding-left: 12px;
+    min-height: 100px;
     @include span-columns(4);
     @include media($mobile) {
       display: none !important;
