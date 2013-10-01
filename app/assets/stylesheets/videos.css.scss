@@ -51,6 +51,9 @@ $videoHeight: 180px;
 
     &:nth-child(6n-1) {
        width: 34% !important;
+       @include media($mobile) {
+        width: 100% !important;
+       }
     }
 
     &.big-left, &.big-right {
