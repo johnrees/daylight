@@ -19,7 +19,7 @@ LoadGmaps = ->
   ]
 
   myOptions =
-    zoom: 16
+    zoom: 15
     center: myLatlng
     # disableDefaultUI: false
     zoomControl: false
@@ -42,6 +42,9 @@ LoadGmaps = ->
     title: "M4 1DW"
     icon: 'http://i.imgur.com/nbWzSfo.png'
   )
+
+  google.maps.event.addDomListener window, 'resize', ->
+    map.setCenter myLatlng
 
 jQuery ->
   LoadGmaps()
