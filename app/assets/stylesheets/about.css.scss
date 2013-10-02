@@ -1,24 +1,42 @@
+.a-about {
+  h3 {
+    // margin: 0;
+    color: #000;
+    margin-bottom: 2em;
+    font-weight: normal;
+  }
+}
 .about-column {
-  @include span-columns(3);
-  &.first {
-    clear: left;
+  .img {
+    height: 400px;
+    background: #F8F8F8;
+    width: 100%;
   }
-  &.last {
-    @include omega();
-  }
+  @include span-columns(2);
+  // &.first {
+  //   clear: left;
+  // }
+  // &.last {
+  //   @include omega();
+  // }
   @include media($mobile) {
     @include fill-parent;
+    p {
+      padding-right: 0;
+    }
+  }
+
+  p {
+    padding-right: 2em;
   }
 }
 
-.a-about #main p {
-  font-size: 1.15em;
-  line-height: 1.5em;
-}
+// .a-about #main p {
+//   font-size: 1.15em;
+//   line-height: 1.5em;
+// }
 
-h3 {
-  margin: 0;
-}
+
 
 .row {
   @include row();
