@@ -1,4 +1,5 @@
-- title "Contact"
+= content_for(:head) do
+  = javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false", "map"
 
 .row
   .flexslider
@@ -35,10 +36,11 @@
 
     %p
       For
-      %span.nightlight Nightlight
+      = link_to "Nightlight", "http://nightlightproductions.co.uk"
       enquiries please email
       #{mail_to "talk@nightlightproductions.co.uk", "talk@nightlightproductions.co.uk", class: "nightlight"}
 
 
 .row
-  %iframe{src: "https://maps.google.co.uk/maps?q=Daylight+Moving+Image+Ltd&view=map&ll=53.483455,-2.237191&spn=0.006129,0.013833&output=embed&iwloc=near"}
+  #MyGmaps
+  -# %iframe{src: "https://maps.google.co.uk/maps?q=Daylight+Moving+Image+Ltd&view=map&ll=53.483455,-2.237191&spn=0.006129,0.013833&output=embed&iwloc=near"}
