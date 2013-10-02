@@ -2,12 +2,20 @@ LoadGmaps = ->
   myLatlng = new google.maps.LatLng(53.48367, -2.23718)
 
   grayStyles = [
-    featureType: "all"
-    stylers: [
-      { saturation: -100 }
-      { lightness: 20 }
-      { weight: 0.4 }
-    ]
+    {
+      featureType: 'all',
+      stylers: [
+        { hue: '#000000' },
+        { saturation: -100 }
+      ]
+    },
+    {
+      featureType: 'transit.station.rail',
+      stylers: [
+        { hue: '#F9A518' },
+        { saturation: 100 }
+      ]
+    }
   ]
 
   myOptions =
