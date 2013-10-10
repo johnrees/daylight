@@ -8,9 +8,15 @@
 }
 .about-column {
   .img {
-    height: 400px;
-    background: #F8F8F8;
+    height: 445px;
+    background: #F8F8F8 image-url("newslides/bike.jpg");
     width: 100%;
+    &.sunflare {
+      background-image: image-url("newslides/sunflare.jpg");
+    }
+    &.window {
+      background-image: image-url("newslides/window.jpg");
+    }
   }
   @include span-columns(2);
   // &.first {
