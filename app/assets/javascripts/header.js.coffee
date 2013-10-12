@@ -14,7 +14,7 @@ headerStuff = (event = null) ->
       # console.log $('header').height(), scroll
       TweenLite.to $('#aperture'), 0.1, { rotation: Math.min($(window).scrollTop() * 4.24, 360) }
       $('#head').css 'height', (headerheight - scroll)
-      $('.fade').css 'opacity', (fadeDistance - scroll) / fadeDistance
+      $('.fade').css 'opacity', Math.max(0, (fadeDistance - scroll) / fadeDistance)
 
       $('header').toggleClass 'fixed', ($('header').height() <= 235)
 
