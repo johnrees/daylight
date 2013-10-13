@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 ruby "2.0.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
-# gem 'turbolinks'
-# gem 'jquery-turbolinks'
+gem 'turbolinks'
+gem 'jquery-turbolinks'
 gem 'acts-as-taggable-on'
 
 gem 'pg' # for heroku

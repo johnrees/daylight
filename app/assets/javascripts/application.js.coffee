@@ -1,3 +1,4 @@
+#= require turbolinks
 #= require jquery
 #= require jquery.flexslider
 #= require TweenMax.min
