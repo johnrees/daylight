@@ -23,6 +23,12 @@
   // }
   @include media($mobile) {
     @include fill-parent;
+    .scrubsprite {
+      height: 250px;
+    }
+    &.sunflare .scrubsprite { background-image: image-url("scrubslides/mmu.jpg") !important; }
+    &.window .scrubsprite { background-image: image-url("scrubslides/glare.jpg") !important; }
+    &.bike .scrubsprite { background-image: image-url("scrubslides/bike.jpg") !important; }
     p {
       padding-right: 0;
     }
@@ -65,103 +71,103 @@ img {
   width: 100%;
   height: 445px;
 
-&.s-01 {background-position: -0px -0px;}
-&.s-02 {background-position: -0px -0px;}
-&.s-03 {background-position: -330px -0px;}
-&.s-04 {background-position: -660px -0px;}
-&.s-05 {background-position: -990px -0px;}
-&.s-06 {background-position: -1320px -0px;}
-&.s-07 {background-position: -1650px -0px;}
-&.s-08 {background-position: -1980px -0px;}
-&.s-09 {background-position: -2310px -0px;}
-&.s-10 {background-position: -2640px -0px;}
-&.s-11 {background-position: -2970px -0px;}
-&.s-12 {background-position: -3300px -0px;}
-&.s-13 {background-position: -3630px -0px;}
-&.s-14 {background-position: -0px -550px;}
-&.s-15 {background-position: -330px -550px;}
-&.s-16 {background-position: -660px -550px;}
-&.s-17 {background-position: -990px -550px;}
-&.s-18 {background-position: -1320px -550px;}
-&.s-19 {background-position: -1650px -550px;}
-&.s-20 {background-position: -1980px -550px;}
-&.s-21 {background-position: -2310px -550px;}
-&.s-22 {background-position: -2640px -550px;}
-&.s-23 {background-position: -2640px -550px;}
-&.s-24 {background-position: -2970px -550px;}
-&.s-25 {background-position: -3300px -550px;}
-&.s-26 {background-position: -3630px -550px;}
-&.s-27 {background-position: -0px -1100px;}
-&.s-28 {background-position: -330px -1100px;}
-&.s-29 {background-position: -660px -1100px;}
-&.s-30 {background-position: -990px -1100px;}
-&.s-31 {background-position: -1320px -1100px;}
-&.s-32 {background-position: -1650px -1100px;}
-&.s-33 {background-position: -1980px -1100px;}
-&.s-34 {background-position: -2310px -1100px;}
-&.s-35 {background-position: -2640px -1100px;}
-&.s-36 {background-position: -2970px -1100px;}
-&.s-37 {background-position: -3300px -1100px;}
-&.s-38 {background-position: -3630px -1100px;}
-&.s-39 {background-position: -0px -1650px;}
-&.s-40 {background-position: -330px -1650px;}
-&.s-41 {background-position: -660px -1650px;}
-&.s-42 {background-position: -990px -1650px;}
-&.s-43 {background-position: -1320px -1650px;}
-&.s-44 {background-position: -1320px -1650px;}
-&.s-45 {background-position: -1650px -1650px;}
-&.s-46 {background-position: -1980px -1650px;}
-&.s-47 {background-position: -2310px -1650px;}
-&.s-48 {background-position: -2640px -1650px;}
-&.s-49 {background-position: -2970px -1650px;}
-&.s-50 {background-position: -3300px -1650px;}
-&.s-51 {background-position: -3630px -1650px;}
-&.s-52 {background-position: -0px -2200px;}
-&.s-53 {background-position: -330px -2200px;}
-&.s-54 {background-position: -660px -2200px;}
-&.s-55 {background-position: -990px -2200px;}
-&.s-56 {background-position: -1320px -2200px;}
-&.s-57 {background-position: -1650px -2200px;}
-&.s-58 {background-position: -1980px -2200px;}
-&.s-59 {background-position: -2310px -2200px;}
-&.s-60 {background-position: -2640px -2200px;}
-&.s-61 {background-position: -2970px -2200px;}
-&.s-62 {background-position: -3300px -2200px;}
-&.s-63 {background-position: -3630px -2200px;}
-&.s-64 {background-position: -0px -2750px;}
-&.s-65 {background-position: -0px -2750px;}
-&.s-66 {background-position: -330px -2750px;}
-&.s-67 {background-position: -660px -2750px;}
-&.s-68 {background-position: -990px -2750px;}
-&.s-69 {background-position: -1320px -2750px;}
-&.s-70 {background-position: -1650px -2750px;}
-&.s-71 {background-position: -1980px -2750px;}
-&.s-72 {background-position: -2310px -2750px;}
-&.s-73 {background-position: -2640px -2750px;}
-&.s-74 {background-position: -2970px -2750px;}
-&.s-75 {background-position: -3300px -2750px;}
-&.s-76 {background-position: -3630px -2750px;}
-&.s-77 {background-position: -0px -3300px;}
-&.s-78 {background-position: -330px -3300px;}
-&.s-79 {background-position: -660px -3300px;}
-&.s-80 {background-position: -990px -3300px;}
-&.s-81 {background-position: -1320px -3300px;}
-&.s-82 {background-position: -1650px -3300px;}
-&.s-83 {background-position: -1980px -3300px;}
-&.s-84 {background-position: -2310px -3300px;}
-&.s-85 {background-position: -2640px -3300px;}
-&.s-86 {background-position: -2640px -3300px;}
-&.s-87 {background-position: -2970px -3300px;}
-&.s-88 {background-position: -3300px -3300px;}
-&.s-89 {background-position: -3630px -3300px;}
-&.s-90 {background-position: -0px -3850px;}
-&.s-91 {background-position: -330px -3850px;}
-&.s-92 {background-position: -660px -3850px;}
-&.s-93 {background-position: -990px -3850px;}
-&.s-94 {background-position: -1320px -3850px;}
-&.s-95 {background-position: -1650px -3850px;}
-&.s-96 {background-position: -1980px -3850px;}
-&.s-97 {background-position: -2310px -3850px;}
-&.s-98 {background-position: -2640px -3850px;}
-&.s-99 {background-position: -2970px -3850px;}
+  &.s-01 {background-position: -0px -0px;}
+  &.s-02 {background-position: -0px -0px;}
+  &.s-03 {background-position: -330px -0px;}
+  &.s-04 {background-position: -660px -0px;}
+  &.s-05 {background-position: -990px -0px;}
+  &.s-06 {background-position: -1320px -0px;}
+  &.s-07 {background-position: -1650px -0px;}
+  &.s-08 {background-position: -1980px -0px;}
+  &.s-09 {background-position: -2310px -0px;}
+  &.s-10 {background-position: -2640px -0px;}
+  &.s-11 {background-position: -2970px -0px;}
+  &.s-12 {background-position: -3300px -0px;}
+  &.s-13 {background-position: -3630px -0px;}
+  &.s-14 {background-position: -0px -550px;}
+  &.s-15 {background-position: -330px -550px;}
+  &.s-16 {background-position: -660px -550px;}
+  &.s-17 {background-position: -990px -550px;}
+  &.s-18 {background-position: -1320px -550px;}
+  &.s-19 {background-position: -1650px -550px;}
+  &.s-20 {background-position: -1980px -550px;}
+  &.s-21 {background-position: -2310px -550px;}
+  &.s-22 {background-position: -2640px -550px;}
+  &.s-23 {background-position: -2640px -550px;}
+  &.s-24 {background-position: -2970px -550px;}
+  &.s-25 {background-position: -3300px -550px;}
+  &.s-26 {background-position: -3630px -550px;}
+  &.s-27 {background-position: -0px -1100px;}
+  &.s-28 {background-position: -330px -1100px;}
+  &.s-29 {background-position: -660px -1100px;}
+  &.s-30 {background-position: -990px -1100px;}
+  &.s-31 {background-position: -1320px -1100px;}
+  &.s-32 {background-position: -1650px -1100px;}
+  &.s-33 {background-position: -1980px -1100px;}
+  &.s-34 {background-position: -2310px -1100px;}
+  &.s-35 {background-position: -2640px -1100px;}
+  &.s-36 {background-position: -2970px -1100px;}
+  &.s-37 {background-position: -3300px -1100px;}
+  &.s-38 {background-position: -3630px -1100px;}
+  &.s-39 {background-position: -0px -1650px;}
+  &.s-40 {background-position: -330px -1650px;}
+  &.s-41 {background-position: -660px -1650px;}
+  &.s-42 {background-position: -990px -1650px;}
+  &.s-43 {background-position: -1320px -1650px;}
+  &.s-44 {background-position: -1320px -1650px;}
+  &.s-45 {background-position: -1650px -1650px;}
+  &.s-46 {background-position: -1980px -1650px;}
+  &.s-47 {background-position: -2310px -1650px;}
+  &.s-48 {background-position: -2640px -1650px;}
+  &.s-49 {background-position: -2970px -1650px;}
+  &.s-50 {background-position: -3300px -1650px;}
+  &.s-51 {background-position: -3630px -1650px;}
+  &.s-52 {background-position: -0px -2200px;}
+  &.s-53 {background-position: -330px -2200px;}
+  &.s-54 {background-position: -660px -2200px;}
+  &.s-55 {background-position: -990px -2200px;}
+  &.s-56 {background-position: -1320px -2200px;}
+  &.s-57 {background-position: -1650px -2200px;}
+  &.s-58 {background-position: -1980px -2200px;}
+  &.s-59 {background-position: -2310px -2200px;}
+  &.s-60 {background-position: -2640px -2200px;}
+  &.s-61 {background-position: -2970px -2200px;}
+  &.s-62 {background-position: -3300px -2200px;}
+  &.s-63 {background-position: -3630px -2200px;}
+  &.s-64 {background-position: -0px -2750px;}
+  &.s-65 {background-position: -0px -2750px;}
+  &.s-66 {background-position: -330px -2750px;}
+  &.s-67 {background-position: -660px -2750px;}
+  &.s-68 {background-position: -990px -2750px;}
+  &.s-69 {background-position: -1320px -2750px;}
+  &.s-70 {background-position: -1650px -2750px;}
+  &.s-71 {background-position: -1980px -2750px;}
+  &.s-72 {background-position: -2310px -2750px;}
+  &.s-73 {background-position: -2640px -2750px;}
+  &.s-74 {background-position: -2970px -2750px;}
+  &.s-75 {background-position: -3300px -2750px;}
+  &.s-76 {background-position: -3630px -2750px;}
+  &.s-77 {background-position: -0px -3300px;}
+  &.s-78 {background-position: -330px -3300px;}
+  &.s-79 {background-position: -660px -3300px;}
+  &.s-80 {background-position: -990px -3300px;}
+  &.s-81 {background-position: -1320px -3300px;}
+  &.s-82 {background-position: -1650px -3300px;}
+  &.s-83 {background-position: -1980px -3300px;}
+  &.s-84 {background-position: -2310px -3300px;}
+  &.s-85 {background-position: -2640px -3300px;}
+  &.s-86 {background-position: -2640px -3300px;}
+  &.s-87 {background-position: -2970px -3300px;}
+  &.s-88 {background-position: -3300px -3300px;}
+  &.s-89 {background-position: -3630px -3300px;}
+  &.s-90 {background-position: -0px -3850px;}
+  &.s-91 {background-position: -330px -3850px;}
+  &.s-92 {background-position: -660px -3850px;}
+  &.s-93 {background-position: -990px -3850px;}
+  &.s-94 {background-position: -1320px -3850px;}
+  &.s-95 {background-position: -1650px -3850px;}
+  &.s-96 {background-position: -1980px -3850px;}
+  &.s-97 {background-position: -2310px -3850px;}
+  &.s-98 {background-position: -2640px -3850px;}
+  &.s-99 {background-position: -2970px -3850px;}
 }
