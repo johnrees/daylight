@@ -25,6 +25,7 @@
     @include fill-parent;
     .scrubsprite {
       height: 250px;
+      background-position: 0 0 !important;
     }
     &.sunflare .scrubsprite { background-image: image-url("scrubslides/mmu.jpg") !important; }
     &.window .scrubsprite { background-image: image-url("scrubslides/glare.jpg") !important; }

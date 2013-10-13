@@ -1,6 +1,6 @@
 ready = ->
 
-  $('header').css(opacity: 0).delay(300).animate({opacity: 1})
+  # $('header').css(opacity: 0).delay(300).animate({opacity: 1})
 
   height = $(window).innerHeight() + 150
   $('body').css('min-height', "#{height}px")
