@@ -70,7 +70,9 @@
     opacity: 0.8;
 
     &.active, &.hovering {
+      filter: none; /* IE6-9 */
       -webkit-filter: none;
+
       opacity: 1;
       // border-color: #F9A518;
       @include media($mobile) {
