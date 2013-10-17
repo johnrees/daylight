@@ -13,20 +13,14 @@
 }
 .about-column {
 
-  .img {
-    background: #F8F8F8 image-url("newslides/bike.jpg");
+  // .img {
+  //   background: #F8F8F8 image-url("newslides/bike.jpg");
 
-    &.window {
-      background-image: image-url("newslides/window.jpg");
-    }
-  }
+  //   &.window {
+  //     background-image: image-url("newslides/window.jpg");
+  //   }
+  // }
   @include span-columns(2);
-  // &.first {
-  //   clear: left;
-  // }
-  // &.last {
-  //   @include omega();
-  // }
   @include media($mobile) {
     @include fill-parent;
     .scrubsprite {
@@ -45,13 +39,6 @@
     padding-right: 2em;
   }
 }
-
-// .a-about #main p {
-//   font-size: 1.15em;
-//   line-height: 1.5em;
-// }
-
-
 
 .row {
   @include row();
@@ -77,6 +64,7 @@ img {
   background-repeat: no-repeat;
   width: 100%;
   height: 445px;
+  background-size: 3690px;
 
   &.s-01 {background-position: -0px -0px;}
   &.s-02 {background-position: -0px -0px;}
