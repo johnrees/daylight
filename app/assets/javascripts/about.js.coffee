@@ -22,7 +22,7 @@ jQuery ->
       # gesturechange
       scroll = $(document).scrollTop()
 
-      i = 0
+      i = 1
       while i < 22
         break if (scroll < window.array[i])
         i++
