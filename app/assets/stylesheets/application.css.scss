@@ -41,7 +41,6 @@ $mobile: new-breakpoint(max-width 580px 4);
 
 
 body #main {
-  font-family: "Helvetica Neue";
   font-weight: 200;
   font-size: 1em;
   line-height: 1.2em;
@@ -96,7 +95,7 @@ p {
 }
 
 body {
-  font-family: 'Helvetica Neue', $helvetica;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 13px;
   color: #8F8F8F;
   overflow-y: scroll;
