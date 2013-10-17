@@ -52,10 +52,6 @@ img {
 }
 
 .scrubsprite {
-  .sunflare & { background-image: image-url("newslides/sunflare.jpg"); }
-  .window & { background-image: image-url("newslides/window.jpg"); }
-  .bike & { background-image: image-url("newslides/bike.jpg"); }
-
   background: #F8F8F8;
   background-position: -2310px -0px;
   display:block;
@@ -63,7 +59,10 @@ img {
   background-repeat: no-repeat;
   width: 100%;
   height: 445px;
-  // -webkit-background-size: 3690px 4950px;
+
+  .sunflare & { background-image: image-url("newslides/sunflare.jpg"); }
+  .window & { background-image: image-url("newslides/window.jpg"); }
+  .bike & { background-image: image-url("newslides/bike.jpg"); }
 
   &.s-01 {background-position: -2310px -550px}
   &.s-02 {background-position: -2310px -0px}
