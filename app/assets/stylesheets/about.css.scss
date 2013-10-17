@@ -15,13 +15,7 @@
 }
 .about-column {
 
-  // .img {
-  //   background: #F8F8F8 image-url("newslides/bike.jpg");
-
-  //   &.window {
-  //     background-image: image-url("newslides/window.jpg");
-  //   }
-  // }
+  margin-bottom: 1em;
   @include span-columns(2);
   @include media($mobile) {
     @include fill-parent;
