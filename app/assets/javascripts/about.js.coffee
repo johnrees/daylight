@@ -11,7 +11,7 @@ jQuery ->
   $(window).resize ->
     window.array = []
     height = $('body').height() - $(window).innerHeight()
-    size = height / 99
+    size = height / 23
     window.array.unshift Math.floor(height)  while (height -= size) >= 0
     # $(".scrubsprite").each ->
     #   $(this).data "startscroll", $(this).offset.top
@@ -23,7 +23,7 @@ jQuery ->
       scroll = $(document).scrollTop()
 
       i = 0
-      while i < 98
+      while i < 22
         break if (scroll < window.array[i])
         i++
 
