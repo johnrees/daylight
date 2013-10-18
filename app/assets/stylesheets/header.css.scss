@@ -95,9 +95,9 @@ header {
     }
 
     a#aperture {
-      width: 40px !important;
-      height: 40px !important;
-      background-image: image-url("small-aperture.png");
+      width: 43px !important;
+      height: 43px !important;
+      background-image: image-url("aperture-logo.png");
     }
 
     .contact, .summary {
@@ -183,9 +183,9 @@ nav.inline {
 
 #aperture {
   display: block;
-  width: 45px;
-  height: 45px;
-  background: image-url('aperture.png') no-repeat center center;
+  width: 43px;
+  height: 43px;
+  background: image-url('aperture-logo.png') no-repeat center center;
   @include media($mobile) {
     margin-left: 0;
   }

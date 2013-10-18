@@ -27,7 +27,6 @@ createMap = ->
   new L.Control.Zoom({ position: 'topright' }).addTo(map)
 
 init = ->
-
   $('#nav-button').click ->
     $('#main-nav').toggle()
 
@@ -71,4 +70,5 @@ jQuery ->
     slideshowSpeed: 4000
     controlNav: false
 
-
+$(document).on 'page:change', ->
+  $('#homepage-video').load()
