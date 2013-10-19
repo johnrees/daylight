@@ -113,14 +113,14 @@ $videoHeight: 180px;
 
     .name {
       color: #FFF;
-      margin-bottom: 1em;
+      margin-bottom: 0.2em;
+      line-height: 1.1em;
     }
-    .name, .company {
-
-      line-height: 1.2em;
+    .company {
+      color: #393939;
+      font-size: 0.9em;
+      line-height: 1.1em;
     }
-
-
 
     .bg:before {
       content: '';
@@ -171,9 +171,7 @@ $videoHeight: 180px;
     background: black;
   }
 
-  .company {
-    color: #393939;
-  }
+
 
 
 
