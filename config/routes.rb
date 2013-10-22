@@ -4,7 +4,7 @@ Daylight::Application.routes.draw do
   resources :videos, except: :index
 
   get 'contact', to: 'static#contact'
-  get "backstage" => redirect("http://backstage.day-light.co.uk")
+  get "backstage" => redirect("http://backstage.day-light.co.uk/backstage/")
 
   namespace :admin do
     %w(videos tags clients homepage_videos featured_videos).each do |resource|
