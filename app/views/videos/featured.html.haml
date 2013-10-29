@@ -1,3 +1,28 @@
+- content_for(:meta) do
+  %meta{content: request.url, property: "og:url"}/
+  %meta{content: (yield(:title).present? ? yield(:title) : "Daylight Moving Image"), property: "og:title"}/
+  %meta{content: @video.description, property: "og:description"}/
+  %meta{content: "video", property: "og:type"}/
+
+  %meta{content: @video.image, property: "og:image"}/
+  %meta{content: "http://vimeo.com/moogaloop.swf?clip_id=#{@video.vimeoid}", property: "og:video"}/
+  %meta{content: "https://vimeo.com/moogaloop.swf?clip_id=#{@video.vimeoid}", property: "og:video:secure_url"}/
+  %meta{content: "application/x-shockwave-flash", property: "og:video:type"}/
+  %meta{content: "640", property: "og:video:width"}/
+  %meta{content: "360", property: "og:video:height"}/
+  %meta{content: "Daylight Moving Image", property: "og:site_name"}/
+  %meta{content: "player", name: "twitter:card"}/
+  %meta{content: "https://player.vimeo.com/video/#{@video.vimeoid}", name: "twitter:player"}/
+  %meta{content: "360", name: "twitter:player:height"}/
+  %meta{content: "640", name: "twitter:player:width"}/
+  %meta{content: "Daylight Moving Image", name: "twitter:app:name:iphone"}/
+  %meta{content: "425194759", name: "twitter:app:id:iphone"}/
+  %meta{content: "vimeo://video/#{@video.vimeoid}", name: "twitter:app:url:iphone"}/
+  %meta{content: "Daylight Moving Image", name: "twitter:app:name:ipad"}/
+  %meta{content: "425194759", name: "twitter:app:id:ipad"}/
+  %meta{content: "Daylight Moving Image", name: "twitter:app:name:googleplay"}/
+  %meta{content: "com.vimeo.android.videoapp", name: "twitter:app:id:googleplay"}/
+
 - if action_name == 'show'
   - title "#{@video} / #{@video.tag}"
   - button "Work"
