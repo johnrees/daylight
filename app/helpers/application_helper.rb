@@ -1,4 +1,9 @@
 module ApplicationHelper
+
+  def vimeo_url src
+    "http://player.vimeo.com/video/#{src}?color=F9A518"
+  end
+
   def vimeo_player src
     content_tag :div, id: 'vimeo-container' do
     content_tag :iframe,
@@ -6,12 +11,12 @@ module ApplicationHelper
       allowfullscreen: true,
       frameborder: 0,
       mozallowfullscreen: true,
-      src: "http://player.vimeo.com/video/#{src}?color=F9A518",
+      src: vimeo_url(src),
       webkitallowfullscreen: true,
       id: 'vimeo',
       width: 990,
       height: 557
-  end
+    end
   end
 
   def title(page_title)

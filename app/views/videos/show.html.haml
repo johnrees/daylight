@@ -1,3 +1,6 @@
+- content_for(:meta) do
+  %meta{content: vimeo_url(@video.vimeoid), name: "og:video"}/
+
 - if action_name == 'show'
   - title "#{@video} / #{@video.tag}"
   - button "Work"
