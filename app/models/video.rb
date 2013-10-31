@@ -32,6 +32,10 @@ class Video < ActiveRecord::Base
     "/#{tag.category.gsub('_','-')}/#{tag.slug}/#{slug}"
   end
 
+  def fullurl
+    "http://www.day-light.co.uk#{fullpath}"
+  end
+
   def feature
     featured?
   end

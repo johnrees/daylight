@@ -24,9 +24,10 @@
     = f.label :name
     = f.text_field :name
 
-  .field
-    = f.label :slug
-    = f.text_field :slug
+  - if @video.persisted?
+    .field
+      = f.label :slug
+      = f.text_field :slug
 
   .field
     = f.label :blurb
