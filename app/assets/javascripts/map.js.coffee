@@ -1,5 +1,5 @@
 LoadGmaps = ->
-  myLatlng = new google.maps.LatLng(53.48367, -2.23718)
+  myLatlng = new google.maps.LatLng(53.48417, -2.23619)
 
   grayStyles = [
     {
@@ -19,7 +19,7 @@ LoadGmaps = ->
   ]
 
   myOptions =
-    zoom: 15
+    zoom: 14
     center: myLatlng
     # disableDefaultUI: false
     zoomControl: false
